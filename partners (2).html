@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeriPura — Partner Programme</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #0F2444;
+    --navy-mid:  #1F3864;
+    --blue:      #2E5FA3;
+    --blue-lt:   #4A80C4;
+    --sky:       #D6E4F0;
+    --pale:      #EBF3FA;
+    --cream:     #F8F9FB;
+    --red:       #C8504A;
+    --gold:      #D4A847;
+    --white:     #FFFFFF;
+    --ink:       #1A2332;
+    --muted:     #5A6878;
+    --border:    #CBD8E8;
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-sans:  'DM Sans', system-ui, sans-serif;
+    --font-mono:  'DM Mono', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); background: var(--cream); color: var(--ink); line-height: 1.55; overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav { background: var(--navy); padding: 0 3rem; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--blue); display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-logo { font-family: var(--font-serif); font-size: 1.3rem; color: var(--white); letter-spacing: 0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 1.5rem; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy); border: none; border-radius: 4px; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 18px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+  .nav-cta:hover { background: #e0b84e; }
+
+  /* ── BUTTONS ── */
+  .btn-primary { background: var(--gold); color: var(--navy); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 26px; border: none; cursor: pointer; text-decoration: none; border-radius: 4px; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: #e0b84e; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: var(--white); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 26px; border: 1.5px solid rgba(255,255,255,0.35); cursor: pointer; text-decoration: none; border-radius: 4px; transition: border-color 0.2s; display: inline-block; }
+  .btn-secondary:hover { border-color: var(--white); }
+  .btn-outline { background: transparent; color: var(--navy); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 26px; border: 1.5px solid var(--navy); cursor: pointer; text-decoration: none; border-radius: 4px; transition: background 0.2s, color 0.2s; display: inline-block; }
+  .btn-outline:hover { background: var(--navy); color: var(--white); }
+
+  /* ── SECTION COMMONS ── */
+  .section-inner { max-width: 1080px; margin: 0 auto; padding: 80px 3rem; }
+  .section-eyebrow { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .section-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; background: var(--blue); }
+  .section-eyebrow.gold { color: var(--gold); }
+  .section-eyebrow.gold::before { background: var(--gold); }
+  h1, h2 { font-family: var(--font-serif); line-height: 1.12; }
+  h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); color: var(--white); margin-bottom: 20px; }
+  h1 em { color: var(--gold); font-style: italic; }
+  h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); color: var(--navy); margin-bottom: 12px; }
+  h2 em { color: var(--gold); font-style: italic; }
+  h3 { font-family: var(--font-serif); font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
+  .lead { font-size: 1rem; color: var(--sky); line-height: 1.7; max-width: 560px; margin-bottom: 36px; }
+  .section-lead { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #1a3a6e 100%);
+    padding: 80px 3rem 72px; position: relative; overflow: hidden;
+  }
+  .hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(214,228,240,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(214,228,240,0.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+  .hero-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: center; position: relative; z-index: 1; }
+  .hero-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); }
+  .hero-sub { font-size: 1rem; color: var(--sky); line-height: 1.7; max-width: 500px; margin-bottom: 36px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Hero stats panel */
+  .hero-stats { display: flex; flex-direction: column; gap: 12px; }
+  .hero-stat-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 20px 22px; }
+  .hero-stat-card .num { font-family: var(--font-serif); font-size: 2rem; color: var(--gold); margin-bottom: 4px; }
+  .hero-stat-card .lbl { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); line-height: 1.4; }
+
+  /* ── WHO IS THIS FOR ── */
+  .who-section { background: var(--pale); }
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; }
+  .who-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; padding: 32px; transition: border-color 0.25s, box-shadow 0.25s; }
+  .who-card:hover { border-color: var(--blue-lt); box-shadow: 0 4px 20px rgba(46,95,163,0.1); }
+  .who-card-icon { font-size: 2rem; margin-bottom: 14px; }
+  .who-card-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
+  .who-card-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+  .fit-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .fit-list li { font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink); display: flex; align-items: flex-start; gap: 8px; }
+  .fit-list li::before { content: '✓'; color: #3a8a60; font-weight: 700; flex-shrink: 0; }
+
+  /* ── PROPOSITION ── */
+  .prop-section { background: var(--white); }
+  .prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 48px; }
+  .prop-card { padding: 36px 32px; border-right: 1.5px solid var(--border); position: relative; }
+  .prop-card:last-child { border-right: none; }
+  .prop-num { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 12px; }
+  .prop-icon { font-size: 1.8rem; margin-bottom: 14px; }
+  .prop-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--navy); margin-bottom: 12px; }
+  .prop-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+  .prop-detail { font-size: 0.84rem; color: var(--ink); line-height: 1.65; padding: 12px 14px; background: var(--pale); border: 1.5px solid var(--border); border-radius: 6px; }
+  .prop-detail strong { color: var(--navy); font-weight: 600; }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--white); }
+  .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 48px; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .faq-item { border-bottom: 1.5px solid var(--border); }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { padding: 20px 24px; font-size: 0.92rem; font-weight: 600; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
+  .faq-q:hover { background: var(--pale); }
+  .faq-q::after { content: '+'; font-family: var(--font-mono); font-size: 1.2rem; color: var(--gold); flex-shrink: 0; margin-left: 12px; transition: transform 0.2s; }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a { display: none; padding: 0 24px 20px; font-size: 0.86rem; color: var(--muted); line-height: 1.7; }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── PARTNER FORM ── */
+  .form-section { background: var(--pale); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
+  .form-intro h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--navy); margin-bottom: 12px; }
+  .form-intro p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+  .contact-item { margin-bottom: 20px; }
+  .ci-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .ci-value { font-size: 0.9rem; color: var(--ink); }
+  .ci-value a { color: var(--blue); text-decoration: none; }
+  .ci-value a:hover { text-decoration: underline; }
+  .partner-form { display: flex; flex-direction: column; gap: 14px; background: var(--white); border: 1.5px solid var(--border); border-radius: 10px; padding: 36px; }
+  .partner-form h3 { font-family: var(--font-serif); font-size: 1.3rem; color: var(--navy); margin-bottom: 4px; }
+  .partner-form .form-subtitle { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-field { display: flex; flex-direction: column; gap: 5px; }
+  .form-field label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .form-field input, .form-field select, .form-field textarea { background: var(--cream); border: 1.5px solid var(--border); border-radius: 6px; color: var(--ink); font-family: var(--font-sans); font-size: 0.88rem; padding: 9px 13px; outline: none; width: 100%; transition: border-color 0.2s; }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--blue); background: var(--white); }
+  .form-field textarea { resize: vertical; min-height: 90px; }
+  .form-field select option { background: var(--white); }
+  .form-checkbox { display: flex; align-items: flex-start; gap: 10px; }
+  .form-checkbox input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--blue); }
+  .form-checkbox label { font-size: 0.8rem; color: var(--muted); line-height: 1.5; cursor: pointer; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); padding: 28px 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .footer-logo { font-family: var(--font-serif); font-size: 1rem; color: var(--sky); }
+  .footer-logo span { color: var(--gold); }
+  .footer-copy { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--muted); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold); }
+
+  /* Corridor tag reuse */
+  .corridor-tag { font-family: var(--font-mono); font-size: 0.6rem; padding: 3px 10px; border-radius: 3px; background: rgba(212,168,71,0.12); border: 1px solid rgba(212,168,71,0.3); color: var(--gold); display: inline-block; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">VERI<span>PURA</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#problem">Problem</a></li>
+    <li><a href="index.html#use-cases">Use Cases</a></li>
+    <li><a href="index.html#technology">Technology</a></li>
+    <li><a href="index.html#applets">Test Drive</a></li>
+    <li><a href="partners.html" class="active">Partners</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#partner-form">Apply to Partner</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">VeriPura Partner Programme</div>
+      <h1>Turn every food shipment<br>into a <em>revenue opportunity.</em></h1>
+      <p class="hero-sub">Freight forwarders and carriers already touch every import shipment. VeriPura turns your compliance exposure into a competitive advantage — and adds a recurring revenue stream to every client relationship you already have.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#partner-form">Apply to Partner</a>
+        <a class="btn-secondary" href="#proposition">See the Proposition</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat-card">
+        <div class="num">14,000+</div>
+        <div class="lbl">Food shipments refused EU entry<br>in 2024 alone — TRACES Annual Report</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="num">39%</div>
+        <div class="lbl">Of EU/US food import refusals caused<br>by documentation failures alone</div>
+      </div>
+      <div class="hero-stat-card">
+        <div class="num">14 days</div>
+        <div class="lbl">Average time to identify a food<br>contamination source without traceability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="who-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who This Is For</div>
+    <h2>Two types of partner.<br>One programme.</h2>
+    <p class="section-lead">VeriPura's channel programme is designed for organisations that already have relationships with EU or US food importers and want to add compliance intelligence to their service offering.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-card-icon">🚢</div>
+        <div class="who-card-title">Freight Forwarders</div>
+        <div class="who-card-desc">You manage documentation for food importers sourcing from Asia, Latin America, Africa, and other high-risk corridors. You already carry the liability when something goes wrong at the border. VeriPura makes you the solution, not the problem.</div>
+        <ul class="fit-list">
+          <li>You handle EU or US-bound food shipments from high-risk corridors</li>
+          <li>Your clients ask you about compliance — or blame you when it fails</li>
+          <li>You want to differentiate from competing forwarders on service, not price</li>
+          <li>You have 10+ active food importer relationships</li>
+        </ul>
+      </div>
+      <div class="who-card">
+        <div class="who-card-icon">🛃</div>
+        <div class="who-card-title">Customs Brokers & Carriers</div>
+        <div class="who-card-desc">You operate at the point where compliance failures become costly — the border. Every hold, every detention, every rejected shipment costs you and your clients. VeriPura moves compliance validation upstream, before the container ever leaves origin.</div>
+        <ul class="fit-list">
+          <li>You handle customs clearance for food imports at EU or US ports</li>
+          <li>Demurrage and detention costs regularly affect your clients</li>
+          <li>You want to offer pre-arrival compliance review as a value-added service</li>
+          <li>You have carrier or broker relationships with import-active clients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPOSITION -->
+<section id="proposition" class="prop-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">The Partner Proposition</div>
+    <h2>Three reasons to partner.<br>All of them <em>commercial.</em></h2>
+    <p class="section-lead">This is not a referral arrangement. It is a structured channel partnership built around your revenue, your liability protection, and your client relationships.</p>
+    <div class="prop-grid">
+      <div class="prop-card">
+        <div class="prop-num">01</div>
+        <div class="prop-icon">💶</div>
+        <div class="prop-title">Revenue Share on Every Shipment</div>
+        <div class="prop-desc">Channel partners earn a recurring share of VeriPura subscription and per-shipment attestation revenue for every client they introduce and retain. No cap on volume. Revenue compounds as your client base grows.</div>
+        <div class="prop-detail">
+          <strong>How it works:</strong> You introduce a food importer client. They subscribe to VeriPura. You earn a share of their monthly subscription fee and per-shipment attestation charges — for as long as they remain a client. Full commercial terms disclosed at onboarding.
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-num">02</div>
+        <div class="prop-icon">🛡️</div>
+        <div class="prop-title">Liability Protection for Your Business</div>
+        <div class="prop-desc">When a shipment is rejected at the border, your client looks at you first. VeriPura creates an immutable, blockchain-attested record of every compliance check performed — demonstrating your due diligence and protecting you from disputes you shouldn't be losing.</div>
+        <div class="prop-detail">
+          <strong>What this means in practice:</strong> Every IOTA-attested compliance verdict is timestamped and tamperproof. If a client claims you failed to flag a documentation issue, you have a verifiable audit trail that says otherwise. That record is yours to keep and present.
+        </div>
+      </div>
+      <div class="prop-card">
+        <div class="prop-num">03</div>
+        <div class="prop-icon">📦</div>
+        <div class="prop-title">A Differentiated Service Offering</div>
+        <div class="prop-desc">VeriPura compliance validation becomes a branded service you offer alongside freight and customs clearance. Clients sourcing from Thailand, Vietnam, Brazil, India, or any high-CPI-gap corridor need this now — EUDR and FSMA 204 enforcement are live.</div>
+        <div class="prop-detail">
+          <strong>What you tell clients:</strong> "We offer pre-departure compliance validation on all food import documentation — flagging errors before your container moves, with blockchain-attested records for every shipment." Your competitors cannot say that.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Questions</div>
+    <h2>What forwarders and carriers<br>ask us most.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do we need to be a compliance expert to sell VeriPura?</div>
+        <div class="faq-a">No. VeriPura handles all the compliance intelligence. Your role as a partner is to introduce the service to clients and position it as part of your offering. We provide sales materials, client-facing one-pagers, and joint demo support. You don't need to understand the regulatory detail — that's what VeriPura does.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What corridors does VeriPura currently cover?</div>
+        <div class="faq-a">VeriPura operates on any corridor where institutional integrity risk creates documentary compliance exposure — primarily origins with a Corruption Perceptions Index score between 25–45. Current focus corridors include Thailand, Vietnam, Indonesia, India, Brazil, Mexico, and the Philippines into EU and US markets. New corridors are added continuously based on partner and client demand.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there exclusivity available?</div>
+        <div class="faq-a">Yes. Anchor partners — those who commit early and meet volume targets — can negotiate geographic or segment exclusivity. For example, an anchor partner focused on Dutch SME importers sourcing from Southeast Asia can discuss exclusivity for that segment. Exclusivity terms are negotiated individually and included in the partner agreement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What happens if a client we introduce goes directly to VeriPura?</div>
+        <div class="faq-a">Clients introduced through the channel programme are tagged to your partner account at the point of introduction. If a client subsequently contacts VeriPura directly, your attribution is maintained and your revenue share continues for the life of that client relationship, subject to the terms of your partner agreement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">We already use a TMS / freight platform — does VeriPura integrate?</div>
+        <div class="faq-a">VeriPura connects via REST API to existing TMS, ERP, and document management systems. For partner organisations, we prioritise API integration as part of the onboarding process so that compliance validation fits into your existing workflow rather than adding a parallel system. Integration scope and timeline are scoped during onboarding.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER FORM -->
+<section id="partner-form" class="form-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Apply to Partner</div>
+    <h2>Let's talk about<br>your client base.</h2>
+    <div class="form-grid">
+      <div class="form-intro">
+        <h3>We review every application personally.</h3>
+        <p>We're not running an open referral network. We're building a small number of high-quality channel partnerships with forwarders and carriers who have genuine relationships with food importers in high-risk corridors.</p>
+        <p style="margin-top:12px;">Tell us about your business, your client base, and the corridors you work in. We'll respond within 5 business days.</p>
+        <div class="contact-item" style="margin-top:28px;">
+          <div class="ci-label">Email</div>
+          <div class="ci-value"><a href="/cdn-cgi/l/email-protection#f3839281879d968180b38596819a83868192dd909c9e"><span class="__cf_email__" data-cfemail="d1a1b0a3a5bfb4a3a291a7b4a3b8a1a4a3b0ffb2bebc">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-label">Book a Partner Call</div>
+          <div class="ci-value"><a href="https://calendar.app.google/ite6AFL7AEv23aqP8">Schedule directly →</a></div>
+        </div>
+        <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:8px;">
+          <span class="corridor-tag">Thailand → EU</span>
+          <span class="corridor-tag">Vietnam → US</span>
+          <span class="corridor-tag">Indonesia → EU</span>
+          <span class="corridor-tag">Brazil → UK/EU</span>
+          <span class="corridor-tag">India → EU/US</span>
+          <span class="corridor-tag">Mexico → US</span>
+        </div>
+      </div>
+
+      <div class="partner-form">
+        <h3>Partner Enquiry</h3>
+        <div class="form-subtitle">Freight Forwarder · Customs Broker · Carrier</div>
+        <div class="form-row">
+          <div class="form-field"><label>First Name</label><input type="text" placeholder="Jan"></div>
+          <div class="form-field"><label>Last Name</label><input type="text" placeholder="de Vries"></div>
+        </div>
+        <div class="form-field"><label>Company Name</label><input type="text" placeholder="Your company"></div>
+        <div class="form-field">
+          <label>Organisation Type</label>
+          <select>
+            <option value="">Select type</option>
+            <option>Freight Forwarder</option>
+            <option>Customs Broker</option>
+            <option>Carrier</option>
+            <option>Freight Forwarder + Customs Broker</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Country of Operation</label><input type="text" placeholder="Netherlands"></div>
+          <div class="form-field"><label>No. of Active Importer Clients</label><input type="text" placeholder="e.g. 25–50"></div>
+        </div>
+        <div class="form-field">
+          <label>Primary Origin Corridors You Work In</label>
+          <input type="text" placeholder="e.g. Thailand, Vietnam, Brazil">
+        </div>
+        <div class="form-field">
+          <label>What brings you to VeriPura?</label>
+          <textarea placeholder="Tell us about your current situation — client compliance issues, liability concerns, service gaps, or commercial opportunity you're looking to address..."></textarea>
+        </div>
+        <div class="form-field"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+        <div class="form-checkbox">
+          <input type="checkbox" id="consent">
+          <label for="consent">I agree to VeriPura processing my data to respond to this enquiry and send relevant partner programme information.</label>
+        </div>
+        <button class="btn-outline" style="align-self:flex-start;">Submit Partner Enquiry</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">VERI<span>PURA</span></div>
+  <div class="footer-copy">© 2026 VeriPura™ — Import Compliance Intelligence</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://medium.com/@info_73854/veripura-whitepaper-8f08c1bb7e2c">Whitepaper</a>
+    <a href="https://x.com/VeriPura">X</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function toggle
