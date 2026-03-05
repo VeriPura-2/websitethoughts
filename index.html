@@ -425,8 +425,8 @@
 <script>
 (function() {
   var KEYWORDS = ['food','sps','sanitary','phytosanitary','import','eudr','fsma','contaminant','mycotoxin','pesticide','residue','traceability','detention','refusal','codex','alimentarius','recall','deforestation','agricultural'];
-  var RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://www.wto.org/english/news_e/rss_e/rss_e.xml') + '&count=30';
-  var GOOGLE_RSS = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://news.google.com/rss/search?q=WTO+food+safety+import+SPS&hl=en-US&gl=US&ceid=US:en') + '&count=20';
+  var WTO_FEED = 'https://corsproxy.io/?' + encodeURIComponent('https://www.wto.org/english/news_e/rss_e/rss_e.xml');
+  var GOOGLE_FEED = 'https://corsproxy.io/?' + encodeURIComponent('https://news.google.com/rss/search?q=WTO+food+safety+import+SPS&hl=en-US&gl=US&ceid=US:en');
 
   function matchesKeyword(text) {
     var lower = text.toLowerCase();
@@ -443,13 +443,21 @@
 
   function fetchFeed(url, callback) {
     fetch(url)
-      .then(function(res) { return res.json(); })
-      .then(function(data) {
-        if (data.status === 'ok' && data.items) {
-          callback(data.items.filter(function(item) {
-            return matchesKeyword(item.title + ' ' + (item.description || ''));
-          }));
-        } else { callback([]); }
+      .then(function(res) { return res.text(); })
+      .then(function(text) {
+        var parser = new DOMParser();
+        var xml = parser.parseFromString(text, 'text/xml');
+        var items = Array.from(xml.querySelectorAll('item')).slice(0, 30);
+        var results = items.map(function(item) {
+          return {
+            title: (item.querySelector('title') || {}).textContent || '',
+            link: (item.querySelector('link') || {}).textContent || '',
+            description: (item.querySelector('description') || {}).textContent || ''
+          };
+        }).filter(function(item) {
+          return item.title && matchesKeyword(item.title + ' ' + item.description);
+        });
+        callback(results);
       })
       .catch(function() { callback([]); });
   }
@@ -485,8 +493,8 @@
       window.veraFeedContext = merged.slice(0, 8).map(function(i) { return i.title; }).join(' | ');
     }
 
-    fetchFeed(RSS_URL, function(items) { wtoItems = items; tryMerge(); });
-    fetchFeed(GOOGLE_RSS, function(items) { googleItems = items; tryMerge(); });
+    fetchFeed(WTO_FEED, function(items) { wtoItems = items; tryMerge(); });
+    fetchFeed(GOOGLE_FEED, function(items) { googleItems = items; tryMerge(); });
   }
 
   if (document.readyState === 'loading') {
