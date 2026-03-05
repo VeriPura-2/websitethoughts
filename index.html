@@ -271,6 +271,36 @@
   .partner-badge:hover { border-color: var(--blue-lt); color: var(--navy); }
   .partner-badge.highlight { border-color: var(--gold); color: var(--navy); background: rgba(212,168,71,0.08); }
 
+  /* ── PARTNER RECRUITMENT ── */
+  .channel-section { background: var(--navy); }
+  .channel-section .section-eyebrow { color: var(--gold); }
+  .channel-section .section-eyebrow::before { background: var(--gold); }
+  .channel-section h2 { color: var(--white); }
+  .channel-section .section-lead { color: var(--sky); max-width: 600px; }
+  .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
+  .channel-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; padding: 28px;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .channel-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(212,168,71,0.4); }
+  .channel-card-icon { font-size: 1.8rem; margin-bottom: 14px; }
+  .channel-card-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; }
+  .channel-card-desc { font-size: 0.85rem; color: var(--sky); line-height: 1.65; }
+  .channel-proof {
+    background: rgba(212,168,71,0.1);
+    border: 1px solid rgba(212,168,71,0.3);
+    border-radius: 8px; padding: 20px 28px;
+    display: flex; align-items: center; gap: 24px;
+    flex-wrap: wrap; margin-bottom: 40px;
+  }
+  .channel-proof-stat { text-align: center; flex: 1; min-width: 120px; }
+  .channel-proof-stat .num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold); margin-bottom: 4px; }
+  .channel-proof-stat .lbl { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); line-height: 1.4; }
+  .channel-proof-divider { width: 1px; height: 48px; background: rgba(212,168,71,0.25); flex-shrink: 0; }
+  .channel-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
   /* ── TEAM ── */
   .team-section { background: var(--white); }
   .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; max-width: 720px; }
@@ -328,6 +358,7 @@
     <li><a href="#use-cases">Use Cases</a></li>
     <li><a href="#technology">Technology</a></li>
     <li><a href="#applets">Test Drive</a></li>
+    <li><a href="#channel-partners">Partners</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -336,15 +367,15 @@
 
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item">EU TRACES rejections rising 23% YoY</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">14,000+ food shipments refused EU entry in 2024 — TRACES Annual Report</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">30+ documents required per EU food import</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">4–8 hours per shipment in manual compliance review</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">39% of import refusals are documentation failures</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">EU TRACES rejections rising 23% YoY</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">14,000+ food shipments refused EU entry in 2024 — TRACES Annual Report</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">30+ documents required per EU food import</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">4–8 hours per shipment in manual compliance review</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">39% of import refusals are documentation failures</span><span class="ticker-item ticker-sep">·</span>
   </div>
 </div>
@@ -374,7 +405,7 @@
   <div class="stat-item"><div class="stat-num red">39%</div><div class="stat-label">of import refusals are<br>documentation failures</div></div>
   <div class="stat-item"><div class="stat-num red">$50K</div><div class="stat-label">avg. cost of a single<br>FDA detention event</div></div>
   <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">documents per EU<br>food import shipment</div></div>
-  <div class="stat-item"><div class="stat-num">8 hrs</div><div class="stat-label">manual review time<br>per import file</div></div>
+  <div class="stat-item"><div class="stat-num">14 days</div><div class="stat-label">avg. to identify source of<br>food contamination (industry data)</div></div>
 </div>
 
 <section id="problem" class="problem-section">
@@ -384,9 +415,9 @@
     <p class="section-lead">The global food import system runs on paper — and it's failing the people who depend on it. For importers, forwarders, and carriers, the cost of compliance failure is measured in detained shipments, regulatory fines, and lost business.</p>
     <div class="problem-grid">
       <div class="problem-card" data-num="01"><div class="problem-cost">$30K–$50K</div><div class="problem-title">Per FDA Detention Incident</div><div class="problem-desc">An FDA automatic detention triggered by a documentation error can cost tens of thousands in warehouse fees, re-inspection costs, and lost product — before the goods ever reach a buyer.</div></div>
-      <div class="problem-card" data-num="02"><div class="problem-cost">+23% YoY</div><div class="problem-title">EU TRACES Border Rejections</div><div class="problem-desc">EU border control rejections are accelerating. New regulations (EU 2017/625, EUDR) have added layers of documentation requirements that legacy manual processes simply cannot keep up with.</div></div>
-      <div class="problem-card" data-num="03"><div class="problem-cost">4–8 hrs</div><div class="problem-title">Manual Review Per Shipment</div><div class="problem-desc">Compliance staff spend hours cross-referencing certificates, checking expiry dates, validating issuing authority signatures — work that is error-prone, slow, and completely unscalable.</div></div>
-      <div class="problem-card" data-num="04"><div class="problem-cost">7 Days</div><div class="problem-title">Average Contamination Trace Time</div><div class="problem-desc">When contamination occurs, tracing a food batch through fragmented paper records takes an average of 7 days. VeriPura reduces this to seconds with an immutable, auditable chain of custody.</div></div>
+      <div class="problem-card" data-num="02"><div class="problem-cost">14,000+</div><div class="problem-title">EU Food Import Refusals in 2024</div><div class="problem-desc">EU border control refusals reached over 14,000 for animal-origin food products in 2024 alone, per the TRACES Annual Report. New regulations including EU 2017/625 and EUDR continue to raise the documentation bar that importers must clear.</div></div>
+      <div class="problem-card" data-num="03"><div class="problem-cost">"Hours to weeks"</div><div class="problem-title">FDA Examination Time Per Shipment</div><div class="problem-desc">The FDA states that shipment examination can take "from a few hours to several weeks" if laboratory analysis is required. Every day a container sits at port compounds storage fees, spoilage risk, and buyer penalties.</div></div>
+      <div class="problem-card" data-num="04"><div class="problem-cost">14 Days</div><div class="problem-title">Average Contamination Identification Time</div><div class="problem-desc">When contamination occurs, identifying the source through fragmented paper records takes an average of 14 days — by which point the product has long since reached consumers. VeriPura's immutable chain of custody compresses this dramatically.</div></div>
     </div>
   </div>
 </section>
@@ -432,7 +463,7 @@
         </ul>
       </div>
       <div class="persona-metrics">
-        <div class="metric-box"><div class="num">–85%</div><div class="label">Reduction in documentation errors at border</div></div>
+        <div class="metric-box"><div class="num">14 days</div><div class="label">Avg. to identify food contamination source without traceability</div></div>
         <div class="metric-box"><div class="num">Minutes</div><div class="label">vs. hours for full compliance review</div></div>
         <div class="metric-box"><div class="num">9-stage</div><div class="label">Structured workflow, not a black box</div></div>
         <div class="metric-box"><div class="num">IOTA</div><div class="label">Blockchain-anchored tamperproof audit trail</div></div>
@@ -501,7 +532,7 @@
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
-          <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. €18,000 in demurrage and re-inspection fees. Mango downgraded and partially destroyed.</div>
+          <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
           <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
         </div>
       </div>
@@ -517,7 +548,7 @@
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
-          <div class="usecase-pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay. €22,000 in costs. Buyer relationship damaged.</div>
+          <div class="usecase-pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay, substantial costs incurred. Buyer relationship damaged.</div>
           <div class="usecase-outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
         </div>
       </div>
@@ -533,7 +564,7 @@
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
-          <div class="usecase-pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. $34,000 in storage, re-examination, and bond costs.</div>
+          <div class="usecase-pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. Storage, re-examination, and bond costs in the range of $30K–$50K — consistent with FDA detention incident data.</div>
           <div class="usecase-outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
         </div>
       </div>
@@ -550,7 +581,7 @@
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU–Mercosur-aligned certificate of origin — each with strict cross-referencing requirements between issuing authorities.</p>
-          <div class="usecase-pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days pending re-verification. £41,000 in cold storage, re-inspection, and partial product loss. Deforestation traceability records requested manually by UK Border Force, causing further delay.</div>
+          <div class="usecase-pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days pending re-verification. Significant costs in cold storage, re-inspection, and partial product loss. Deforestation traceability records requested manually by UK Border Force, causing further delay.</div>
           <div class="usecase-outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. Cold chain integrity maintained. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
         </div>
       </div>
@@ -585,6 +616,60 @@
       <div class="partner-badge">Google Cloud</div>
       <div class="partner-badge">Mama Thai — Pilot Partner</div>
       <div class="partner-badge">Pilot Partners: Open</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNEL PARTNER RECRUITMENT -->
+<section id="channel-partners" class="channel-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Become a Partner</div>
+    <h2>Freight forwarders and carriers:<br>VeriPura works <em>for</em> you.</h2>
+    <p class="section-lead">You already touch every food shipment. Every compliance failure your clients suffer is a cost you absorb — in delays, in relationship damage, in liability exposure. VeriPura turns that burden into a competitive advantage and a new revenue stream.</p>
+
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="channel-card-icon">💶</div>
+        <div class="channel-card-title">Revenue Share on Every Shipment</div>
+        <div class="channel-card-desc">Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce. Each new importer client you onboard generates recurring income — with no cap on volume. CAC through channel partners is 6× lower than direct, which means more margin to share.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-card-icon">🛡️</div>
+        <div class="channel-card-title">Protect Yourself from Client Liability</div>
+        <div class="channel-card-desc">When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you an immutable, blockchain-attested record of every compliance check performed — demonstrating due diligence and protecting you from disputes. You're no longer carrying your clients' documentation risk.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-card-icon">📦</div>
+        <div class="channel-card-title">Extend Your Service Offering</div>
+        <div class="channel-card-desc">VeriPura compliance validation becomes a value-added service you offer alongside freight. Clients sourcing from high-risk corridors — Thailand, Vietnam, Brazil, India — need this capability now, with EUDR and FSMA 204 enforcement live. You become their single point of contact for compliant cross-border food trade.</div>
+      </div>
+    </div>
+
+    <div class="channel-proof">
+      <div class="channel-proof-stat">
+        <div class="num">€1,200</div>
+        <div class="lbl">CAC via channel<br>vs €9,500 direct</div>
+      </div>
+      <div class="channel-proof-divider"></div>
+      <div class="channel-proof-stat">
+        <div class="num">6×</div>
+        <div class="lbl">CAC advantage for<br>channel partners</div>
+      </div>
+      <div class="channel-proof-divider"></div>
+      <div class="channel-proof-stat">
+        <div class="num">New</div>
+        <div class="lbl">Geography opened per<br>forwarder partner added</div>
+      </div>
+      <div class="channel-proof-divider"></div>
+      <div class="channel-proof-stat">
+        <div class="num">Q2 '26</div>
+        <div class="lbl">Anchor partner LOI<br>targeted this quarter</div>
+      </div>
+    </div>
+
+    <div class="channel-cta">
+      <a class="btn-primary" href="partners.html">See the Full Partner Programme →</a>
+      <a class="btn-secondary" href="#contact">Contact Us About Partnering</a>
     </div>
   </div>
 </section>
