@@ -184,7 +184,7 @@
   .section-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; background: var(--blue); }
   h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); line-height: 1.15; margin-bottom: 12px; }
   h2 em { color: var(--gold); font-style: italic; }
-  .section-lead { font-size: 1rem; color: var(--muted); max-width: 540px; line-height: 1.7; margin-bottom: 48px; }
+  .section-lead { font-size: 1rem; color: var(--ink); max-width: 540px; line-height: 1.7; margin-bottom: 48px; }
 
   /* ── PROBLEM ── */
   .problem-section { background: var(--pale); }
@@ -208,12 +208,12 @@
   .stage-num { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
   .stage-icon { font-size: 1.2rem; margin-bottom: 8px; }
   .stage-name { font-size: 0.7rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
-  .stage-sub { font-family: var(--font-mono); font-size: 0.58rem; color: var(--muted); line-height: 1.4; }
+  .stage-sub { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 500; color: var(--ink); line-height: 1.4; }
 
   /* ── PERSONAS ── */
   .persona-section { background: var(--pale); }
   .persona-tabs { display: flex; border-bottom: 1.5px solid var(--border); margin-bottom: 36px; }
-  .persona-tab { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 24px; cursor: pointer; color: var(--muted); background: none; border: none; border-bottom: 2.5px solid transparent; margin-bottom: -1.5px; transition: color 0.2s, border-color 0.2s; }
+  .persona-tab { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 24px; cursor: pointer; color: var(--blue); background: none; border: none; border-bottom: 2.5px solid transparent; margin-bottom: -1.5px; transition: color 0.2s, border-color 0.2s; }
   .persona-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
   .persona-tab:hover:not(.active) { color: var(--blue); }
   .persona-panel { display: none; }
@@ -227,7 +227,7 @@
   .persona-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .metric-box { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; padding: 20px; }
   .metric-box .num { font-family: var(--font-serif); font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
-  .metric-box .label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); line-height: 1.4; }
+  .metric-box .label { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink); line-height: 1.4; }
   .corridor-box { grid-column: 1 / -1; background: var(--navy); border: 1.5px solid var(--navy-mid); border-radius: 8px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .corridor-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); flex-shrink: 0; }
   .corridor-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -308,7 +308,7 @@
     font-family: var(--font-serif); font-size: 1.3rem;
     color: var(--navy); margin-bottom: 10px;
   }
-  .applet-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 24px; }
+  .applet-desc { font-size: 0.88rem; font-weight: 400; color: var(--ink); line-height: 1.65; flex: 1; margin-bottom: 24px; }
   .applet-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 7px; }
   .applet-features li {
     font-family: var(--font-mono); font-size: 0.66rem;
@@ -338,7 +338,7 @@
   .tech-icon { width: 36px; height: 36px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
   .tech-icon svg { width: 26px; height: 26px; stroke: var(--blue); fill: none; stroke-width: 1.5; }
   .tech-title { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
-  .tech-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+  .tech-desc { font-size: 0.88rem; font-weight: 400; color: var(--ink); line-height: 1.65; }
   .tech-tag { display: inline-block; margin-top: 14px; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; background: rgba(46,95,163,0.1); color: var(--blue); }
 
   /* ── PARTNERS ── */
@@ -1008,25 +1008,31 @@ function showPersona(id, btn) {
 
   /* Pulse ring behind FAB */
   #vera-fab {
-    width: 58px; height: 58px; border-radius: 50%;
+    width: auto; height: 52px; border-radius: 26px;
     background: linear-gradient(135deg, #D4A847 0%, #e8c060 100%);
     border: none; cursor: pointer;
-    box-shadow: 0 4px 20px rgba(212,168,71,0.5);
+    box-shadow: 0 4px 24px rgba(212,168,71,0.55);
     display: flex; align-items: center; justify-content: center;
+    gap: 10px; padding: 0 22px;
     position: relative; transition: transform 0.2s, box-shadow 0.2s;
-    font-size: 0; /* hide any text */
   }
-  #vera-fab:hover { transform: scale(1.07); box-shadow: 0 6px 28px rgba(212,168,71,0.65); }
+  #vera-fab:hover { transform: scale(1.04); box-shadow: 0 6px 28px rgba(212,168,71,0.7); }
   #vera-fab::before {
-    content: ''; position: absolute; inset: -6px; border-radius: 50%;
+    content: ''; position: absolute; inset: -5px; border-radius: 30px;
     border: 2px solid rgba(212,168,71,0.35);
     animation: vera-pulse 2.4s ease-in-out infinite;
   }
   @keyframes vera-pulse {
     0%,100% { transform: scale(1); opacity: 0.7; }
-    50%      { transform: scale(1.18); opacity: 0; }
+    50%      { transform: scale(1.1); opacity: 0; }
   }
-  #vera-fab svg { width: 26px; height: 26px; pointer-events: none; }
+  #vera-fab svg { width: 22px; height: 22px; pointer-events: none; flex-shrink: 0; }
+  #vera-fab-label {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.85rem; font-weight: 600;
+    color: #0F2444; letter-spacing: 0.02em;
+    pointer-events: none; white-space: nowrap;
+  }
 
   /* Tooltip */
   #vera-tooltip {
@@ -1220,7 +1226,7 @@ function showPersona(id, btn) {
 
 <!-- Widget HTML -->
 <div id="vera-launcher">
-  <button id="vera-fab" aria-label="Chat with Vera">
+  <button id="vera-fab" aria-label="Chat with Vera"><span id="vera-fab-label">Talk to Vera</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="#0F2444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
@@ -1283,7 +1289,13 @@ RULES:
 - Never invent statistics — refer only to FDA $30K–$50K detention costs, 39% documentation failure rate, 14,000+ EU refusals in 2024, 14-day contamination trace average
 - Never mention competitor products by name
 - If someone is rude or clearly not a prospect, politely wish them well and close
-- Do not output the JSON until you have asked at least 2 qualifying questions`;
+- Do not output the JSON until you have asked at least 2 qualifying questions
+
+IDENTITY & TRANSPARENCY:
+- You are Vera, an AI assistant built on Claude and deployed by VeriPura. You are not a human.
+- If anyone asks whether you are a human or an AI, always answer honestly and clearly: you are an AI assistant named Vera.
+- You have been trained with detailed knowledge of VeriPura's platform, roadmap, and compliance intelligence — drawn from VeriPura's internal development conversations and product documentation — so your knowledge of VeriPura reflects the latest state of the platform, not just what appears on the website.
+- You may describe yourself as VeriPura's AI compliance guide — knowledgeable, current, and here to help visitors find the right next step.`;
 
   const history = [];
   let isOpen = false;
@@ -1381,7 +1393,7 @@ RULES:
     showTyping();
 
     try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://veripura-chat.tomsoberlin.workers.dev', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
