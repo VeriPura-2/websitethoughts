@@ -425,13 +425,13 @@
   .db-importer-identity { display:flex; align-items:center; gap:16px; }
   .db-importer-avatar { width:44px; height:44px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; font-family:var(--font-serif); font-size:1.1rem; color:var(--navy); font-weight:700; flex-shrink:0; }
   .db-importer-name { font-family:var(--font-serif); font-size:1.1rem; color:var(--white); margin-bottom:2px; }
-  .db-importer-meta { font-family:var(--font-mono); font-size:0.6rem; color:rgba(214,228,240,0.55); letter-spacing:0.05em; }
+  .db-importer-meta { font-family:var(--font-mono); font-size:0.6rem; color:rgba(214,228,240,0.85); letter-spacing:0.05em; }
   .db-importer-stats { display:flex; gap:28px; }
   .db-imp-stat { text-align:right; }
   .db-imp-stat-num { font-family:var(--font-mono); font-size:1.05rem; font-weight:600; color:var(--gold); }
-  .db-imp-stat-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.45); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px; }
+  .db-imp-stat-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.8); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px; }
   .db-po-list { display:flex; flex-direction:column; gap:8px; }
-  .db-po-card { background:rgba(31,56,100,0.5); border:1.5px solid rgba(203,216,232,0.2); border-radius:8px; overflow:hidden; transition:border-color 0.2s; }
+  .db-po-card { background:#1a3460; border:1.5px solid rgba(203,216,232,0.25); border-radius:8px; overflow:hidden; transition:border-color 0.2s; }
   .db-po-card:hover { border-color:rgba(203,216,232,0.4); }
   .db-po-card.db-open { border-color:rgba(212,168,71,0.4); }
   .db-po-card.db-archived { border-color:rgba(27,122,74,0.4); }
@@ -441,27 +441,27 @@
   .db-po-card.db-open .db-po-chevron { transform:rotate(90deg); color:var(--gold); }
   .db-po-number { font-family:var(--font-mono); font-size:0.7rem; font-weight:600; color:var(--gold); letter-spacing:0.05em; margin-bottom:3px; }
   .db-po-route { font-size:0.82rem; color:var(--white); font-weight:500; }
-  .db-po-sub { font-family:var(--font-mono); font-size:0.58rem; color:rgba(214,228,240,0.45); margin-top:2px; letter-spacing:0.03em; }
+  .db-po-sub { font-family:var(--font-mono); font-size:0.58rem; color:rgba(214,228,240,0.8); margin-top:2px; letter-spacing:0.03em; }
   .db-po-processor { text-align:right; }
-  .db-po-processor-name { font-size:0.73rem; color:rgba(214,228,240,0.7); margin-bottom:4px; }
+  .db-po-processor-name { font-size:0.73rem; color:rgba(214,228,240,0.92); margin-bottom:4px; }
   .db-processor-rating { display:flex; align-items:center; gap:3px; justify-content:flex-end; }
   .db-star { font-size:0.58rem; color:var(--gold); }
   .db-star.empty { color:rgba(212,168,71,0.25); }
-  .db-rating-num { font-family:var(--font-mono); font-size:0.58rem; color:rgba(214,228,240,0.45); margin-left:2px; }
+  .db-rating-num { font-family:var(--font-mono); font-size:0.58rem; color:rgba(214,228,240,0.8); margin-left:2px; }
   .db-po-progress-col { min-width:110px; }
-  .db-po-progress-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.4); letter-spacing:0.05em; text-transform:uppercase; margin-bottom:5px; text-align:right; }
+  .db-po-progress-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.8); letter-spacing:0.05em; text-transform:uppercase; margin-bottom:5px; text-align:right; }
   .db-po-bar-wrap { background:rgba(255,255,255,0.08); border-radius:3px; height:4px; overflow:hidden; }
   .db-po-bar-fill { height:100%; border-radius:3px; }
-  .db-po-doc-count { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.35); margin-top:3px; text-align:right; }
+  .db-po-doc-count { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.75); margin-top:3px; text-align:right; }
   .db-po-status-badge { font-family:var(--font-mono); font-size:0.58rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; white-space:nowrap; }
   .db-badge-progress { background:rgba(46,95,163,0.25); color:#7EB3E8; border:1px solid rgba(46,95,163,0.4); }
   .db-badge-action { background:rgba(192,57,43,0.2); color:#E88080; border:1px solid rgba(192,57,43,0.4); }
   .db-badge-awaiting { background:rgba(212,168,71,0.15); color:var(--gold); border:1px solid rgba(212,168,71,0.35); }
   .db-badge-archived { background:rgba(27,122,74,0.2); color:#6DC898; border:1px solid rgba(27,122,74,0.35); }
-  .db-po-body { display:none; border-top:1px solid rgba(203,216,232,0.1); padding:0 18px 18px; }
+  .db-po-body { display:none; border-top:1px solid rgba(203,216,232,0.15); padding:0 18px 18px; background:#152d55; }
   .db-po-card.db-open .db-po-body { display:block; }
   .db-doc-categories { display:flex; flex-direction:column; gap:10px; margin-top:14px; }
-  .db-doc-category { background:rgba(15,36,68,0.6); border:1px solid rgba(203,216,232,0.12); border-radius:6px; overflow:hidden; }
+  .db-doc-category { background:#0f2444; border:1px solid rgba(203,216,232,0.18); border-radius:6px; overflow:hidden; }
   .db-cat-header { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; cursor:pointer; transition:background 0.15s; }
   .db-cat-header:hover { background:rgba(255,255,255,0.02); }
   .db-cat-left { display:flex; align-items:center; gap:8px; }
@@ -477,16 +477,16 @@
   .db-cat-progress-wrap { width:76px; }
   .db-cat-progress-bar { height:3px; background:rgba(255,255,255,0.08); border-radius:2px; overflow:hidden; margin-bottom:3px; }
   .db-cat-progress-fill { height:100%; border-radius:2px; }
-  .db-cat-progress-pct { font-family:var(--font-mono); font-size:0.54rem; color:rgba(214,228,240,0.35); text-align:right; }
-  .db-cat-chevron { font-size:0.7rem; color:rgba(214,228,240,0.3); transition:transform 0.2s; }
+  .db-cat-progress-pct { font-family:var(--font-mono); font-size:0.54rem; color:rgba(214,228,240,0.75); text-align:right; }
+  .db-cat-chevron { font-size:0.7rem; color:rgba(214,228,240,0.7); transition:transform 0.2s; }
   .db-doc-category.db-cat-open .db-cat-chevron { transform:rotate(90deg); }
-  .db-doc-list { display:none; padding:0 14px 10px; border-top:1px solid rgba(203,216,232,0.07); }
+  .db-doc-list { display:none; padding:0 14px 10px; border-top:1px solid rgba(203,216,232,0.12); background:#0f2444; }
   .db-doc-category.db-cat-open .db-doc-list { display:block; }
   .db-doc-item { display:flex; align-items:flex-start; justify-content:space-between; padding:9px 0; border-bottom:1px solid rgba(203,216,232,0.06); gap:10px; }
   .db-doc-item:last-child { border-bottom:none; }
   .db-doc-item-left { flex:1; min-width:0; }
   .db-doc-item-name { font-size:0.77rem; color:rgba(214,228,240,0.85); font-weight:500; margin-bottom:2px; }
-  .db-doc-item-provider { font-family:var(--font-mono); font-size:0.57rem; color:rgba(214,228,240,0.32); letter-spacing:0.02em; }
+  .db-doc-item-provider { font-family:var(--font-mono); font-size:0.57rem; color:rgba(214,228,240,0.75); letter-spacing:0.02em; }
   .db-doc-item-hash { font-family:var(--font-mono); font-size:0.54rem; color:rgba(212,168,71,0.5); margin-top:3px; display:flex; align-items:center; gap:4px; }
   .db-doc-item-right { display:flex; align-items:center; gap:7px; flex-shrink:0; }
   .db-doc-status { font-family:var(--font-mono); font-size:0.56rem; font-weight:600; letter-spacing:0.07em; text-transform:uppercase; padding:2px 7px; border-radius:3px; white-space:nowrap; }
@@ -503,7 +503,7 @@
   .db-legend { display:flex; gap:18px; flex-wrap:wrap; margin-top:20px; padding-top:16px; border-top:1px solid rgba(203,216,232,0.1); }
   .db-legend-item { display:flex; align-items:center; gap:5px; }
   .db-legend-dot { width:7px; height:7px; border-radius:2px; flex-shrink:0; }
-  .db-legend-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.45); letter-spacing:0.06em; text-transform:uppercase; }
+  .db-legend-label { font-family:var(--font-mono); font-size:0.56rem; color:rgba(214,228,240,0.8); letter-spacing:0.06em; text-transform:uppercase; }
   .stage-num { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
   .stage-icon { font-size: 1.2rem; margin-bottom: 8px; }
   .stage-name { font-size: 0.7rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
@@ -1073,7 +1073,7 @@
 
 
     <!-- Compliance Dashboard -->
-    <div style="margin-top:36px;">
+    <div style="margin-top:36px; background:#0f2444; border-radius:12px; padding:28px; border:1.5px solid rgba(203,216,232,0.15);">
       <div style="font-family:var(--font-mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:16px;">Simulation · Illustrative Example Only — All data shown is fictional</div>
 
       <!-- Importer Header -->
@@ -1106,7 +1106,7 @@
         <div class="db-legend-item"><div class="db-legend-dot" style="background:#5A6878"></div><span class="db-legend-label">Missing</span></div>
         <div class="db-legend-item"><div class="db-legend-dot" style="background:rgba(212,168,71,0.5)"></div><span class="db-legend-label">⬡ IOTA Anchored</span></div>
       </div>
-      <div style="font-family:var(--font-mono);font-size:0.56rem;color:var(--muted);margin-top:12px;text-align:center;letter-spacing:0.03em;">All purchase orders, processors, and shipment data are illustrative examples — not real transactions or clients.</div>
+      <div style="font-family:var(--font-mono);font-size:0.56rem;color:rgba(214,228,240,0.75);margin-top:12px;text-align:center;letter-spacing:0.03em;">All purchase orders, processors, and shipment data are illustrative examples — not real transactions or clients.</div>
     </div>
 
   </div>
