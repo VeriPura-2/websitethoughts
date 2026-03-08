@@ -2296,18 +2296,75 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
   // ── WORKFLOW STAGE CASCADE removed — static state retained ──
 
   // ── STAMP ANIMATION ──
-  document.addEventListener('DOMContentLoaded', function() {
-    const stamp = document.getElementById('rejected-stamp');
-    if (!stamp) return;
-    setTimeout(function() {
-      stamp.classList.add('stamped');
-      stamp.addEventListener('animationend', function() {
-        stamp.style.transform = 'translate(-50%, -50%) rotate(-18deg) scale(1)';
-        stamp.style.opacity = '1';
-        stamp.style.animation = 'none';
-      }, { once: true });
-    }, 1200);
-  });
+  (function() {
+    var stampFired = false;
+    function playStamp() {
+      if (stampFired) return;
+      stampFired = true;
+      ['click','scroll','keydown','touchstart'].forEach(function(ev) {
+        document.removeEventListener(ev, playStamp);
+      });
+      var stamp = document.getElementById('rejected-stamp');
+      if (!stamp) return;
+      setTimeout(function() {
+        stamp.classList.add('stamped');
+        stamp.addEventListener('animationend', function() {
+          stamp.style.transform = 'translate(-50%, -50%) rotate(-18deg) scale(1)';
+          stamp.style.opacity = '1';
+          stamp.style.animation = 'none';
+        }, { once: true });
+        try {
+          var ctx = new (window.AudioContext || window.webkitAudioContext)();
+          var thud = ctx.createOscillator();
+          var thudGain = ctx.createGain();
+          thud.type = 'sine';
+          thud.frequency.setValueAtTime(120, ctx.currentTime);
+          thud.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.08);
+          thudGain.gain.setValueAtTime(0.7, ctx.currentTime);
+          thudGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+          thud.connect(thudGain); thudGain.connect(ctx.destination);
+          thud.start(ctx.currentTime); thud.stop(ctx.currentTime + 0.12);
+          var buf = ctx.createBuffer(1, ctx.sampleRate * 0.04, ctx.sampleRate);
+          var data = buf.getChannelData(0);
+          for (var i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 3);
+          var noise = ctx.createBufferSource();
+          var noiseFilter = ctx.createBiquadFilter();
+          var noiseGain = ctx.createGain();
+          noise.buffer = buf;
+          noiseFilter.type = 'bandpass';
+          noiseFilter.frequency.value = 2800;
+          noiseFilter.Q.value = 0.8;
+          noiseGain.gain.setValueAtTime(0.5, ctx.currentTime);
+          noiseGain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.04);
+          noise.connect(noiseFilter); noiseFilter.connect(noiseGain); noiseGain.connect(ctx.destination);
+          noise.start(ctx.currentTime);
+        } catch(e) {}
+        try {
+          function speakRejected() {
+            const utter = new SpeechSynthesisUtterance('Rejected');
+            utter.lang = 'en-GB';
+            utter.pitch = 0.85;
+            utter.rate = 0.82;
+            utter.volume = 1;
+            const voices = window.speechSynthesis.getVoices();
+            const brit = voices.find(v => v.lang === 'en-GB' && /male|daniel|george|oliver|arthur/i.test(v.name))
+                      || voices.find(v => v.lang === 'en-GB')
+                      || voices.find(v => /en.GB/i.test(v.lang));
+            if (brit) utter.voice = brit;
+            window.speechSynthesis.speak(utter);
+          }
+          if (window.speechSynthesis.getVoices().length > 0) {
+            speakRejected();
+          } else {
+            window.speechSynthesis.addEventListener('voiceschanged', speakRejected, { once: true });
+          }
+        } catch(e) {}
+      }, 600);
+    }
+    ['click','scroll','keydown','touchstart'].forEach(function(ev) {
+      document.addEventListener(ev, playStamp, { once: false, passive: true });
+    });
+  })();
 
   // ── COMPLIANCE DASHBOARD ──
   (function() {
@@ -2489,12 +2546,13 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
     const list = document.getElementById('db-po-list');
     if (list) list.innerHTML = POS.map((po,i)=>dbPO(po,i)).join('');
   })();
-  function runWorkflowAnimation() {
+  window.runWorkflowAnimation = function runWorkflowAnimation() {
     const btn = document.getElementById('workflow-run-btn');
     const label = document.getElementById('workflow-btn-label');
     const badge = document.getElementById('workflow-iota-badge');
     const stages = document.querySelectorAll('.workflow-stages .stage');
 
+    if (!btn || !label || !badge) return;
     // Reset
     stages.forEach(s => { s.classList.remove('lit','ledger-complete'); });
     badge.classList.remove('visible');
