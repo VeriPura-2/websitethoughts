@@ -262,6 +262,11 @@
   .metric-box .num { font-family: var(--font-serif); font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
   .metric-box .label { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink); line-height: 1.4; }
   .corridor-box { grid-column: 1 / -1; background: var(--navy); border: 1.5px solid var(--navy-mid); border-radius: 8px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .pilot-callout { margin-top: 24px; background: rgba(212,168,71,0.08); border: 1.5px solid rgba(212,168,71,0.3); border-radius: 8px; padding: 20px 24px; }
+  .pilot-callout-slots { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .pilot-callout p { font-size: 0.86rem; color: var(--ink); line-height: 1.6; margin-bottom: 14px; }
+  .pilot-callout-cta { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; color: var(--navy); text-decoration: none; text-transform: uppercase; background: var(--gold); padding: 8px 18px; border-radius: 4px; display: inline-block; transition: background 0.2s; }
+  .pilot-callout-cta:hover { background: #e0b84e; }
   .corridor-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); flex-shrink: 0; }
   .corridor-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .corridor-tag { font-family: var(--font-mono); font-size: 0.6rem; padding: 3px 10px; border-radius: 3px; background: rgba(212,168,71,0.12); border: 1px solid rgba(212,168,71,0.3); color: var(--sky); }
@@ -349,6 +354,55 @@
   .channel-proof-divider { width: 1px; height: 48px; background: rgba(212,168,71,0.25); flex-shrink: 0; }
   .channel-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
+  /* ── ASK SECTION ── */
+  .ask-section { background: var(--pale); }
+  .ask-layout { display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px; margin-top: 40px; align-items: start; }
+  .ask-qlabel { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .ask-quickreplies-col { display: flex; flex-direction: column; gap: 10px; }
+  .ask-qr { background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; padding: 14px 18px; text-align: left; font-family: var(--font-sans); font-size: 0.84rem; color: var(--navy); cursor: pointer; transition: border-color 0.2s, background 0.2s; line-height: 1.4; }
+  .ask-qr:hover { border-color: var(--gold); background: rgba(212,168,71,0.05); }
+  .ask-chat-panel { background: #0F2444; border-radius: 14px; border: 1px solid rgba(214,228,240,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; display: flex; flex-direction: column; min-height: 480px; }
+  .ask-chat-header { background: linear-gradient(135deg, #1F3864 0%, #0F2444 100%); padding: 16px 20px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid rgba(214,228,240,0.1); }
+  .ask-founder-avatars { display: flex; position: relative; width: 56px; height: 36px; flex-shrink: 0; }
+  .ask-founder-avatars img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid #0F2444; position: absolute; top: 0; }
+  .ask-founder-avatars img:first-child { left: 0; z-index: 2; }
+  .ask-founder-avatars img:last-child { left: 20px; z-index: 1; }
+  .ask-chat-title { font-family: var(--font-serif); font-size: 0.95rem; color: #FFFFFF; line-height: 1.2; }
+  .ask-chat-sub { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.08em; color: rgba(214,228,240,0.6); margin-top: 2px; }
+  .ask-messages { flex: 1; overflow-y: auto; padding: 18px 18px 10px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: thin; scrollbar-color: rgba(214,228,240,0.15) transparent; }
+  .ask-msg { max-width: 88%; line-height: 1.55; animation: vera-msgIn 0.22s ease; }
+  .ask-msg.bot { align-self: flex-start; }
+  .ask-msg.usr { align-self: flex-end; }
+  .ask-sender { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 5px; }
+  .ask-msg.bot .ask-sender { display: flex; align-items: center; gap: 7px; color: #FFFFFF; }
+  .ask-msg.bot .ask-sender img { width: 22px; height: 22px; border-radius: 50%; object-fit: cover; object-position: center top; border: 1px solid rgba(212,168,71,0.35); flex-shrink: 0; }
+  .ask-msg.bot .ask-sender span { font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.85); }
+  .ask-msg.usr .ask-sender { text-align: right; color: rgba(214,228,240,0.4); }
+  .ask-bubble { border-radius: 4px 14px 14px 14px; padding: 10px 14px; font-family: var(--font-sans); font-size: 0.84rem; }
+  .ask-msg.bot .ask-bubble { background: rgba(255,255,255,0.07); border: 1px solid rgba(214,228,240,0.12); color: #D6E4F0; }
+  .ask-msg.bot .ask-bubble a { color: #D4A847; text-decoration: underline; word-break: break-all; }
+  .ask-msg.bot .ask-bubble a:hover { color: #e0b84e; }
+  .ask-msg.usr .ask-bubble { background: #D4A847; color: #0F2444; border-radius: 14px 14px 4px 14px; font-weight: 500; }
+  .ask-typing .ask-bubble { display: flex; gap: 4px; align-items: center; padding: 12px 16px !important; }
+  .ask-cta-block { background: rgba(212,168,71,0.1); border: 1px solid rgba(212,168,71,0.3); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .ask-cta-block a { display: block; text-align: center; padding: 9px 14px; background: #D4A847; color: #0F2444; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border-radius: 6px; transition: background 0.2s; }
+  .ask-cta-block a:hover { background: #e0b84e; }
+  .ask-cta-block a.secondary { background: transparent; color: #D4A847; border: 1px solid rgba(212,168,71,0.4); }
+  .ask-cta-block a.secondary:hover { background: rgba(212,168,71,0.1); }
+  .ask-input-row { padding: 10px 14px 14px; display: flex; gap: 8px; align-items: center; border-top: 1px solid rgba(214,228,240,0.08); flex-shrink: 0; }
+  #ask-input { flex: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(214,228,240,0.15); border-radius: 8px; color: #D6E4F0; font-family: var(--font-sans); font-size: 0.84rem; padding: 8px 12px; outline: none; resize: none; transition: border-color 0.2s; line-height: 1.4; min-height: 36px; max-height: 90px; }
+  #ask-input::placeholder { color: rgba(214,228,240,0.3); }
+  #ask-input:focus { border-color: rgba(212,168,71,0.5); }
+  #ask-send { width: 34px; height: 34px; border-radius: 8px; background: #D4A847; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s; }
+  #ask-send:hover { background: #e0b84e; }
+  #ask-send svg { width: 15px; height: 15px; color: #0F2444; }
+  #ask-mic { width: 34px; height: 34px; border-radius: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(214,228,240,0.15); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+  #ask-mic svg { width: 15px; height: 15px; color: rgba(214,228,240,0.6); transition: color 0.2s; }
+  #ask-mic:hover { background: rgba(255,255,255,0.12); }
+  #ask-mic.listening { background: rgba(212,168,71,0.15); border-color: #D4A847; animation: mic-pulse 1.2s ease-in-out infinite; }
+  #ask-mic.listening svg { color: #D4A847; }
+  @media (max-width: 768px) { .ask-layout { grid-template-columns: 1fr; } }
+
   /* ── TEAM ── */
   .team-section { background: var(--white); }
   .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; max-width: 720px; }
@@ -414,10 +468,11 @@
     <li><a href="#technology">Technology</a></li>
     <li><a href="#applets">Test Drive</a></li>
     <li><a href="#channel-partners">Partners</a></li>
+    <li><a href="#ask">Ask Us</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="#contact">Book a Demo</a>
+  <a class="nav-cta" href="#contact">Apply for a Pilot Slot</a>
 </nav>
 
 <div class="ticker">
@@ -435,6 +490,9 @@
     <span class="ticker-item">China notified 11 new food safety standards to WTO, August 2025 — MRL and contaminant limits revised</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">WTO SPS Transparency Working Group launched November 2025 — new notification obligations being shaped</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Record SPS notifications from developing economies in 2024 — 75% of all WTO SPS filings</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Now selecting founding pilot participants · 5 importer slots · 2 partner slots</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Founding terms locked for life · Benefits not available to later clients</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Apply for a founding pilot slot · Speak directly with Onno &amp; Thomas</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">14,000+ food shipments refused EU entry in 2024 — TRACES Annual Report</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">39% of import refusals are documentation failures</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">EUDR enforcement now 30 December 2026 for large operators — preparation window is now</span><span class="ticker-item ticker-sep">·</span>
@@ -448,6 +506,9 @@
     <span class="ticker-item">China notified 11 new food safety standards to WTO, August 2025 — MRL and contaminant limits revised</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">WTO SPS Transparency Working Group launched November 2025 — new notification obligations being shaped</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">Record SPS notifications from developing economies in 2024 — 75% of all WTO SPS filings</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Now selecting founding pilot participants · 5 importer slots · 2 partner slots</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Founding terms locked for life · Benefits not available to later clients</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item" style="color: var(--gold)">Apply for a founding pilot slot · Speak directly with Onno &amp; Thomas</span><span class="ticker-item ticker-sep">·</span>
   </div>
 </div>
 
@@ -560,11 +621,11 @@
 
 <section id="home" class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Import Compliance Intelligence</div>
+    <div class="hero-eyebrow">Now Selecting Founding Pilot Participants — 5 Importer Slots · 2 Partner Slots</div>
     <h1>Import compliance<br>shouldn't cost you<br><em>a shipment.</em></h1>
     <p class="hero-sub">VeriPura helps EU and US food importers, freight forwarders, and carriers validate compliance documentation before a single container moves — eliminating rejections, detentions, and the manual chaos in between.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#contact">Book a Demo</a>
+      <a class="btn-primary" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See How It Works</a>
     </div>
   </div>
@@ -688,6 +749,11 @@
           <li>Real-time risk scoring by sourcing corridor and product category</li>
           <li>Immutable compliance records for audits and buyer due diligence</li>
         </ul>
+        <div class="pilot-callout">
+          <div class="pilot-callout-slots">5 importer slots remaining</div>
+          <p>We are deliberately selective to start. Founding participants help shape the product, lock founding terms, and receive benefits not available to later clients. What those benefits are is a conversation.</p>
+          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">14 days</div><div class="label">Avg. to identify food contamination source without traceability</div></div>
@@ -708,6 +774,11 @@
           <li>Client-facing compliance reports generated automatically</li>
           <li>API integration with your existing TMS or document management system</li>
         </ul>
+        <div class="pilot-callout">
+          <div class="pilot-callout-slots">2 partner slots remaining</div>
+          <p>Founding partners help shape the channel programme, lock founding terms, and receive benefits not available to later partners. What those benefits are is a conversation.</p>
+          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">Batch</div><div class="label">Multi-shipment processing in one workflow</div></div>
@@ -728,6 +799,11 @@
           <li>Immutable chain of custody for liability protection</li>
           <li>Structured remediation guidance — not just flags, but fixes</li>
         </ul>
+        <div class="pilot-callout">
+          <div class="pilot-callout-slots">2 partner slots remaining</div>
+          <p>Founding partners help shape the channel programme, lock founding terms, and receive benefits not available to later partners. What those benefits are is a conversation.</p>
+          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">Pre-</div><div class="label">Arrival compliance review before port</div></div>
@@ -871,7 +947,48 @@
   </div>
 </section>
 
-<section id="team" class="team-section">
+<!-- ASK US ANYTHING -->
+<section id="ask" class="ask-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Ask Us Anything</div>
+    <h2>Ask us anything.</h2>
+    <p class="section-lead">Not sure if VeriPura fits? Ask Onno and Thomas directly. If the answer isn't in our system, they'll offer to speak with you personally.</p>
+    <div class="ask-layout">
+      <div class="ask-quickreplies-col">
+        <div class="ask-qlabel">Common questions</div>
+        <button class="ask-qr" onclick="askFounders('Do I need to be a compliance expert to sell VeriPura?')">Do I need to be a compliance expert to sell VeriPura?</button>
+        <button class="ask-qr" onclick="askFounders('What corridors does VeriPura currently cover?')">What corridors does VeriPura currently cover?</button>
+        <button class="ask-qr" onclick="askFounders('Is exclusivity available for partners?')">Is exclusivity available for partners?</button>
+        <button class="ask-qr" onclick="askFounders('What happens if my client goes directly to VeriPura?')">What happens if my client goes directly to VeriPura?</button>
+        <button class="ask-qr" onclick="askFounders('Do you integrate with our TMS or freight platform?')">Do you integrate with our TMS or freight platform?</button>
+      </div>
+      <div class="ask-chat-col">
+        <div class="ask-chat-panel" id="ask-panel">
+          <div class="ask-chat-header">
+            <div class="ask-founder-avatars">
+              <img src="Onno_no_BG.jpeg" alt="Onno Stienen">
+              <img src="Thomas_no_BG.png" alt="Thomas Oberlin">
+            </div>
+            <div>
+              <div class="ask-chat-title">VeriPura · Ask the Founders</div>
+              <div class="ask-chat-sub">Automated assistant · Onno &amp; Thomas answer</div>
+            </div>
+          </div>
+          <div class="ask-messages" id="ask-messages"></div>
+          <div class="ask-input-row">
+            <textarea id="ask-input" placeholder="Type your question…" rows="1"></textarea>
+            <button id="ask-mic" aria-label="Speak">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            </button>
+            <button id="ask-send" aria-label="Send">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <div class="section-inner">
     <div class="section-eyebrow">The Team</div>
     <h2>Founded by operators<br>who've lived the problem.</h2>
@@ -953,9 +1070,9 @@
   <div class="cta-inner">
     <div class="section-eyebrow">Get Started</div>
     <h2>The most important thing<br>we import is <em>trust.</em></h2>
-    <p>If you're a food importer, freight forwarder, or carrier moving goods from high-risk sourcing corridors into the EU or US, we want to talk. Tell us what your current compliance process looks like — and we'll show you what VeriPura can change.</p>
+    <p>We are deliberately selective to start — five importer slots and two partner slots for our founding pilot programme. If you're moving food from high-risk sourcing corridors into the EU or US, tell us what your current compliance process looks like. We'll show you what VeriPura can change — and whether you qualify.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="#contact">Book a Demo</a>
+      <a class="btn-primary" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See the Workflow</a>
     </div>
   </div>
@@ -1330,7 +1447,7 @@ PROSPECT TRACK — Onno leads, light SPIN approach:
 - Problem: surface the friction — have they had shipments held or rejected?
 - Implication: what does it cost them when a shipment is delayed?
 - Need-Payoff: if they could catch documentation errors before departure, what would that be worth?
-- Close (after 4–6 exchanges): "It sounds like this is exactly the kind of problem VeriPura was built for. Would it be useful to speak directly with Onno and Thomas?"
+- Close (after 4–6 exchanges): "It sounds like this is exactly the kind of problem VeriPura was built for. We're currently selecting our founding pilot participants — five importer slots and two partner slots. If this sounds like the right fit, would it be useful to speak directly with Onno and Thomas to see if you qualify?"
 - Meeting YES: provide https://calendar.app.google/aDWSnVgPhiHtsj4L6 — then STOP
 - Meeting NO: trigger contact CTA, one warm closing sentence, STOP
 
@@ -1339,11 +1456,27 @@ INVESTOR TRACK — Thomas leads, light touch only:
 - After 2–3 exchanges offer three paths: a) investors.veripura.com b) calendar link c) contact form
 - If asked specific financial questions, answer briefly, qualify as projections, then route
 
-QUICK REPLY HANDLING:
-- "How does it work?" → Onno answers briefly (agentic workflows, pre-shipment document verification), then asks: "Which part of the import process is causing the most friction for you right now?"
-- "Where does it work?" → Onno: "Nearly anywhere institutional integrity risk is present in the supply chain — which corridors are most relevant for you?"
-- "Become a Partner" → Thomas asks: "Are you looking at a referral partnership, or integrating VeriPura's workflows into your existing importer support offering?"
-- "Tell me about the team" → Brief answer referencing Onno (compliance/technology background) and Thomas (commercial/operations), link to LinkedIn profiles: https://www.linkedin.com/in/onnostienen/ and https://www.linkedin.com/in/thomassoberlin/ — then ask what brought them to VeriPura
+PILOT PROGRAMME — CRITICAL CONTEXT:
+VeriPura is currently selecting founding pilot participants. There are exactly 5 importer slots and 2 partner slots available. This is deliberate — not a marketing construct. Founding participants help shape the product, lock founding terms, and receive benefits not available to later clients. Never specify what those benefits or terms are — that is for the meeting. When a prospect or partner is qualified, reference the pilot naturally: "We're currently selecting our founding pilot participants — five importer slots and two partner slots. If this sounds like the right fit, the next step is a direct conversation with Onno and Thomas to see if you qualify."
+
+FREQUENTLY ASKED QUESTIONS — answer these accurately if asked:
+
+Q: Do I need to be a compliance expert to sell VeriPura?
+A (Onno): No. Forwarders and carriers position VeriPura on the strength of the problem it solves — shipment delays, border rejections, documentation failures — without needing to understand the underlying regulatory detail. We handle the compliance intelligence; you handle the relationship. We're currently selecting two founding partner slots — partners who come in now help shape the programme and lock terms not available later.
+
+Q: What corridors does VeriPura currently cover?
+A (Onno): VeriPura operates across the high-risk sourcing corridors into the EU and US — Thailand, Vietnam, Indonesia, India, Brazil, Mexico, and a growing list of origin markets where CPI scores and regulatory complexity create the highest documentation failure rates. We can also expand to new corridors rapidly — our swarm of finely tuned AI agents identifies requirements by HS code, product category, and trade corridor, so we can bring a new corridor online quickly. If you have a specific corridor in mind, we can confirm coverage or timeline directly.
+
+Q: Is exclusivity available for partners?
+A (Thomas): We're open to exploring limited-time exclusivity for certain new trade corridors or product categories for qualifying partners — particularly for our two founding partner slots. It's not something we offer broadly, but it is on the table for the right relationship. That's worth a direct conversation.
+
+Q: What happens if my client goes directly to VeriPura?
+A (Thomas): If a client comes to VeriPura directly within 6 months of you making an introduction that resulted in a meeting, your referral fee applies to their activity for the duration of the attribution window — regardless of how they engage with us after that introduction. The exact terms are in the partner agreement, which we walk through in an onboarding call.
+
+Q: Do you integrate with our TMS or freight platform?
+A (Onno): Yes. VeriPura connects via REST API and webhook, layering onto your existing TMS or freight platform without requiring a rip-and-replace. Document intake can be triggered directly from your current workflow.
+
+IF YOU CANNOT ANSWER: Never guess or hallucinate an answer. If a question falls outside your knowledge, say so plainly and offer a meeting: "That's a question best answered directly by Onno and Thomas — would it be useful to schedule a short call?"
 
 CTA ROUTING — when ready to route, output ONLY the following JSON on its own line:
 Qualified prospect: {"cta":"prospect","label":"Book a Meeting","url":"https://calendar.app.google/aDWSnVgPhiHtsj4L6","secondary":"See How It Works","secondary_url":"#workflow"}
@@ -1364,6 +1497,8 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
 - EU-Mercosur: provisionally applying February 2026
 - Patent: https://patents.google.com/patent/US8947879B2/en
 - Financial projections (if asked, always qualify as projections): Y1 €208K, Y5 €33.2M, EBITDA+ Y4, CAGR 255%, LTV:CAC 135×, CAC payback 2.1 months, SAFE €750K / €3.75M cap / 20% discount / minimum €25K`;
+
+  window.VERIPURA_SYSTEM_PROMPT = SYSTEM_PROMPT;
 
   const history = [];
   let isOpen = false;
@@ -1523,7 +1658,7 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
       addMessage('assistant', raw, persona);
       history.push({ role: 'assistant', content: raw });
       if (history.length === 2) {
-        setQuickReplies(['How does it work?', 'Where does it work?', 'Become a Partner', 'Tell me about the team']);
+        setQuickReplies(['Do I need compliance expertise to sell VeriPura?', 'What corridors do you cover?', 'Is exclusivity available?', 'What if my client goes direct?', 'Do you integrate with our TMS?']);
       }
     } catch(err) {
       hideTyping();
@@ -1597,6 +1732,158 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
       input.placeholder = 'Type a message…';
     });
   }
+
+  // ── INLINE ASK PANEL ──
+  (function() {
+    const askMessages = document.getElementById('ask-messages');
+    const askInput = document.getElementById('ask-input');
+    const askSend = document.getElementById('ask-send');
+    const askMic = document.getElementById('ask-mic');
+    if (!askMessages) return;
+
+    const askHistory = [];
+    let askTyping = false;
+    let askStarted = false;
+
+    function askLinkify(text) {
+      return text.replace(/(https?:\/\/[^\s<>"']+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    }
+
+    function askAddMessage(role, text, persona) {
+      const wrap = document.createElement('div');
+      wrap.className = `ask-msg ${role === 'assistant' ? 'bot' : 'usr'}`;
+      const sender = document.createElement('div');
+      sender.className = 'ask-sender';
+      if (role === 'assistant') {
+        const isThomas = persona === 'thomas';
+        const img = document.createElement('img');
+        img.src = isThomas ? 'Thomas_no_BG.png' : 'Onno_no_BG.jpeg';
+        img.alt = isThomas ? 'Thomas Oberlin' : 'Onno Stienen';
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = isThomas ? 'Thomas Oberlin' : 'Onno Stienen';
+        sender.appendChild(img);
+        sender.appendChild(nameSpan);
+      } else {
+        sender.textContent = 'You';
+      }
+      const bubble = document.createElement('div');
+      bubble.className = 'ask-bubble';
+      if (role === 'assistant') { bubble.innerHTML = askLinkify(text); } else { bubble.textContent = text; }
+      wrap.appendChild(sender);
+      wrap.appendChild(bubble);
+      askMessages.appendChild(wrap);
+      askMessages.scrollTop = askMessages.scrollHeight;
+      return wrap;
+    }
+
+    function askShowTyping() {
+      const wrap = document.createElement('div');
+      wrap.className = 'ask-msg bot ask-typing';
+      wrap.id = 'ask-typing-indicator';
+      wrap.innerHTML = '<div class="ask-sender"><img src="Onno_no_BG.jpeg" alt=""><span>Onno &amp; Thomas</span></div><div class="ask-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+      askMessages.appendChild(wrap);
+      askMessages.scrollTop = askMessages.scrollHeight;
+    }
+    function askHideTyping() { const el = document.getElementById('ask-typing-indicator'); if (el) el.remove(); }
+
+    function askShowCTA(data) {
+      const wrap = document.createElement('div');
+      wrap.className = 'ask-msg bot';
+      const block = document.createElement('div');
+      block.className = 'ask-cta-block';
+      const primary = document.createElement('a');
+      primary.href = data.url; primary.textContent = data.label;
+      block.appendChild(primary);
+      wrap.appendChild(block);
+      askMessages.appendChild(wrap);
+      askMessages.scrollTop = askMessages.scrollHeight;
+      setTimeout(() => {
+        const secondary = document.createElement('a');
+        secondary.href = data.secondary_url;
+        secondary.className = 'secondary';
+        secondary.textContent = data.secondary;
+        block.appendChild(secondary);
+        askMessages.scrollTop = askMessages.scrollHeight;
+      }, 3000);
+    }
+
+    async function askCallClaude(userMessage) {
+      askHistory.push({ role: 'user', content: userMessage });
+      askTyping = true;
+      askShowTyping();
+      try {
+        const response = await fetch('https://veripura-chat.tomsoberlin.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 1000, system: window.VERIPURA_SYSTEM_PROMPT, messages: askHistory })
+        });
+        const data = await response.json();
+        askHideTyping();
+        askTyping = false;
+        let raw = data.content?.[0]?.text || "I'm having a brief technical issue — please try again in a moment.";
+        let persona = 'onno';
+        if (/^Thomas here\s*[—\-]/i.test(raw)) { persona = 'thomas'; raw = raw.replace(/^Thomas here\s*[—\-]\s*/i, ''); }
+        else if (/^Onno here\s*[—\-]/i.test(raw)) { raw = raw.replace(/^Onno here\s*[—\-]\s*/i, ''); }
+        const jsonMatch = raw.match(/\{.*"cta".*\}/s);
+        if (jsonMatch) {
+          try {
+            const ctaData = JSON.parse(jsonMatch[0]);
+            const textOnly = raw.replace(jsonMatch[0], '').trim();
+            if (textOnly) { askAddMessage('assistant', textOnly, persona); askHistory.push({ role: 'assistant', content: textOnly }); }
+            askShowCTA(ctaData); return;
+          } catch(e) {}
+        }
+        askAddMessage('assistant', raw, persona);
+        askHistory.push({ role: 'assistant', content: raw });
+      } catch(err) {
+        askHideTyping(); askTyping = false;
+        askAddMessage('assistant', "I'm having a brief technical issue — please try again in a moment.", 'onno');
+      }
+    }
+
+    function askSendMessage(text) {
+      if (!askStarted) {
+        askStarted = true;
+        askCallClaude("Hello, I just arrived on the VeriPura website.");
+      }
+      const msg = (text || askInput.value).trim();
+      if (!msg || askTyping) return;
+      askInput.value = '';
+      askInput.style.height = 'auto';
+      askAddMessage('user', msg);
+      askCallClaude(msg);
+    }
+
+    window.askFounders = function(question) {
+      if (!askStarted) { askStarted = true; }
+      document.getElementById('ask').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setTimeout(() => {
+        askAddMessage('user', question);
+        askCallClaude(question);
+      }, 400);
+    };
+
+    askSend.addEventListener('click', () => askSendMessage());
+    askInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askSendMessage(); } });
+    askInput.addEventListener('input', function() { this.style.height = 'auto'; this.style.height = Math.min(this.scrollHeight, 90) + 'px'; });
+
+    // Mic for inline panel
+    const AskSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!AskSpeechRecognition) { askMic.style.display = 'none'; } else {
+      const askRecog = new AskSpeechRecognition();
+      askRecog.lang = 'en-US'; askRecog.interimResults = false; askRecog.maxAlternatives = 1;
+      let askListening = false;
+      askMic.addEventListener('click', () => { if (askListening) { askRecog.stop(); return; } try { askRecog.start(); } catch(e) {} });
+      askRecog.addEventListener('start', () => { askListening = true; askMic.classList.add('listening'); askInput.placeholder = 'Listening…'; });
+      askRecog.addEventListener('result', e => { const t = e.results[0][0].transcript.trim(); if (t) { askInput.value = t; askSendMessage(t); } });
+      askRecog.addEventListener('end', () => { askListening = false; askMic.classList.remove('listening'); askInput.placeholder = 'Type your question…'; });
+      askRecog.addEventListener('error', () => { askListening = false; askMic.classList.remove('listening'); askInput.placeholder = 'Type your question…'; });
+    }
+
+    // Auto-start greeting
+    askStarted = true;
+    askCallClaude("Hello, I just arrived on the VeriPura website.");
+  })();
 
   // ── WORKFLOW STAGE CASCADE ──
   (function() {
