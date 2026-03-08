@@ -721,6 +721,125 @@
   .footer-social a { color: rgba(214,228,240,0.5); transition: color 0.2s; display: flex; align-items: center; }
   .footer-social a:hover { color: var(--gold); }
   .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* ── RESPONSIVE ── */
+
+  /* Hamburger (hidden on desktop) */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--sky); border-radius: 2px; transition: all 0.25s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-mobile-menu { display: none; position: absolute; top: 56px; left: 0; right: 0; background: var(--navy); border-bottom: 1.5px solid rgba(255,255,255,0.1); padding: 20px 24px; z-index: 999; flex-direction: column; gap: 0; }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu li { list-style: none; }
+  .nav-mobile-menu a { display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s; }
+  .nav-mobile-menu a:hover { color: var(--gold); }
+  .nav-mobile-menu .nav-cta { margin-top: 16px; display: inline-block; text-align: center; border-bottom: none; }
+
+  @media (max-width: 768px) {
+
+    /* Nav */
+    nav { position: relative; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    /* Section padding */
+    .section-inner { padding: 56px 1.25rem; }
+
+    /* Hero */
+    .hero { grid-template-columns: 1fr; gap: 40px; padding: 56px 1.25rem 48px; }
+    .hero::after { display: none; }
+    .hero-visual { justify-content: center; order: 2; }
+    .rejected-doc-wrap { width: 100%; max-width: 340px; }
+    .hero-content { order: 1; }
+    .hero h1 { font-size: clamp(1.9rem, 7vw, 2.8rem); }
+    .hero-sub { font-size: 0.92rem; }
+
+    /* Stats band */
+    .stats-band { grid-template-columns: repeat(2, 1fr); }
+    .stat-box { border-right: none; border-bottom: 1.5px solid var(--border); }
+    .stat-box:nth-child(odd) { border-right: 1.5px solid var(--border); }
+    .stat-box:nth-child(3), .stat-box:nth-child(4) { border-bottom: none; }
+
+    /* Risk section */
+    .risk-stat-strip { flex-direction: column; align-items: flex-start; gap: 20px; padding: 20px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .cpi-gap-row { flex-direction: column; }
+    .cpi-gap-left, .cpi-gap-right { width: 100%; text-align: center; padding: 16px; }
+    .cpi-gap-center { border-left: none; border-right: none; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 16px; }
+    .cpi-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* Workflow stages — horizontal scroll */
+    .workflow-stages { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; }
+    .stage { min-width: 110px; flex-shrink: 0; }
+
+    /* Persona */
+    .persona-panel.active { grid-template-columns: 1fr; gap: 28px; }
+    .persona-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; white-space: nowrap; }
+    .persona-tab { flex-shrink: 0; }
+
+    /* Use cases */
+    .usecase-grid { grid-template-columns: 1fr; }
+
+    /* Applets */
+    .applets-grid { grid-template-columns: 1fr; }
+
+    /* Tech */
+    .tech-grid { grid-template-columns: 1fr; }
+
+    /* Channel / Partners */
+    .channel-grid { grid-template-columns: 1fr; }
+
+    /* Team */
+    .team-grid { grid-template-columns: 1fr; max-width: 100%; }
+
+    /* Contact */
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* Dashboard */
+    .db-importer-header { flex-direction: column; align-items: flex-start; }
+    .db-importer-stats { flex-wrap: wrap; gap: 16px; }
+    .db-imp-stat { text-align: left; }
+    .db-po-header { grid-template-columns: 28px 1fr auto; gap: 10px; flex-wrap: wrap; }
+    .db-po-processor { display: none; }
+    .db-po-progress-col { display: none; }
+    .db-cat-summary { display: none; }
+    .db-cat-right { gap: 8px; }
+
+    /* Footer */
+    .footer-links { flex-wrap: wrap; gap: 12px; }
+  }
+
+  @media (max-width: 480px) {
+
+    /* Stats band — single column */
+    .stats-band { grid-template-columns: 1fr; }
+    .stat-box { border-right: none; border-bottom: 1.5px solid var(--border); }
+    .stat-box:last-child { border-bottom: none; }
+
+    /* Section padding tighter */
+    .section-inner { padding: 44px 1rem; }
+
+    /* Hero */
+    .hero { padding: 44px 1rem 40px; }
+    .hero-actions { flex-direction: column; align-items: flex-start; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+    /* Rejected doc */
+    .rejected-doc { padding: 20px 18px 18px; }
+    .rejected-stamp-inner { font-size: 1.9rem; padding: 4px 10px; border-width: 3px; }
+
+    /* CPI grid */
+    .cpi-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Persona metrics */
+    .persona-metrics { grid-template-columns: 1fr; }
+
+    /* Dashboard importer stats */
+    .db-importer-stats { display: grid; grid-template-columns: 1fr 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -738,7 +857,21 @@
     <li><a href="#team">Team</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Apply for a Pilot Slot</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<ul class="nav-mobile-menu" id="nav-mobile-menu">
+  <li><a href="#problem" class="nav-mobile-link">The Risks</a></li>
+  <li><a href="#workflow" class="nav-mobile-link">How It Works</a></li>
+  <li><a href="#personas" class="nav-mobile-link">Who It's For</a></li>
+  <li><a href="#use-cases" class="nav-mobile-link">Use Cases</a></li>
+  <li><a href="#technology" class="nav-mobile-link">Technology</a></li>
+  <li><a href="#applets" class="nav-mobile-link">Test Drive</a></li>
+  <li><a href="#channel-partners" class="nav-mobile-link">Partners</a></li>
+  <li><a href="#team" class="nav-mobile-link">Team</a></li>
+  <li><a href="#contact" class="nav-cta nav-mobile-link">Apply for a Pilot Slot</a></li>
+</ul>
 
 <div class="ticker">
   <div class="ticker-track">
@@ -2294,6 +2427,23 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
   })();
 
   // ── WORKFLOW STAGE CASCADE removed — static state retained ──
+
+  // ── MOBILE NAV ──
+  (function() {
+    var btn = document.getElementById('nav-hamburger');
+    var menu = document.getElementById('nav-mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-mobile-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  })();
 
   // ── STAMP ANIMATION ──
   (function() {
