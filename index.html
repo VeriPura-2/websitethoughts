@@ -396,6 +396,8 @@
   .usecase-pain::before { content: '⚠  '; font-size: 0.8rem; }
   .usecase-outcome { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: #0a3d6b; background: rgba(46,95,163,0.08); border: 1.5px solid rgba(46,95,163,0.3); border-left: 4px solid #2E5FA3; border-radius: 4px; padding: 10px 14px; line-height: 1.6; }
   .usecase-outcome::before { content: '✔  '; font-size: 0.8rem; }
+  .usecase-pilot-hook { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; color: var(--gold); margin-top: 14px; }
+  .usecase-pilot-hook a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ── APPLETS / TEST DRIVE ── */
   .applets-section { background: var(--pale); border-top: 1.5px solid var(--border); }
@@ -419,6 +421,8 @@
   .applet-link.primary:hover { background: #e0b84e; transform: translateY(-1px); }
   .applet-link.secondary { background: transparent; color: var(--blue); border: 1.5px solid var(--border); }
   .applet-link.secondary:hover { border-color: var(--blue-lt); }
+  .applet-feedback { font-family: var(--font-mono); font-size: 0.66rem; color: var(--muted); margin-top: 10px; }
+  .applet-feedback a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
 
   /* ── TECHNOLOGY ── */
   .tech-section { background: var(--white); }
@@ -587,7 +591,7 @@
     <span class="ticker-item">EUDR enforcement now 30 December 2026 for large operators — preparation window is now</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">WTO SPS Committee reviewed a record 71 food trade concerns in November 2025</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">30+ documents required per EU food import shipment</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">30+ documents required per food import shipment into Europe, the US or UK</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FSMA Rule 204 traceability requirements now in effect — high-risk food importers must comply</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">EU Commission simplification review of EUDR due 30 April 2026 — scope may expand</span><span class="ticker-item ticker-sep">·</span>
@@ -603,7 +607,7 @@
     <span class="ticker-item">EUDR enforcement now 30 December 2026 for large operators — preparation window is now</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">WTO SPS Committee reviewed a record 71 food trade concerns in November 2025</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">30+ documents required per EU food import shipment</span><span class="ticker-item ticker-sep">·</span>
+    <span class="ticker-item">30+ documents required per food import shipment into Europe, the US or UK</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FSMA Rule 204 traceability requirements now in effect — high-risk food importers must comply</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
     <span class="ticker-item">EU Commission simplification review of EUDR due 30 April 2026 — scope may expand</span><span class="ticker-item ticker-sep">·</span>
@@ -761,7 +765,7 @@
     <div class="risk-stat-strip">
       <div class="risk-stat">
         <div class="risk-stat-num">14,000+</div>
-        <div class="risk-stat-label">EU food import refusals in 2024</div>
+        <div class="risk-stat-label">European food import refusals in 2024</div>
       </div>
       <div class="risk-stat-divider"></div>
       <div class="risk-stat">
@@ -783,7 +787,7 @@
     <!-- CPI Corridor Heatmap -->
     <div class="cpi-block">
       <div class="cpi-block-title">Know Your Corridor Risk</div>
-      <p class="cpi-block-desc">Every sourcing corridor carries a different compliance risk profile. The wider the gap between your origin market's CPI score and your destination market's expectations, the greater your documentation exposure. These 18 corridors represent the highest concentration of EU and US refusals — but VeriPura operates wherever the risk exists.</p>
+      <p class="cpi-block-desc">Every sourcing corridor carries a different compliance risk profile. The wider the gap between your origin market's CPI score and your destination market's expectations, the greater your documentation exposure. These 18 corridors represent the highest concentration of European and US refusals — but VeriPura operates wherever the risk exists.</p>
       <div class="cpi-gap-row">
         <div class="cpi-gap-side">
           <div class="cpi-gap-label">Receiving Markets</div>
@@ -949,7 +953,7 @@
   <div class="section-inner">
     <div class="section-eyebrow">Use Cases</div>
     <h2>Real shipments.<br>Real compliance problems solved.</h2>
-    <p class="section-lead">See how VeriPura works across the food categories most exposed to documentation failure at EU and US borders.</p>
+    <p class="section-lead">See how VeriPura works across the food categories most exposed to documentation failure at European, US and UK borders.</p>
     <p style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 10px; letter-spacing: 0.04em;">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
     <div class="usecase-grid">
       <div class="usecase-card">
@@ -962,6 +966,7 @@
           <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
           <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
           <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
+          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for. <a href="#contact">Apply for a pilot slot</a></div>
         </div>
       </div>
       <div class="usecase-card">
@@ -974,6 +979,7 @@
           <p class="usecase-scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
           <div class="usecase-pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay, substantial costs incurred. Buyer relationship damaged.</div>
           <div class="usecase-outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
+          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for. <a href="#contact">Apply for a pilot slot</a></div>
         </div>
       </div>
       <div class="usecase-card">
@@ -986,6 +992,7 @@
           <p class="usecase-scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
           <div class="usecase-pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. Storage, re-examination, and bond costs in the range of $30K–$50K — consistent with FDA detention incident data.</div>
           <div class="usecase-outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
+          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for. <a href="#contact">Apply for a pilot slot</a></div>
         </div>
       </div>
       <div class="usecase-card">
@@ -998,6 +1005,7 @@
           <p class="usecase-scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU–Mercosur-aligned certificate of origin — each with strict cross-referencing requirements between issuing authorities.</p>
           <div class="usecase-pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days pending re-verification. Significant costs in cold storage, re-inspection, and partial product loss. Deforestation traceability records requested manually by UK Border Force, causing further delay.</div>
           <div class="usecase-outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. Cold chain integrity maintained. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
+          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for. <a href="#contact">Apply for a pilot slot</a></div>
         </div>
       </div>
     </div>
@@ -1013,7 +1021,7 @@
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div><div class="tech-title">Document AI Engine</div><div class="tech-desc">Powered by Google Cloud Document AI, VeriPura extracts and validates data from any format — PDFs, scanned certificates, multi-language documents — in seconds, not hours.</div><span class="tech-tag">Google Cloud Doc AI</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="tech-title">Regulatory Rule Engine</div><div class="tech-desc">A continuously updated library of food import requirements across Europe, US, UK and beyond — TRACES NT, FDA FSMA, EUDR, EU 2017/625, UK FRCR, FSMA 204 — checked against every document field in real time.</div><span class="tech-tag">Europe · FDA · UK · EUDR</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><div class="tech-title">IOTA Blockchain Ledger</div><div class="tech-desc">Every compliance verdict is anchored to the IOTA Rebased blockchain via IOTA TWIN — an immutable, tamperproof record any authorised party can verify instantly.</div><span class="tech-tag">IOTA Rebased · TWIN</span></div>
-      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="tech-title">Risk Corridor Intelligence</div><div class="tech-desc">Built on FDA refusal data and EU TRACES rejection statistics, VeriPura scores every sourcing corridor by risk profile — so importers know their exposure before signing a PO.</div><span class="tech-tag">65,000+ FDA Refusal Records</span></div>
+      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div class="tech-title">Risk Corridor Intelligence</div><div class="tech-desc">Built on FDA refusal data, European TRACES rejection statistics, and UK border intelligence, VeriPura scores every sourcing corridor by risk profile — so importers know their exposure before signing a PO.</div><span class="tech-tag">65,000+ FDA Refusal Records</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="tech-title">Verifiable Credentials</div><div class="tech-desc">Using IOTA Identity 1.7 and W3C Verifiable Credentials, VeriPura issues machine-readable compliance attestations shareable instantly with buyers, auditors, and border authorities.</div><span class="tech-tag">W3C VCs · IOTA Identity</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="tech-title">API & System Integration</div><div class="tech-desc">VeriPura connects via REST API to your existing TMS, ERP, or document management system. Compliance intelligence layered on top of your current workflow — no rip-and-replace.</div><span class="tech-tag">REST API · Webhook</span></div>
     </div>
@@ -1120,7 +1128,7 @@
         <div>
           <div class="team-name"><a href="https://www.linkedin.com/in/onnostienen/" target="_blank" rel="noopener">Onno Stienen</a></div>
           <div class="team-title">CEO & Co-Founder</div>
-          <div class="team-bio">Supply chain and food industry operator with deep expertise in import logistics and cross-border trade compliance across EU markets.</div>
+          <div class="team-bio">18+ years operating in food export and import compliance across Southeast Asia and Europe, including direct experience with Bangkok-based organic food production. EU food import compliance expert with an active network across the Netherlands, Switzerland and Germany. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.</div>
         </div>
       </div>
       <div class="team-card">
@@ -1128,7 +1136,7 @@
         <div>
           <div class="team-name"><a href="https://www.linkedin.com/in/thomassoberlin/" target="_blank" rel="noopener">Thomas Oberlin</a></div>
           <div class="team-title">COO & Co-Founder</div>
-          <div class="team-bio">Serial entrepreneur with $14M raised across prior ventures. Grew up on a dairy farm, worked in food processing — food safety is personal. Based in Italy.</div>
+          <div class="team-bio">Serial entrepreneur and patent holder with €14M raised across prior ventures. Founder of the first Controlled Environment Agriculture company in South America, and worked in food processing — a firsthand understanding of the supply chain problems VeriPura solves. Italy-based with extensive go-to-market background in innovative B2B environments.</div>
         </div>
       </div>
     </div>
@@ -1138,10 +1146,10 @@
 <!-- APPLETS / TEST DRIVE -->
 <section id="applets" class="applets-section">
   <div class="section-inner">
-    <div class="section-eyebrow">Go for a Test Drive</div>
-    <h2>Try VeriPura's compliance<br>tools — live, right now.</h2>
+    <div class="section-eyebrow">Live Intelligence Tools</div>
+    <h2>See what VeriPura sees —<br>right now.</h2>
     <div class="applets-intro">
-      <p class="section-lead" style="margin-bottom:0;">Two live applets are available today. No login required. See the AI compliance engine in action on your own documents before you commit to a full demo.</p>
+      <p class="section-lead" style="margin-bottom:0;">Most compliance platforms ask you to trust a demo. VeriPura gives you the tools. Two live applets, no login, no sales call required. Upload your own label. Run your own recipe. See exactly how the AI compliance engine thinks — then decide if you want it working across every shipment.</p>
     </div>
     <div class="applets-grid">
       <div class="applet-card live">
@@ -1156,6 +1164,7 @@
           <li>Prevents costly recalls from labelling errors</li>
         </ul>
         <a class="applet-link primary" href="https://label.veripura.com/" target="_blank">Launch Label Applet →</a>
+        <div class="applet-feedback">Used this? <a href="#contact">Tell us what you found →</a></div>
       </div>
       <div class="applet-card live">
         <span class="applet-status status-live">Live</span>
@@ -1169,6 +1178,7 @@
           <li>Outputs market-ready nutritional declarations</li>
         </ul>
         <a class="applet-link primary" href="https://nutrional.veripura.com/" target="_blank">Launch Nutritional Applet →</a>
+        <div class="applet-feedback">Used this? <a href="#contact">Tell us what you found →</a></div>
       </div>
       <div class="applet-card soon">
         <span class="applet-status status-dev">In Development</span>
@@ -1181,7 +1191,7 @@
           <li>EUDR deforestation due diligence module</li>
           <li>TRACES NT pre-notification builder</li>
         </ul>
-        <a class="applet-link secondary" href="#contact">Get Early Access →</a>
+        <a class="applet-link secondary" href="#contact">Join the Pilot — Shape What We Build Next →</a>
       </div>
     </div>
   </div>
@@ -1207,7 +1217,7 @@
       <div>
         <div class="contact-info-item"><div class="ci-label">Email</div><div class="ci-value"><a href="/cdn-cgi/l/email-protection#d7beb9b1b897a1b2a5bea7a2a5b6f9b4b8ba"><span class="__cf_email__" data-cfemail="c3aaada5ac83b5a6b1aab3b6b1a2eda0acae">[email&#160;protected]</span></a></div></div>
         <div class="contact-info-item"><div class="ci-label">Book a Demo Directly</div><div class="ci-value"><a href="https://calendar.app.google/aDWSnVgPhiHtsj4L6">Schedule via Calendar →</a></div></div>
-        <div class="contact-info-item"><div class="ci-label">Pilot Program</div><div class="ci-note">We are currently accepting a limited number of pilot partners. If you are a food importer or forwarder active in EU or US-bound corridors from Asia, Latin America, or Africa — we'd like to hear from you.</div></div>
+        <div class="contact-info-item"><div class="ci-label">Pilot Program</div><div class="ci-note">We are currently accepting a limited number of pilot partners. If you are a food importer or forwarder active in corridors bound for Europe, the US, the UK or beyond — we'd like to hear from you.</div></div>
       </div>
       <div class="contact-form">
         <div class="form-row">
@@ -1586,7 +1596,7 @@ Q: Do I need to be a compliance expert to sell VeriPura?
 A (Onno): No. Forwarders and carriers position VeriPura on the strength of the problem it solves — shipment delays, border rejections, documentation failures — without needing to understand the underlying regulatory detail. We handle the compliance intelligence; you handle the relationship. We're currently selecting two founding partner slots — partners who come in now help shape the programme and lock terms not available later.
 
 Q: What corridors does VeriPura currently cover?
-A (Onno): VeriPura operates across the high-risk sourcing corridors into the EU and US — Thailand, Vietnam, Indonesia, India, Brazil, Mexico, and a growing list of origin markets where CPI scores and regulatory complexity create the highest documentation failure rates. We can also expand to new corridors rapidly — our swarm of finely tuned AI agents identifies requirements by HS code, product category, and trade corridor, so we can bring a new corridor online quickly. If you have a specific corridor in mind, we can confirm coverage or timeline directly.
+A (Onno): VeriPura operates across the high-risk sourcing corridors into Europe, the US, the UK and beyond — Thailand, Vietnam, Indonesia, India, Brazil, Mexico, and a growing list of origin markets where CPI scores and regulatory complexity create the highest documentation failure rates. We can also expand to new corridors rapidly — our swarm of finely tuned AI agents identifies requirements by HS code, product category, and trade corridor, so we can bring a new corridor online quickly. If you have a specific corridor in mind, we can confirm coverage or timeline directly.
 
 Q: Is exclusivity available for partners?
 A (Thomas): We're open to exploring limited-time exclusivity for certain new trade corridors or product categories for qualifying partners — particularly for our two founding partner slots. It's not something we offer broadly, but it is on the table for the right relationship. That's worth a direct conversation.
@@ -2030,20 +2040,7 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
     askCallClaude("Hello, I just arrived on the VeriPura website.");
   })();
 
-  // ── WORKFLOW STAGE CASCADE ──
-  (function() {
-    const stages = document.querySelectorAll('.workflow-stages .stage');
-    if (!stages.length) return;
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        stages.forEach((stage, i) => {
-          setTimeout(() => stage.classList.add('lit'), i * 750);
-        });
-        observer.disconnect();
-      }
-    }, { threshold: 0.3 });
-    observer.observe(document.querySelector('.workflow-stages'));
-  })();
+  // ── WORKFLOW STAGE CASCADE removed — static state retained ──
 
   function startConversation() {
     callClaude("Hello, I just arrived on the VeriPura website.");
