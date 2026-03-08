@@ -8,30 +8,20 @@
 <meta name="keywords" content="food import compliance, EU TRACES, FDA detention, EUDR, FSMA 204, import documentation verification, food safety compliance platform, blockchain attestation, supply chain compliance">
 <meta name="author" content="VeriPura">
 <meta name="robots" content="index, follow">
-
-<!-- Geo Tags -->
 <meta name="geo.region" content="IT-VA">
 <meta name="geo.placename" content="Busto Arsizio, Italy">
 <meta name="ICBM" content="45.6117, 8.8518">
-
-<!-- Canonical -->
 <link rel="canonical" href="https://thomasoberlin.github.io/VP-Trust-what-you-eat/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VeriPura">
 <meta property="og:title" content="VeriPura | Food Import Compliance Platform">
 <meta property="og:description" content="AI-powered food import compliance verification. Eliminate FDA detentions, EU TRACES rejections, and documentation failures before your shipment moves.">
 <meta property="og:url" content="https://thomasoberlin.github.io/VP-Trust-what-you-eat/">
 <meta property="og:image" content="https://thomasoberlin.github.io/VP-Trust-what-you-eat/Onno_no_BG.jpeg">
-
-<!-- Twitter/X Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VeriPura | Food Import Compliance Platform">
 <meta name="twitter:description" content="AI-powered food import compliance verification. Eliminate FDA detentions, EU TRACES rejections, and documentation failures before your shipment moves.">
 <meta name="twitter:image" content="https://thomasoberlin.github.io/VP-Trust-what-you-eat/Onno_no_BG.jpeg">
-
-<!-- Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -196,6 +186,45 @@
   .problem-title { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
   .problem-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.65; }
 
+  /* ── CPI CORRIDOR HEATMAP ── */
+  .cpi-block { margin-top: 48px; background: var(--navy); border-radius: 10px; padding: 32px; }
+  .cpi-block-title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--white); margin-bottom: 6px; }
+  .cpi-block-title span { color: var(--gold); font-style: italic; }
+  .cpi-block-desc { font-size: 0.88rem; color: var(--sky); line-height: 1.65; margin-bottom: 28px; max-width: 620px; }
+  .cpi-gap-row { display: flex; align-items: center; gap: 0; margin-bottom: 28px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; }
+  .cpi-gap-side { flex: 1; padding: 20px 24px; }
+  .cpi-gap-label { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(214,228,240,0.5); margin-bottom: 6px; }
+  .cpi-gap-value { font-family: var(--font-serif); font-size: 1.4rem; color: var(--white); margin-bottom: 4px; }
+  .cpi-gap-sub { font-family: var(--font-mono); font-size: 0.64rem; color: var(--sky); }
+  .cpi-gap-center { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 28px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+  .cpi-gap-num { font-family: var(--font-serif); font-size: 2.8rem; color: var(--gold); line-height: 1; }
+  .cpi-gap-arrow { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+  .cpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .cpi-card { border-radius: 6px; padding: 12px 10px; position: relative; }
+  .cpi-card-score { font-family: var(--font-serif); font-size: 1.4rem; color: var(--white); line-height: 1; margin-bottom: 2px; }
+  .cpi-card-country { font-size: 0.78rem; font-weight: 600; color: var(--white); margin-bottom: 2px; }
+  .cpi-card-region { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .cpi-card-commodities { font-family: var(--font-mono); font-size: 0.58rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+  .cpi-source { font-family: var(--font-mono); font-size: 0.6rem; color: rgba(214,228,240,0.4); margin-top: 20px; }
+  .cpi-source a { color: rgba(212,168,71,0.7); text-decoration: none; }
+  .cpi-source a:hover { color: var(--gold); }
+
+  /* CPI color scale — lower score = deeper red */
+  .cpi-20s { background: #7a1a1a; }
+  .cpi-26 { background: #8b2020; }
+  .cpi-29 { background: #962626; }
+  .cpi-31 { background: #a03030; }
+  .cpi-33 { background: #a83838; }
+  .cpi-34 { background: #b04040; }
+  .cpi-35 { background: #b84848; }
+  .cpi-36 { background: #bf5050; }
+  .cpi-37 { background: #c45858; }
+  .cpi-38 { background: #c86060; }
+  .cpi-39 { background: #cc6a6a; }
+  .cpi-40 { background: #ce7070; }
+  .cpi-42 { background: #d07878; }
+  .cpi-43 { background: #d28080; }
+
   /* ── WORKFLOW ── */
   .workflow-section { background: var(--white); }
   .workflow-stages { display: flex; margin-top: 48px; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
@@ -236,98 +265,40 @@
   /* ── USE CASES ── */
   .usecases-section { background: var(--white); }
   .usecase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
-  .usecase-card {
-    background: var(--pale); border: 1.5px solid var(--border); border-radius: 8px;
-    overflow: hidden; transition: border-color 0.25s, box-shadow 0.25s;
-  }
+  .usecase-card { background: var(--pale); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.25s, box-shadow 0.25s; }
   .usecase-card:hover { border-color: var(--blue-lt); box-shadow: 0 4px 20px rgba(46,95,163,0.1); }
-  .usecase-card-header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-    padding: 24px 24px 20px;
-  }
-  .usecase-category {
-    font-family: var(--font-mono); font-size: 0.6rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 8px;
-  }
-  .usecase-title {
-    font-family: var(--font-serif); font-size: 1.2rem;
-    color: var(--white); line-height: 1.2;
-  }
-  .usecase-corridor {
-    display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px;
-  }
+  .usecase-card-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 24px 24px 20px; }
+  .usecase-category { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .usecase-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--white); line-height: 1.2; }
+  .usecase-corridor { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
   .usecase-card-body { padding: 22px 24px; }
-  .usecase-scenario {
-    font-size: 0.86rem; color: var(--ink); line-height: 1.65;
-    margin-bottom: 16px;
-  }
-  .usecase-pain {
-    font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.04em; color: #7a4f00;
-    background: rgba(220,150,0,0.09); border: 1.5px solid rgba(220,150,0,0.35);
-    border-left: 4px solid #D4A847;
-    border-radius: 4px; padding: 10px 14px; margin-bottom: 14px;
-    line-height: 1.6;
-  }
+  .usecase-scenario { font-size: 0.86rem; color: var(--ink); line-height: 1.65; margin-bottom: 16px; }
+  .usecase-pain { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: #7a4f00; background: rgba(220,150,0,0.09); border: 1.5px solid rgba(220,150,0,0.35); border-left: 4px solid #D4A847; border-radius: 4px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.6; }
   .usecase-pain::before { content: '⚠  '; font-size: 0.8rem; }
-  .usecase-outcome {
-    font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-    letter-spacing: 0.04em; color: #0a3d6b;
-    background: rgba(46,95,163,0.08); border: 1.5px solid rgba(46,95,163,0.3);
-    border-left: 4px solid #2E5FA3;
-    border-radius: 4px; padding: 10px 14px;
-    line-height: 1.6;
-  }
+  .usecase-outcome { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: #0a3d6b; background: rgba(46,95,163,0.08); border: 1.5px solid rgba(46,95,163,0.3); border-left: 4px solid #2E5FA3; border-radius: 4px; padding: 10px 14px; line-height: 1.6; }
   .usecase-outcome::before { content: '✔  '; font-size: 0.8rem; }
 
   /* ── APPLETS / TEST DRIVE ── */
   .applets-section { background: var(--pale); border-top: 1.5px solid var(--border); }
   .applets-intro { max-width: 600px; margin-bottom: 48px; }
   .applets-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .applet-card {
-    background: var(--white); border: 1.5px solid var(--border);
-    border-radius: 10px; padding: 32px 28px;
-    display: flex; flex-direction: column;
-    transition: border-color 0.25s, box-shadow 0.25s;
-    position: relative; overflow: hidden;
-  }
+  .applet-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 10px; padding: 32px 28px; display: flex; flex-direction: column; transition: border-color 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
   .applet-card:hover { border-color: var(--blue-lt); box-shadow: 0 4px 20px rgba(46,95,163,0.1); }
   .applet-card.live { border-top: 3px solid var(--gold); }
   .applet-card.soon { border-top: 3px solid var(--border); }
-  .applet-status {
-    font-family: var(--font-mono); font-size: 0.58rem;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    padding: 3px 9px; border-radius: 3px;
-    display: inline-block; margin-bottom: 16px; align-self: flex-start;
-  }
+  .applet-status { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; display: inline-block; margin-bottom: 16px; align-self: flex-start; }
   .status-live { background: rgba(212,168,71,0.15); color: var(--gold); border: 1px solid rgba(212,168,71,0.35); }
   .status-dev  { background: rgba(90,104,120,0.1); color: var(--muted); border: 1px solid var(--border); }
   .applet-icon { font-size: 2rem; margin-bottom: 14px; }
-  .applet-name {
-    font-family: var(--font-serif); font-size: 1.3rem;
-    color: var(--navy); margin-bottom: 10px;
-  }
+  .applet-name { font-family: var(--font-serif); font-size: 1.3rem; color: var(--navy); margin-bottom: 10px; }
   .applet-desc { font-size: 0.88rem; font-weight: 400; color: var(--ink); line-height: 1.65; flex: 1; margin-bottom: 24px; }
   .applet-features { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 7px; }
-  .applet-features li {
-    font-family: var(--font-mono); font-size: 0.66rem;
-    color: var(--ink); display: flex; align-items: flex-start; gap: 8px;
-  }
+  .applet-features li { font-family: var(--font-mono); font-size: 0.66rem; color: var(--ink); display: flex; align-items: flex-start; gap: 8px; }
   .applet-features li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
-  .applet-link {
-    font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    padding: 10px 20px; border-radius: 4px; text-decoration: none;
-    display: inline-block; transition: background 0.2s, transform 0.15s;
-    align-self: flex-start;
-  }
+  .applet-link { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; align-self: flex-start; }
   .applet-link.primary { background: var(--gold); color: var(--navy); }
   .applet-link.primary:hover { background: #e0b84e; transform: translateY(-1px); }
-  .applet-link.secondary {
-    background: transparent; color: var(--blue);
-    border: 1.5px solid var(--border);
-  }
+  .applet-link.secondary { background: transparent; color: var(--blue); border: 1.5px solid var(--border); }
   .applet-link.secondary:hover { border-color: var(--blue-lt); }
 
   /* ── TECHNOLOGY ── */
@@ -340,6 +311,13 @@
   .tech-title { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
   .tech-desc { font-size: 0.88rem; font-weight: 400; color: var(--ink); line-height: 1.65; }
   .tech-tag { display: inline-block; margin-top: 14px; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; background: rgba(46,95,163,0.1); color: var(--blue); }
+
+  /* ── EXPANSION PATH ── */
+  .expansion-strip { margin-top: 40px; background: var(--navy); border-radius: 8px; padding: 24px 32px; display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+  .expansion-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-right: 28px; flex-shrink: 0; }
+  .expansion-steps { display: flex; align-items: center; gap: 0; flex-wrap: wrap; }
+  .expansion-step { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 500; color: var(--white); padding: 6px 16px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; white-space: nowrap; }
+  .expansion-arrow { color: var(--gold); font-size: 1rem; padding: 0 10px; flex-shrink: 0; }
 
   /* ── PARTNERS ── */
   .partners-section { background: var(--pale); border-top: 1.5px solid var(--border); }
@@ -355,23 +333,12 @@
   .channel-section h2 { color: var(--white); }
   .channel-section .section-lead { color: var(--sky); max-width: 600px; }
   .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 48px; }
-  .channel-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 8px; padding: 28px;
-    transition: background 0.25s, border-color 0.25s;
-  }
+  .channel-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 28px; transition: background 0.25s, border-color 0.25s; }
   .channel-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(212,168,71,0.4); }
   .channel-card-icon { font-size: 1.8rem; margin-bottom: 14px; }
   .channel-card-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--white); margin-bottom: 10px; }
   .channel-card-desc { font-size: 0.85rem; color: var(--sky); line-height: 1.65; }
-  .channel-proof {
-    background: rgba(212,168,71,0.1);
-    border: 1px solid rgba(212,168,71,0.3);
-    border-radius: 8px; padding: 20px 28px;
-    display: flex; align-items: center; gap: 24px;
-    flex-wrap: wrap; margin-bottom: 40px;
-  }
+  .channel-proof { background: rgba(212,168,71,0.1); border: 1px solid rgba(212,168,71,0.3); border-radius: 8px; padding: 20px 28px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; }
   .channel-proof-stat { text-align: center; flex: 1; min-width: 120px; }
   .channel-proof-stat .num { font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold); margin-bottom: 4px; }
   .channel-proof-stat .lbl { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); line-height: 1.4; }
@@ -386,6 +353,8 @@
   .team-avatar { width: 72px; height: 72px; flex-shrink: 0; border-radius: 10px; overflow: hidden; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1.1rem; color: var(--gold); }
   .team-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .team-name { font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 3px; }
+  .team-name a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(46,95,163,0.3); transition: border-color 0.2s, color 0.2s; }
+  .team-name a:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .team-title { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
   .team-bio { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 
@@ -420,9 +389,13 @@
   .footer-logo { font-family: var(--font-serif); font-size: 1rem; color: var(--sky); }
   .footer-logo span { color: var(--gold); }
   .footer-copy { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--muted); }
-  .footer-links { display: flex; gap: 20px; }
+  .footer-links { display: flex; gap: 20px; align-items: center; }
   .footer-links a { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
+  .footer-social { display: flex; gap: 14px; align-items: center; }
+  .footer-social a { color: rgba(214,228,240,0.5); transition: color 0.2s; display: flex; align-items: center; }
+  .footer-social a:hover { color: var(--gold); }
+  .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
 </style>
 </head>
 <body>
@@ -502,19 +475,11 @@
     'https://corsproxy.io/?' + encodeURIComponent('https://news.google.com/rss/search?q=food+fraud+adulteration+border+inspection&hl=en-US&gl=US&ceid=US:en'),
     'https://corsproxy.io/?' + encodeURIComponent('https://news.google.com/rss/search?q=Codex+Alimentarius+food+standard+mycotoxin+aflatoxin&hl=en-US&gl=US&ceid=US:en')
   ];
-  var REFRESH_INTERVAL = 10 * 60 * 1000; // refresh every 10 minutes
+  var REFRESH_INTERVAL = 10 * 60 * 1000;
 
   function matchesKeyword(text) {
     var lower = text.toLowerCase();
     return KEYWORDS.some(function(k) { return lower.indexOf(k) !== -1; });
-  }
-
-  function buildTrack(items) {
-    if (!items || items.length === 0) return null;
-    var doubled = items.concat(items);
-    return doubled.map(function(item) {
-      return '<span class="wto-item"><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></span><span class="wto-sep">&middot;</span>';
-    }).join('');
   }
 
   function fetchFeed(url, callback) {
@@ -539,7 +504,6 @@
   }
 
   function loadWTOFeed() {
-
     var allItems = [];
     var completedFeeds = 0;
     FEEDS.forEach(function(url) {
@@ -547,7 +511,6 @@
         allItems = allItems.concat(items);
         completedFeeds++;
         if (completedFeeds === FEEDS.length) {
-          // Deduplicate
           var seen = {};
           var merged = allItems.filter(function(item) {
             if (!item.title || seen[item.title]) return false;
@@ -623,13 +586,57 @@
   <div class="section-inner">
     <div class="section-eyebrow">The Problem</div>
     <h2>One wrong field.<br>One rejected container.</h2>
-    <p class="section-lead">The global food import system runs on paper — and it's failing the people who depend on it. For importers, forwarders, and carriers, the cost of compliance failure is measured in detained shipments, regulatory fines, and lost business.</p>
+    <p class="section-lead">The global food import system runs on paper — and it's failing the people who depend on it. For importers, forwarders, and carriers, the cost of compliance failure is measured in detained shipments, regulatory fines, and lost business. Today, importers may spend €50K or more on freelance compliance consultants just to navigate what VeriPura handles automatically.</p>
     <div class="problem-grid">
       <div class="problem-card" data-num="01"><div class="problem-cost">$30K–$50K</div><div class="problem-title">Per FDA Detention Incident</div><div class="problem-desc">An FDA automatic detention triggered by a documentation error can cost tens of thousands in warehouse fees, re-inspection costs, and lost product — before the goods ever reach a buyer.</div></div>
       <div class="problem-card" data-num="02"><div class="problem-cost">14,000+</div><div class="problem-title">EU Food Import Refusals in 2024</div><div class="problem-desc">EU border control refusals reached over 14,000 for animal-origin food products in 2024 alone, per the TRACES Annual Report. New regulations including EU 2017/625 and EUDR continue to raise the documentation bar that importers must clear.</div></div>
       <div class="problem-card" data-num="03"><div class="problem-cost">"Hours to weeks"</div><div class="problem-title">FDA Examination Time Per Shipment</div><div class="problem-desc">The FDA states that shipment examination can take "from a few hours to several weeks" if laboratory analysis is required. Every day a container sits at port compounds storage fees, spoilage risk, and buyer penalties.</div></div>
       <div class="problem-card" data-num="04"><div class="problem-cost">14 Days</div><div class="problem-title">Average Contamination Identification Time</div><div class="problem-desc">When contamination occurs, identifying the source through fragmented paper records takes an average of 14 days — by which point the product has long since reached consumers. VeriPura's immutable chain of custody compresses this dramatically.</div></div>
     </div>
+
+    <!-- CPI Corridor Heatmap -->
+    <div class="cpi-block">
+      <div class="cpi-block-title">Where We Operate — <span>High-Risk Import Corridors</span></div>
+      <p class="cpi-block-desc">VeriPura operates on any corridor where institutional integrity risk creates documentary compliance exposure. The greater the CPI gap between origin and receiving market, the greater the importer's liability.</p>
+      <div class="cpi-gap-row">
+        <div class="cpi-gap-side">
+          <div class="cpi-gap-label">Receiving Markets</div>
+          <div class="cpi-gap-value">UK, Western Europe, Canada &amp; USA</div>
+          <div class="cpi-gap-sub">avg CPI 79</div>
+        </div>
+        <div class="cpi-gap-center">
+          <div class="cpi-gap-num">44</div>
+          <div class="cpi-gap-arrow">← point gap →</div>
+        </div>
+        <div class="cpi-gap-side" style="text-align:right;">
+          <div class="cpi-gap-label">Origin Corridors</div>
+          <div class="cpi-gap-value">Global South</div>
+          <div class="cpi-gap-sub">avg CPI 35</div>
+        </div>
+      </div>
+      <div class="cpi-grid">
+        <div class="cpi-card cpi-20s"><div class="cpi-card-score">24</div><div class="cpi-card-country">Bangladesh</div><div class="cpi-card-region">CPI Score · SA</div><div class="cpi-card-commodities">Shrimp &amp; prawns · Frozen fish · Vegetables</div></div>
+        <div class="cpi-card cpi-26"><div class="cpi-card-score">26</div><div class="cpi-card-country">Nigeria</div><div class="cpi-card-region">CPI Score · AFR</div><div class="cpi-card-commodities">Sesame seeds · Cocoa beans · Cashews</div></div>
+        <div class="cpi-card cpi-29"><div class="cpi-card-score">29</div><div class="cpi-card-country">Pakistan</div><div class="cpi-card-region">CPI Score · SA</div><div class="cpi-card-commodities">Basmati rice · Citrus · Onions</div></div>
+        <div class="cpi-card cpi-31"><div class="cpi-card-score">31</div><div class="cpi-card-country">Mexico</div><div class="cpi-card-region">CPI Score · LAM</div><div class="cpi-card-commodities">Avocados · Tomatoes · Berries</div></div>
+        <div class="cpi-card cpi-31"><div class="cpi-card-score">31</div><div class="cpi-card-country">Kenya</div><div class="cpi-card-region">CPI Score · AFR</div><div class="cpi-card-commodities">Tea · Coffee · Fresh vegetables</div></div>
+        <div class="cpi-card cpi-33"><div class="cpi-card-score">33</div><div class="cpi-card-country">Peru</div><div class="cpi-card-region">CPI Score · LAM</div><div class="cpi-card-commodities">Asparagus · Avocados · Blueberries</div></div>
+        <div class="cpi-card cpi-33"><div class="cpi-card-score">33</div><div class="cpi-card-country">Philippines</div><div class="cpi-card-region">CPI Score · SEA</div><div class="cpi-card-commodities">Coconut products · Banana · Pineapple</div></div>
+        <div class="cpi-card cpi-34"><div class="cpi-card-score">34</div><div class="cpi-card-country">Indonesia</div><div class="cpi-card-region">CPI Score · SEA</div><div class="cpi-card-commodities">Palm oil · Coffee · Cocoa</div></div>
+        <div class="cpi-card cpi-34"><div class="cpi-card-score">34</div><div class="cpi-card-country">Turkey</div><div class="cpi-card-region">CPI Score · MENA</div><div class="cpi-card-commodities">Hazelnuts · Dried fruits · Tomatoes</div></div>
+        <div class="cpi-card cpi-35"><div class="cpi-card-score">35</div><div class="cpi-card-country">Egypt</div><div class="cpi-card-region">CPI Score · MENA</div><div class="cpi-card-commodities">Citrus · Potatoes · Onions</div></div>
+        <div class="cpi-card cpi-35"><div class="cpi-card-score">35</div><div class="cpi-card-country">Thailand</div><div class="cpi-card-region">CPI Score · SEA</div><div class="cpi-card-commodities">Rice · Processed seafood · Cassava</div></div>
+        <div class="cpi-card cpi-36"><div class="cpi-card-score">36</div><div class="cpi-card-country">Brazil</div><div class="cpi-card-region">CPI Score · LAM</div><div class="cpi-card-commodities">Soy · Beef · Coffee</div></div>
+        <div class="cpi-card cpi-37"><div class="cpi-card-score">37</div><div class="cpi-card-country">Argentina</div><div class="cpi-card-region">CPI Score · LAM</div><div class="cpi-card-commodities">Soy · Beef · Sunflower oil</div></div>
+        <div class="cpi-card cpi-38"><div class="cpi-card-score">38</div><div class="cpi-card-country">Morocco</div><div class="cpi-card-region">CPI Score · AFR</div><div class="cpi-card-commodities">Citrus · Tomatoes · Olives &amp; olive oil</div></div>
+        <div class="cpi-card cpi-39"><div class="cpi-card-score">39</div><div class="cpi-card-country">India</div><div class="cpi-card-region">CPI Score · SA</div><div class="cpi-card-commodities">Spices · Rice · Seafood</div></div>
+        <div class="cpi-card cpi-40"><div class="cpi-card-score">40</div><div class="cpi-card-country">Vietnam</div><div class="cpi-card-region">CPI Score · SEA</div><div class="cpi-card-commodities">Seafood · Coffee · Cashews</div></div>
+        <div class="cpi-card cpi-42"><div class="cpi-card-score">42</div><div class="cpi-card-country">China</div><div class="cpi-card-region">CPI Score · EA</div><div class="cpi-card-commodities">Processed vegetables · Garlic · Seafood</div></div>
+        <div class="cpi-card cpi-43"><div class="cpi-card-score">43</div><div class="cpi-card-country">Ghana</div><div class="cpi-card-region">CPI Score · AFR</div><div class="cpi-card-commodities">Cocoa beans · Pineapple · Cashews</div></div>
+      </div>
+      <div class="cpi-source">Source: <a href="https://www.transparency.org/en/cpi/2025" target="_blank" rel="noopener">Transparency International CPI 2024</a> · Scale 0 (highly corrupt) → 100 (very clean)</div>
+    </div>
+
   </div>
 </section>
 
@@ -649,14 +656,11 @@
       <div class="stage"><div class="stage-num">08</div><div class="stage-icon">⚖️</div><div class="stage-name">Verdict</div><div class="stage-sub">Pass / fail + fix</div></div>
       <div class="stage"><div class="stage-num">09</div><div class="stage-icon">🔐</div><div class="stage-name">Ledger</div><div class="stage-sub">IOTA blockchain anchor</div></div>
     </div>
-
-    <!-- Agents callout -->
     <div style="margin-top: 28px; background: var(--navy); border-radius: 8px; padding: 20px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <div style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); flex-shrink: 0; line-height: 1;">50+</div>
       <div style="width: 1px; height: 36px; background: rgba(212,168,71,0.3); flex-shrink: 0;"></div>
       <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--sky); line-height: 1.6; max-width: 680px;">Specialised agents working in combination — each trained to the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.</div>
     </div>
-
   </div>
 </section>
 
@@ -739,15 +743,11 @@
     <h2>Real shipments.<br>Real compliance problems solved.</h2>
     <p class="section-lead">See how VeriPura works across the food categories most exposed to documentation failure at EU and US borders.</p>
     <div class="usecase-grid">
-
       <div class="usecase-card">
         <div class="usecase-card-header">
           <div class="usecase-category">Fresh Produce</div>
           <div class="usecase-title">Thai Mango to Rotterdam</div>
-          <div class="usecase-corridor">
-            <span class="corridor-tag">Thailand → NL</span>
-            <span class="corridor-tag">CPI Gap: 44pts</span>
-          </div>
+          <div class="usecase-corridor"><span class="corridor-tag">Thailand → NL</span><span class="corridor-tag">CPI Gap: 44pts</span></div>
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
@@ -755,15 +755,11 @@
           <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
         </div>
       </div>
-
       <div class="usecase-card">
         <div class="usecase-card-header">
           <div class="usecase-category">Seafood</div>
           <div class="usecase-title">Vietnamese Shrimp to Hamburg</div>
-          <div class="usecase-corridor">
-            <span class="corridor-tag">Vietnam → DE</span>
-            <span class="corridor-tag">EUDR Affected</span>
-          </div>
+          <div class="usecase-corridor"><span class="corridor-tag">Vietnam → DE</span><span class="corridor-tag">EUDR Affected</span></div>
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
@@ -771,15 +767,11 @@
           <div class="usecase-outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
         </div>
       </div>
-
       <div class="usecase-card">
         <div class="usecase-card-header">
           <div class="usecase-category">Processed Food</div>
           <div class="usecase-title">Indian Spices to US FDA</div>
-          <div class="usecase-corridor">
-            <span class="corridor-tag">India → US</span>
-            <span class="corridor-tag">FSMA 204</span>
-          </div>
+          <div class="usecase-corridor"><span class="corridor-tag">India → US</span><span class="corridor-tag">FSMA 204</span></div>
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
@@ -787,16 +779,11 @@
           <div class="usecase-outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
         </div>
       </div>
-
       <div class="usecase-card">
         <div class="usecase-card-header">
           <div class="usecase-category">Beef & Red Meat</div>
           <div class="usecase-title">Brazilian Beef to Great Britain</div>
-          <div class="usecase-corridor">
-            <span class="corridor-tag">Brazil → GB</span>
-            <span class="corridor-tag">EUDR Adjacent</span>
-            <span class="corridor-tag">CPI Gap: 42pts</span>
-          </div>
+          <div class="usecase-corridor"><span class="corridor-tag">Brazil → GB</span><span class="corridor-tag">EUDR Adjacent</span><span class="corridor-tag">CPI Gap: 42pts</span></div>
         </div>
         <div class="usecase-card-body">
           <p class="usecase-scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU–Mercosur-aligned certificate of origin — each with strict cross-referencing requirements between issuing authorities.</p>
@@ -804,7 +791,6 @@
           <div class="usecase-outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. Cold chain integrity maintained. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -822,16 +808,31 @@
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div class="tech-title">Verifiable Credentials</div><div class="tech-desc">Using IOTA Identity 1.7 and W3C Verifiable Credentials, VeriPura issues machine-readable compliance attestations shareable instantly with buyers, auditors, and border authorities.</div><span class="tech-tag">W3C VCs · IOTA Identity</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div class="tech-title">API & System Integration</div><div class="tech-desc">VeriPura connects via REST API to your existing TMS, ERP, or document management system. Compliance intelligence layered on top of your current workflow — no rip-and-replace.</div><span class="tech-tag">REST API · Webhook</span></div>
     </div>
+
+    <!-- Platform Expansion Strip -->
+    <div class="expansion-strip">
+      <div class="expansion-label">Platform Expansion</div>
+      <div class="expansion-steps">
+        <div class="expansion-step">Food</div>
+        <div class="expansion-arrow">→</div>
+        <div class="expansion-step">Vitamins &amp; Supplements</div>
+        <div class="expansion-arrow">→</div>
+        <div class="expansion-step">Pharmaceuticals</div>
+        <div class="expansion-arrow">→</div>
+        <div class="expansion-step">Cosmetics</div>
+        <div class="expansion-arrow">→</div>
+        <div class="expansion-step">Pet Food</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- CHANNEL PARTNER RECRUITMENT -->
 <section id="channel-partners" class="channel-section">
   <div class="section-inner">
     <div class="section-eyebrow">Become a Partner</div>
     <h2>Freight forwarders and carriers:<br>VeriPura works <em>for</em> you.</h2>
     <p class="section-lead">You already touch every food shipment. Every compliance failure your clients suffer is a cost you absorb — in delays, in relationship damage, in liability exposure. VeriPura turns that burden into a competitive advantage and a new revenue stream.</p>
-
     <div class="channel-grid">
       <div class="channel-card">
         <div class="channel-card-icon">💶</div>
@@ -849,29 +850,15 @@
         <div class="channel-card-desc">VeriPura compliance validation becomes a value-added service you offer alongside freight. Clients sourcing from high-risk corridors — Thailand, Vietnam, Brazil, India — need this capability now, with EUDR and FSMA 204 enforcement live. You become their single point of contact for compliant cross-border food trade.</div>
       </div>
     </div>
-
     <div class="channel-proof">
-      <div class="channel-proof-stat">
-        <div class="num">14,000+</div>
-        <div class="lbl">Food shipments refused<br>EU entry in 2024</div>
-      </div>
+      <div class="channel-proof-stat"><div class="num">14,000+</div><div class="lbl">Food shipments refused<br>EU entry in 2024</div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat">
-        <div class="num">39%</div>
-        <div class="lbl">Of refusals caused by<br>documentation failures</div>
-      </div>
+      <div class="channel-proof-stat"><div class="num">39%</div><div class="lbl">Of refusals caused by<br>documentation failures</div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat">
-        <div class="num">$30–50K</div>
-        <div class="lbl">Avg. cost of a single<br>FDA detention incident</div>
-      </div>
+      <div class="channel-proof-stat"><div class="num">$30–50K</div><div class="lbl">Avg. cost of a single<br>FDA detention incident</div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat">
-        <div class="num">14 days</div>
-        <div class="lbl">Avg. to identify a food<br>contamination source</div>
-      </div>
+      <div class="channel-proof-stat"><div class="num">14 days</div><div class="lbl">Avg. to identify a food<br>contamination source</div></div>
     </div>
-
     <div class="channel-cta">
       <a class="btn-primary" href="partners.html">See the Full Partner Programme →</a>
       <a class="btn-secondary" href="#contact">Contact Us About Partnering</a>
@@ -885,8 +872,22 @@
     <h2>Founded by operators<br>who've lived the problem.</h2>
     <p class="section-lead">VeriPura was built by entrepreneurs with direct experience in food processing, supply chain, and technology — not consultants who read about it.</p>
     <div class="team-grid">
-      <div class="team-card"><div class="team-avatar"><img src="Onno_no_BG.jpeg" alt="Onno Stienen"></div><div><div class="team-name">Onno Stienen</div><div class="team-title">CEO & Co-Founder</div><div class="team-bio">Supply chain and food industry operator with deep expertise in import logistics and cross-border trade compliance across EU markets.</div></div></div>
-      <div class="team-card"><div class="team-avatar"><img src="Thomas_no_BG.png" alt="Thomas Oberlin"></div><div><div class="team-name">Thomas Oberlin</div><div class="team-title">COO & Co-Founder</div><div class="team-bio">Serial entrepreneur with $14M raised across prior ventures. Grew up on a dairy farm, worked in food processing — food safety is personal. Based in Italy.</div></div></div>
+      <div class="team-card">
+        <div class="team-avatar"><img src="Onno_no_BG.jpeg" alt="Onno Stienen"></div>
+        <div>
+          <div class="team-name"><a href="https://www.linkedin.com/in/onnostienen/" target="_blank" rel="noopener">Onno Stienen</a></div>
+          <div class="team-title">CEO & Co-Founder</div>
+          <div class="team-bio">Supply chain and food industry operator with deep expertise in import logistics and cross-border trade compliance across EU markets.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><img src="Thomas_no_BG.png" alt="Thomas Oberlin"></div>
+        <div>
+          <div class="team-name"><a href="https://www.linkedin.com/in/thomassoberlin/" target="_blank" rel="noopener">Thomas Oberlin</a></div>
+          <div class="team-title">COO & Co-Founder</div>
+          <div class="team-bio">Serial entrepreneur with $14M raised across prior ventures. Grew up on a dairy farm, worked in food processing — food safety is personal. Based in Italy.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -900,7 +901,6 @@
       <p class="section-lead" style="margin-bottom:0;">Two live applets are available today. No login required. See the AI compliance engine in action on your own documents before you commit to a full demo.</p>
     </div>
     <div class="applets-grid">
-
       <div class="applet-card live">
         <span class="applet-status status-live">Live</span>
         <div class="applet-icon">🏷️</div>
@@ -914,7 +914,6 @@
         </ul>
         <a class="applet-link primary" href="https://label.veripura.com/" target="_blank">Launch Label Applet →</a>
       </div>
-
       <div class="applet-card live">
         <span class="applet-status status-live">Live</span>
         <div class="applet-icon">📊</div>
@@ -928,7 +927,6 @@
         </ul>
         <a class="applet-link primary" href="https://nutrional.veripura.com/" target="_blank">Launch Nutritional Applet →</a>
       </div>
-
       <div class="applet-card soon">
         <span class="applet-status status-dev">In Development</span>
         <div class="applet-icon">🔄</div>
@@ -942,7 +940,6 @@
         </ul>
         <a class="applet-link secondary" href="#contact">Get Early Access →</a>
       </div>
-
     </div>
   </div>
 </section>
@@ -991,7 +988,24 @@
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
     <a href="https://medium.com/@info_73854/veripura-whitepaper-8f08c1bb7e2c">Whitepaper</a>
-    <a href="https://x.com/VeriPura">X</a>
+  </div>
+  <div class="footer-social">
+    <!-- X / Twitter -->
+    <a href="https://x.com/VeriPura" target="_blank" rel="noopener" aria-label="X">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/company/veripura/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <!-- Telegram -->
+    <a href="https://t.me/VeriPura" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+    </a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/veri.pura/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </a>
   </div>
 </footer>
 
@@ -1005,13 +1019,11 @@ function showPersona(id, btn) {
 </script>
 
 <style>
-  /* ── WIDGET SHELL ── */
+  /* ── ASK THE FOUNDERS WIDGET ── */
   #vera-launcher {
     position: fixed; bottom: 28px; right: 28px; z-index: 9999;
     display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
   }
-
-  /* Pulse ring behind FAB */
   #vera-fab {
     width: auto; height: 52px; border-radius: 26px;
     background: linear-gradient(135deg, #D4A847 0%, #e8c060 100%);
@@ -1038,8 +1050,6 @@ function showPersona(id, btn) {
     color: #0F2444; letter-spacing: 0.02em;
     pointer-events: none; white-space: nowrap;
   }
-
-  /* Tooltip */
   #vera-tooltip {
     background: #0F2444; color: #D6E4F0;
     font-family: 'DM Sans', system-ui, sans-serif;
@@ -1051,8 +1061,6 @@ function showPersona(id, btn) {
   }
   #vera-fab:hover + #vera-tooltip,
   #vera-launcher:hover #vera-tooltip { opacity: 1; }
-
-  /* ── CHAT PANEL ── */
   #vera-panel {
     position: fixed; bottom: 100px; right: 28px; z-index: 9998;
     width: 360px; max-height: 560px;
@@ -1068,44 +1076,38 @@ function showPersona(id, btn) {
   #vera-panel.open {
     transform: translateY(0) scale(1); opacity: 1; pointer-events: all;
   }
-
-  /* Header */
   #vera-header {
     background: linear-gradient(135deg, #1F3864 0%, #0F2444 100%);
-    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px; display: flex; align-items: center; gap: 12px;
     border-bottom: 1px solid rgba(214,228,240,0.1);
     flex-shrink: 0;
   }
-  #vera-avatar {
-    width: 38px; height: 38px; border-radius: 50%;
-    background: linear-gradient(135deg, #D4A847, #e8c060);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1rem; color: #0F2444; font-weight: 700;
-    flex-shrink: 0; position: relative;
+  #vera-founder-avatars {
+    display: flex; flex-shrink: 0; position: relative; width: 56px; height: 36px;
   }
-  #vera-avatar::after {
-    content: ''; position: absolute; bottom: 1px; right: 1px;
-    width: 9px; height: 9px; border-radius: 50%;
-    background: #3ab86a; border: 2px solid #0F2444;
+  #vera-founder-avatars img {
+    width: 36px; height: 36px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 2px solid #0F2444;
+    position: absolute; top: 0;
   }
+  #avatar-onno { left: 0; z-index: 2; }
+  #avatar-thomas { left: 20px; z-index: 1; }
   #vera-header-text { flex: 1; }
   #vera-name {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 0.95rem; color: #FFFFFF; line-height: 1.2;
+    font-size: 0.9rem; color: #FFFFFF; line-height: 1.2;
   }
   #vera-status {
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
-    color: #3ab86a;
+    font-size: 0.58rem; letter-spacing: 0.08em;
+    color: rgba(214,228,240,0.6); margin-top: 2px;
   }
   #vera-close {
     background: none; border: none; cursor: pointer; padding: 4px;
     color: rgba(214,228,240,0.5); transition: color 0.2s; line-height: 1;
   }
   #vera-close:hover { color: #D6E4F0; }
-
-  /* Messages */
   #vera-messages {
     flex: 1; overflow-y: auto; padding: 16px 16px 8px;
     display: flex; flex-direction: column; gap: 10px;
@@ -1113,7 +1115,6 @@ function showPersona(id, btn) {
   }
   #vera-messages::-webkit-scrollbar { width: 4px; }
   #vera-messages::-webkit-scrollbar-thumb { background: rgba(214,228,240,0.15); border-radius: 2px; }
-
   .vera-msg {
     max-width: 88%; line-height: 1.55; animation: vera-msgIn 0.22s ease;
   }
@@ -1123,7 +1124,6 @@ function showPersona(id, btn) {
   }
   .vera-msg.vera { align-self: flex-start; }
   .vera-msg.user { align-self: flex-end; }
-
   .vera-msg.vera .vera-bubble {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(214,228,240,0.12);
@@ -1133,7 +1133,10 @@ function showPersona(id, btn) {
     font-family: 'DM Sans', system-ui, sans-serif;
     font-size: 0.84rem;
   }
-  .vera-msg.user .vera-bubble {
+  .vera-msg.vera .vera-bubble a {
+    color: #D4A847; text-decoration: underline; word-break: break-all;
+  }
+  .vera-msg.vera .vera-bubble a:hover { color: #e0b84e; }
     background: #D4A847; color: #0F2444;
     border-radius: 14px 14px 4px 14px;
     padding: 10px 14px;
@@ -1142,12 +1145,23 @@ function showPersona(id, btn) {
   }
   .vera-sender {
     font-family: 'DM Mono', monospace;
-    font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+    font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase;
     color: rgba(214,228,240,0.4); margin-bottom: 4px;
   }
   .vera-msg.user .vera-sender { text-align: right; }
-
-  /* Quick replies */
+  .vera-msg.vera .vera-sender {
+    display: flex; align-items: center; gap: 7px; color: #FFFFFF;
+  }
+  .vera-msg.vera .vera-sender img {
+    width: 22px; height: 22px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 1px solid rgba(212,168,71,0.35);
+    flex-shrink: 0;
+  }
+  .vera-msg.vera .vera-sender span {
+    font-size: 0.6rem; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.85);
+  }
   #vera-quick-replies {
     padding: 8px 16px; display: flex; flex-wrap: wrap; gap: 6px;
     flex-shrink: 0;
@@ -1163,8 +1177,6 @@ function showPersona(id, btn) {
     white-space: nowrap;
   }
   .vera-qr:hover { background: rgba(212,168,71,0.12); border-color: #D4A847; }
-
-  /* Input */
   #vera-input-row {
     padding: 10px 14px 14px; display: flex; gap: 8px; align-items: center;
     border-top: 1px solid rgba(214,228,240,0.08); flex-shrink: 0;
@@ -1187,8 +1199,25 @@ function showPersona(id, btn) {
   }
   #vera-send:hover { background: #e0b84e; transform: scale(1.05); }
   #vera-send svg { width: 15px; height: 15px; color: #0F2444; }
-
-  /* Typing indicator */
+  #vera-mic {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(214,228,240,0.15);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  #vera-mic svg { width: 15px; height: 15px; color: rgba(214,228,240,0.6); transition: color 0.2s; }
+  #vera-mic:hover { background: rgba(255,255,255,0.12); border-color: rgba(214,228,240,0.3); }
+  #vera-mic:hover svg { color: #D6E4F0; }
+  #vera-mic.listening {
+    background: rgba(212,168,71,0.15); border-color: #D4A847;
+    animation: mic-pulse 1.2s ease-in-out infinite;
+  }
+  #vera-mic.listening svg { color: #D4A847; }
+  @keyframes mic-pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(212,168,71,0.4); }
+    50%      { box-shadow: 0 0 0 6px rgba(212,168,71,0); }
+  }
   .vera-typing .vera-bubble {
     display: flex; gap: 4px; align-items: center; padding: 12px 16px !important;
   }
@@ -1203,8 +1232,6 @@ function showPersona(id, btn) {
     0%,60%,100% { transform: translateY(0); opacity: 0.4; }
     30%          { transform: translateY(-5px); opacity: 1; }
   }
-
-  /* CTA block */
   .vera-cta-block {
     background: rgba(212,168,71,0.1);
     border: 1px solid rgba(212,168,71,0.3);
@@ -1231,20 +1258,24 @@ function showPersona(id, btn) {
 
 <!-- Widget HTML -->
 <div id="vera-launcher">
-  <button id="vera-fab" aria-label="Chat with Vera"><span id="vera-fab-label">Talk to Vera</span>
+  <button id="vera-fab" aria-label="Ask the Founders">
+    <span id="vera-fab-label">Ask the Founders</span>
     <svg viewBox="0 0 24 24" fill="none" stroke="#0F2444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
     </svg>
   </button>
-  <div id="vera-tooltip">Talk to Vera</div>
+  <div id="vera-tooltip">Ask the Founders</div>
 </div>
 
-<div id="vera-panel" role="dialog" aria-label="Chat with Vera">
+<div id="vera-panel" role="dialog" aria-label="Ask the Founders">
   <div id="vera-header">
-    <div id="vera-avatar">V</div>
+    <div id="vera-founder-avatars">
+      <img src="Onno_no_BG.jpeg" alt="Onno Stienen" id="avatar-onno">
+      <img src="Thomas_no_BG.png" alt="Thomas Oberlin" id="avatar-thomas">
+    </div>
     <div id="vera-header-text">
-      <div id="vera-name">Vera — VeriPura</div>
-      <div id="vera-status">● Online</div>
+      <div id="vera-name">VeriPura · Ask the Founders</div>
+      <div id="vera-status">Automated assistant · Onno &amp; Thomas answer</div>
     </div>
     <button id="vera-close" aria-label="Close chat">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -1254,6 +1285,12 @@ function showPersona(id, btn) {
   <div id="vera-quick-replies"></div>
   <div id="vera-input-row">
     <textarea id="vera-input" placeholder="Type a message…" rows="1"></textarea>
+    <button id="vera-mic" aria-label="Speak">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="2" width="6" height="11" rx="3"/>
+        <path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/>
+      </svg>
+    </button>
     <button id="vera-send" aria-label="Send">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
@@ -1262,77 +1299,71 @@ function showPersona(id, btn) {
 
 <script>
 (function() {
-  // ── CONFIG ──────────────────────────────────────
-  const feedContext = window.veraFeedContext ? '\n\nLIVE WTO INTELLIGENCE (from today\'s feed — you may reference these naturally in conversation if relevant):\n' + window.veraFeedContext : '';
-  const SYSTEM_PROMPT = `You are Vera, a qualification assistant for VeriPura — an AI-powered food import compliance platform. You are embedded as a floating chat widget on the VeriPura website.
+  const SYSTEM_PROMPT = `You are an automated assistant representing VeriPura's two co-founders: Onno Stienen (CEO, compliance & technology) and Thomas Oberlin (COO, commercial & investor relations). You speak on their behalf in a website chat widget.
 
-Your purpose is to qualify visitors by understanding who they are and what they need, then route them to the right next step. You are warm, precise, and professional — never pushy.
+PERSONA ROUTING — topic-based only:
+- AI Onno handles: platform technology, compliance operations, regulatory frameworks, supply chain corridors, importer/forwarder conversations, how the product works
+- AI Thomas handles: commercial questions, GTM, partnerships, freight forwarder channel, investor enquiries, financial projections
 
-VISITOR TYPES you will encounter:
-1. FOOD IMPORTERS — companies importing food into EU or US from high-risk sourcing corridors (Thailand, Vietnam, Brazil, India, Indonesia, Mexico). They struggle with documentation compliance, FDA detentions, EU TRACES rejections.
-2. FREIGHT FORWARDERS / CUSTOMS BROKERS / CARRIERS — logistics companies who handle food shipments and want to offer compliance as a service to their clients.
-3. INVESTORS — people exploring VeriPura as an investment opportunity.
-4. GENERAL / UNKNOWN — journalists, researchers, competitors, or people just exploring.
+FIRST MESSAGE ONLY — begin with exactly: "Onno here —" or "Thomas here —" depending on who is responding. Never repeat this prefix in subsequent messages.
 
-QUALIFICATION FLOW:
-- Start with a warm, brief introduction (2 sentences max). Ask an open question: what brings them to VeriPura today — do not assume their role or destination markets.
-- Listen to their answer and determine their type naturally from context. Do not ask "are you an importer or a forwarder?" — let them tell you in their own words.
-- Keep each message SHORT — 2-4 sentences maximum. One question per message. Never use bullet lists. Conversational tone only.
+HANDOFF — if a topic clearly belongs to the other founder, say exactly one sentence handing off (e.g. "That's one for Thomas —") then give the answer. No partial answers before the handoff sentence.
 
-FOR IMPORTERS, FREIGHT FORWARDERS, SHIPPING COMPANIES and CUSTOMS BROKERS — use a light SPIN selling approach, one question at a time, in natural conversation:
+RESPONSE RULES:
+- Maximum 3 sentences per response
+- ONE question per turn, no exceptions
+- Never use bullet lists unless absolutely essential
+- Never say: "Thanks for your interest", "Feel free to reach out", "Don't hesitate to contact us"
+- Never describe VeriPura as "SaaS"
+- Never say "AI-powered" — use "agentic workflows" instead
+- No specific compliance advice from Onno (surface only, always route to a call)
+- No specific financial or legal advice from Thomas (state as projections, route to call)
+- If asked whether you are an AI or a human: always disclose honestly that this is an automated assistant
 
-  SITUATION (understand their world — open, not binary):
-  - Where are they sourcing from? Let them tell you — do not offer a list of two destinations.
-  - What does their current compliance process look like? Who handles it?
-  - Do not ask about volume and destination in the same message.
+PROSPECT TRACK — Onno leads, light SPIN approach:
+- Situation: understand their sourcing corridors and current compliance process — one open question at a time
+- Problem: surface the friction — have they had shipments held or rejected?
+- Implication: what does it cost them when a shipment is delayed?
+- Need-Payoff: if they could catch documentation errors before departure, what would that be worth?
+- Close (after 4–6 exchanges): "It sounds like this is exactly the kind of problem VeriPura was built for. Would it be useful to speak directly with Onno and Thomas?"
+- Meeting YES: provide https://calendar.app.google/aDWSnVgPhiHtsj4L6 — then STOP
+- Meeting NO: trigger contact CTA, one warm closing sentence, STOP
 
-  PROBLEM (surface the friction — let them name it):
-  - What part of the compliance process causes them the most headaches right now?
-  - Have they had shipments held, rejected, or delayed recently?
-  - Compliance requirements are constantly evolving — how do they keep up with regulatory changes across their sourcing corridors?
+INVESTOR TRACK — Thomas leads, light touch only:
+- Do not deeply qualify investors
+- After 2–3 exchanges offer three paths: a) investors.veripura.com b) calendar link c) contact form
+- If asked specific financial questions, answer briefly, qualify as projections, then route
 
-  IMPLICATION (deepen the cost of inaction — one question):
-  - What happens to their business — or their clients — when a shipment gets held?
-  - How much time does the team spend on documentation review per shipment?
+QUICK REPLY HANDLING:
+- "How does it work?" → Onno answers briefly (agentic workflows, pre-shipment document verification), then asks: "Which part of the import process is causing the most friction for you right now?"
+- "Where does it work?" → Onno: "Nearly anywhere institutional integrity risk is present in the supply chain — which corridors are most relevant for you?"
+- "Become a Partner" → Thomas asks: "Are you looking at a referral partnership, or integrating VeriPura's workflows into your existing importer support offering?"
+- "Tell me about the team" → Brief answer referencing Onno (compliance/technology background) and Thomas (commercial/operations), link to LinkedIn profiles: https://www.linkedin.com/in/onnostienen/ and https://www.linkedin.com/in/thomassoberlin/ — then ask what brought them to VeriPura
 
-  NEED-PAYOFF (let them articulate the value — one question):
-  - If they could catch a documentation problem before the shipment left origin, what would that be worth to them?
-  - What would it mean for their client relationships if they could guarantee compliant documentation every time?
+CTA ROUTING — when ready to route, output ONLY the following JSON on its own line:
+Qualified prospect: {"cta":"prospect","label":"Book a Meeting","url":"https://calendar.app.google/aDWSnVgPhiHtsj4L6","secondary":"See How It Works","secondary_url":"#workflow"}
+Partner: {"cta":"partner","label":"Apply to Partner","url":"partners.html#partner-form","secondary":"Read the Programme","secondary_url":"partners.html"}
+Investor: {"cta":"investor","label":"Visit Investor Microsite","url":"https://investors.veripura.com","secondary":"Schedule a Call","secondary_url":"https://calendar.app.google/aDWSnVgPhiHtsj4L6"}
+General: {"cta":"general","label":"Explore VeriPura","url":"#workflow","secondary":"Contact Us","secondary_url":"#contact"}
 
-  CLOSE — after 4–6 natural exchanges, when the problem and implication are clear, move toward the meeting:
-  - Do not ask "would you like a demo?" — instead say something like: "It sounds like this is exactly the kind of problem VeriPura was built for. The best next step would be a short call with our team — they can show you how it works against your actual corridors and document types. Would that be useful?"
+Do not output the CTA JSON until at least 2 qualifying exchanges have taken place.
 
-FOR INVESTORS:
-- Ask open questions about their focus area and what drew them to VeriPura.
-- After 2–3 exchanges offer the investor pack and suggest a call.
-
-FOR GENERAL / UNKNOWN:
-- Be helpful and informative. Route to relevant sections of the site. Offer contact if appropriate.
-
-CTA ROUTING — when you are ready to route, output ONLY the following JSON on its own line (the UI will intercept it):
-For qualified importer: {"cta":"importer","label":"Book a Demo","url":"https://calendar.app.google/aDWSnVgPhiHtsj4L6","secondary":"See How It Works","secondary_url":"#workflow"}
-For qualified partner: {"cta":"partner","label":"Apply to Partner","url":"partners.html#partner-form","secondary":"Read the Programme","secondary_url":"partners.html"}
-For investor: {"cta":"investor","label":"Request Investor Pack","url":"#contact","secondary":"View Whitepaper","secondary_url":"https://medium.com/@info_73854/veripura-whitepaper-8f08c1bb7e2c"}
-For unqualified/unknown: {"cta":"general","label":"Explore VeriPura","url":"#workflow","secondary":"Contact Us","secondary_url":"#contact"}
-
-RULES:
-- Never claim VeriPura is "SaaS"
-- Never invent statistics — refer only to FDA $30K–$50K detention costs, 39% documentation failure rate, 14,000+ EU refusals in 2024, 14-day contamination trace average
-- Never mention competitor products by name
-- If someone is rude or clearly not a prospect, politely wish them well and close
-- Do not output the JSON until you have asked at least 2 qualifying questions
-
-IDENTITY & TRANSPARENCY:
-- You are Vera, an AI assistant built on Claude and deployed by VeriPura. You are not a human.
-- If anyone asks whether you are a human or an AI, always answer honestly and clearly: you are an AI assistant named Vera.
-- You have been trained with detailed knowledge of VeriPura's platform, roadmap, and compliance intelligence — drawn from VeriPura's internal development conversations and product documentation — so your knowledge of VeriPura reflects the latest state of the platform, not just what appears on the website.
-- You may describe yourself as VeriPura's AI compliance guide — knowledgeable, current, and here to help visitors find the right next step.`;
+VERIFIED DATA ONLY — never invent statistics. Permitted references:
+- FDA detention costs: $30K–$50K per incident
+- EU refusals: 14,000+ in 2024
+- Documentation failure rate: 39%
+- Contamination trace average: 14 days
+- FSMA 204 full enforcement: July 2028
+- EUDR applies to EU/EEA only — NOT the UK
+- UK FRCR: not yet in force
+- EU-Mercosur: provisionally applying February 2026
+- Patent: https://patents.google.com/patent/US8947879B2/en
+- Financial projections (if asked, always qualify as projections): Y1 €208K, Y5 €33.2M, EBITDA+ Y4, CAGR 255%, LTV:CAC 135×, CAC payback 2.1 months, SAFE €750K / €3.75M cap / 20% discount / minimum €25K`;
 
   const history = [];
   let isOpen = false;
   let isTyping = false;
 
-  // ── DOM ─────────────────────────────────────────
   const fab      = document.getElementById('vera-fab');
   const panel    = document.getElementById('vera-panel');
   const closeBtn = document.getElementById('vera-close');
@@ -1341,7 +1372,6 @@ IDENTITY & TRANSPARENCY:
   const input    = document.getElementById('vera-input');
   const sendBtn  = document.getElementById('vera-send');
 
-  // ── TOGGLE ──────────────────────────────────────
   function openPanel() {
     isOpen = true;
     panel.classList.add('open');
@@ -1357,19 +1387,34 @@ IDENTITY & TRANSPARENCY:
   fab.addEventListener('click', openPanel);
   closeBtn.addEventListener('click', closePanel);
 
-  // ── MESSAGES ────────────────────────────────────
-  function addMessage(role, text) {
+  function linkify(text) {
+    return text.replace(/(https?:\/\/[^\s<>"']+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+  }
+
+  function addMessage(role, text, persona) {
     const wrap = document.createElement('div');
     wrap.className = `vera-msg ${role === 'assistant' ? 'vera' : 'user'}`;
-
     const sender = document.createElement('div');
     sender.className = 'vera-sender';
-    sender.textContent = role === 'assistant' ? 'Vera' : 'You';
-
+    if (role === 'assistant') {
+      const isThomas = persona === 'thomas';
+      const img = document.createElement('img');
+      img.src = isThomas ? 'Thomas_no_BG.png' : 'Onno_no_BG.jpeg';
+      img.alt = isThomas ? 'Thomas Oberlin' : 'Onno Stienen';
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = isThomas ? 'Thomas Oberlin' : 'Onno Stienen';
+      sender.appendChild(img);
+      sender.appendChild(nameSpan);
+    } else {
+      sender.textContent = 'You';
+    }
     const bubble = document.createElement('div');
     bubble.className = 'vera-bubble';
-    bubble.textContent = text;
-
+    if (role === 'assistant') {
+      bubble.innerHTML = linkify(text);
+    } else {
+      bubble.textContent = text;
+    }
     wrap.appendChild(sender);
     wrap.appendChild(bubble);
     messages.appendChild(wrap);
@@ -1381,7 +1426,7 @@ IDENTITY & TRANSPARENCY:
     const wrap = document.createElement('div');
     wrap.className = 'vera-msg vera vera-typing';
     wrap.id = 'vera-typing-indicator';
-    wrap.innerHTML = '<div class="vera-sender">Vera</div><div class="vera-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+    wrap.innerHTML = '<div class="vera-sender"><img src="Onno_no_BG.jpeg" alt=""><span>Onno &amp; Thomas</span></div><div class="vera-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
     messages.appendChild(wrap);
     messages.scrollTop = messages.scrollHeight;
   }
@@ -1393,9 +1438,7 @@ IDENTITY & TRANSPARENCY:
   function showCTA(data) {
     const block = document.createElement('div');
     block.className = 'vera-cta-block';
-    block.innerHTML = `
-      <a href="${data.url}">${data.label}</a>
-      <a href="${data.secondary_url}" class="secondary">${data.secondary}</a>`;
+    block.innerHTML = `<a href="${data.url}">${data.label}</a><a href="${data.secondary_url}" class="secondary">${data.secondary}</a>`;
     const wrap = document.createElement('div');
     wrap.className = 'vera-msg vera';
     wrap.appendChild(block);
@@ -1417,12 +1460,10 @@ IDENTITY & TRANSPARENCY:
     });
   }
 
-  // ── API CALL ────────────────────────────────────
   async function callClaude(userMessage) {
     history.push({ role: 'user', content: userMessage });
     isTyping = true;
     showTyping();
-
     try {
       const response = await fetch('https://veripura-chat.tomsoberlin.workers.dev', {
         method: 'POST',
@@ -1430,25 +1471,32 @@ IDENTITY & TRANSPARENCY:
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 1000,
-          system: SYSTEM_PROMPT + feedContext,
+          system: SYSTEM_PROMPT,
           messages: history
         })
       });
-
       const data = await response.json();
       hideTyping();
       isTyping = false;
+      let raw = data.content?.[0]?.text || "I'm having a brief technical issue — please try again in a moment.";
 
-      const raw = data.content?.[0]?.text || "I'm having a brief technical issue — please try again in a moment.";
+      // Detect persona from prefix
+      let persona = 'onno';
+      if (/^Thomas here\s*[—\-]/i.test(raw)) {
+        persona = 'thomas';
+        raw = raw.replace(/^Thomas here\s*[—\-]\s*/i, '');
+      } else if (/^Onno here\s*[—\-]/i.test(raw)) {
+        persona = 'onno';
+        raw = raw.replace(/^Onno here\s*[—\-]\s*/i, '');
+      }
 
-      // Check for CTA JSON
       const jsonMatch = raw.match(/\{.*"cta".*\}/s);
       if (jsonMatch) {
         try {
           const ctaData = JSON.parse(jsonMatch[0]);
           const textOnly = raw.replace(jsonMatch[0], '').trim();
           if (textOnly) {
-            addMessage('assistant', textOnly);
+            addMessage('assistant', textOnly, persona);
             history.push({ role: 'assistant', content: textOnly });
           }
           showCTA(ctaData);
@@ -1456,23 +1504,18 @@ IDENTITY & TRANSPARENCY:
           return;
         } catch(e) { /* fall through */ }
       }
-
-      addMessage('assistant', raw);
+      addMessage('assistant', raw, persona);
       history.push({ role: 'assistant', content: raw });
-
-      // Suggest quick replies early in conversation
       if (history.length === 2) {
-        setQuickReplies(["I'm a food importer", "I'm a freight forwarder", "I'm looking to invest", "Just exploring"]);
+        setQuickReplies(['How does it work?', 'Where does it work?', 'Become a Partner', 'Tell me about the team']);
       }
-
     } catch(err) {
       hideTyping();
       isTyping = false;
-      addMessage('assistant', "I'm having a brief technical issue — please try again in a moment.");
+      addMessage('assistant', "I'm having a brief technical issue — please try again in a moment.", 'onno');
     }
   }
 
-  // ── SEND ────────────────────────────────────────
   function sendMessage(text) {
     const msg = (text || input.value).trim();
     if (!msg || isTyping) return;
@@ -1492,11 +1535,58 @@ IDENTITY & TRANSPARENCY:
     this.style.height = Math.min(this.scrollHeight, 90) + 'px';
   });
 
-  // ── START ────────────────────────────────────────
+  // ── SPEECH INPUT ──
+  const micBtn = document.getElementById('vera-mic');
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) {
+    micBtn.style.display = 'none';
+  } else {
+    const recog = new SpeechRecognition();
+    recog.lang = 'en-US';
+    recog.interimResults = false;
+    recog.maxAlternatives = 1;
+    let listening = false;
+
+    micBtn.addEventListener('click', () => {
+      if (listening) {
+        recog.stop();
+        return;
+      }
+      try { recog.start(); } catch(e) { /* already started */ }
+    });
+
+    recog.addEventListener('start', () => {
+      listening = true;
+      micBtn.classList.add('listening');
+      input.placeholder = 'Listening…';
+    });
+
+    recog.addEventListener('result', e => {
+      const transcript = e.results[0][0].transcript.trim();
+      if (transcript) {
+        input.value = transcript;
+        sendMessage(transcript);
+      }
+    });
+
+    recog.addEventListener('end', () => {
+      listening = false;
+      micBtn.classList.remove('listening');
+      input.placeholder = 'Type a message…';
+    });
+
+    recog.addEventListener('error', () => {
+      listening = false;
+      micBtn.classList.remove('listening');
+      input.placeholder = 'Type a message…';
+    });
+  }
+
   function startConversation() {
     callClaude("Hello, I just arrived on the VeriPura website.");
   }
-
 })();
 </script>
 <!-- ── END VERA WIDGET ── -->
+</body>
+</html>
