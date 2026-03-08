@@ -228,12 +228,16 @@
   /* ── WORKFLOW ── */
   .workflow-section { background: var(--white); }
   .workflow-stages { display: flex; margin-top: 48px; border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .stage { flex: 1; min-width: 96px; background: var(--pale); border-right: 1.5px solid var(--border); padding: 22px 14px; text-align: center; transition: background 0.2s; }
+  .stage { flex: 1; min-width: 96px; background: var(--pale); border-right: 1.5px solid var(--border); padding: 22px 14px; text-align: center; transition: background 0.4s ease, border-color 0.4s ease; }
   .stage:last-child { border-right: none; }
   .stage:hover { background: var(--sky); }
   .stage.active { background: var(--navy-mid); }
   .stage.active .stage-num, .stage.active .stage-name { color: var(--gold); }
   .stage.active .stage-sub { color: var(--sky); }
+  .stage.lit { background: var(--navy) !important; border-right-color: rgba(212,168,71,0.2) !important; }
+  .stage.lit .stage-num { color: var(--gold); transition: color 0.4s ease; }
+  .stage.lit .stage-name { color: #FFFFFF; transition: color 0.4s ease; }
+  .stage.lit .stage-sub { color: rgba(214,228,240,0.7); transition: color 0.4s ease; }
   .stage-num { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 8px; }
   .stage-icon { font-size: 1.2rem; margin-bottom: 8px; }
   .stage-name { font-size: 0.7rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
@@ -742,6 +746,7 @@
     <div class="section-eyebrow">Use Cases</div>
     <h2>Real shipments.<br>Real compliance problems solved.</h2>
     <p class="section-lead">See how VeriPura works across the food categories most exposed to documentation failure at EU and US borders.</p>
+    <p style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 10px; letter-spacing: 0.04em;">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
     <div class="usecase-grid">
       <div class="usecase-card">
         <div class="usecase-card-header">
@@ -1436,14 +1441,25 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
   }
 
   function showCTA(data) {
-    const block = document.createElement('div');
-    block.className = 'vera-cta-block';
-    block.innerHTML = `<a href="${data.url}">${data.label}</a><a href="${data.secondary_url}" class="secondary">${data.secondary}</a>`;
     const wrap = document.createElement('div');
     wrap.className = 'vera-msg vera';
+    const block = document.createElement('div');
+    block.className = 'vera-cta-block';
+    const primary = document.createElement('a');
+    primary.href = data.url;
+    primary.textContent = data.label;
+    block.appendChild(primary);
     wrap.appendChild(block);
     messages.appendChild(wrap);
     messages.scrollTop = messages.scrollHeight;
+    setTimeout(() => {
+      const secondary = document.createElement('a');
+      secondary.href = data.secondary_url;
+      secondary.className = 'secondary';
+      secondary.textContent = data.secondary;
+      block.appendChild(secondary);
+      messages.scrollTop = messages.scrollHeight;
+    }, 3000);
   }
 
   function setQuickReplies(options) {
@@ -1581,6 +1597,21 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
       input.placeholder = 'Type a message…';
     });
   }
+
+  // ── WORKFLOW STAGE CASCADE ──
+  (function() {
+    const stages = document.querySelectorAll('.workflow-stages .stage');
+    if (!stages.length) return;
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        stages.forEach((stage, i) => {
+          setTimeout(() => stage.classList.add('lit'), i * 750);
+        });
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+    observer.observe(document.querySelector('.workflow-stages'));
+  })();
 
   function startConversation() {
     callClaude("Hello, I just arrived on the VeriPura website.");
