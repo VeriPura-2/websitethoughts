@@ -1495,6 +1495,8 @@
     </div>
   </div>
 </section>
+
+<section id="team" class="team-section">
   <div class="section-inner">
     <div class="section-eyebrow">The Team</div>
     <h2>Founded by operators<br>who've lived the problem.</h2>
@@ -2690,34 +2692,25 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
     if (list) list.innerHTML = POS.map((po,i)=>dbPO(po,i)).join('');
   })();
   window.runWorkflowAnimation = function runWorkflowAnimation() {
-    const btn = document.getElementById('workflow-run-btn');
-    const label = document.getElementById('workflow-btn-label');
-    const badge = document.getElementById('workflow-iota-badge');
     const stages = document.querySelectorAll('.workflow-stages .stage');
-
-    if (!btn || !label || !badge) return;
+    if (!stages.length) return;
     // Reset
     stages.forEach(s => { s.classList.remove('lit','ledger-complete'); });
-    badge.classList.remove('visible');
-    btn.disabled = true;
-    label.textContent = '▶ Processing…';
-
-    // Light stages 0-7 at 750ms intervals
+    // Light stages at 750ms intervals
     stages.forEach((stage, i) => {
       setTimeout(() => {
         stage.classList.add('lit');
-        // Stage 09 (index 8) — pulse + show badge
         if (i === 8) {
-          setTimeout(() => {
-            stage.classList.add('ledger-complete');
-            badge.classList.add('visible');
-            btn.disabled = false;
-            label.textContent = '↺ Run Again';
-          }, 400);
+          setTimeout(() => { stage.classList.add('ledger-complete'); }, 400);
         }
       }, i * 750);
     });
   }
+
+  // Auto-trigger on load
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(window.runWorkflowAnimation, 600);
+  });
 
   // ── SIMULATION CARD PROGRESS BARS ──
   (function() {
