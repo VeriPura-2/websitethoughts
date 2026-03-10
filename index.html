@@ -156,7 +156,10 @@
   ]
 }
 </script>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('2HhEHDtm361XQsDYI');</script>
 <style>
   :root {
     --navy:      #0F2444;
@@ -186,16 +189,49 @@
     background: var(--navy); padding: 0 3rem;
     position: sticky; top: 0; z-index: 100;
     border-bottom: 2px solid var(--blue);
-    display: flex; align-items: center; justify-content: space-between; height: 56px;
+    display: flex; align-items: center; justify-content: space-between; height: 64px;
   }
-  .nav-logo { font-family: var(--font-serif); font-size: 1.3rem; color: var(--white); letter-spacing: 0.02em; text-decoration: none; }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 1.5rem; align-items: center; list-style: none; }
-  .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+  .nav-logo svg { height: 42px; width: auto; }
+  .nav-links { display: flex; gap: 1.1rem; align-items: center; list-style: none; }
+  .nav-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
   .nav-links a:hover { color: var(--gold); }
   .nav-investor { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(212,168,71,0.75); text-decoration: none; border: 1px solid rgba(212,168,71,0.3); border-radius: 3px; padding: 5px 12px; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
   .nav-investor:hover { color: var(--gold); border-color: rgba(212,168,71,0.7); }
-  .nav-cta { background: var(--gold); color: var(--navy); border: none; border-radius: 4px; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 7px 18px; cursor: pointer; text-decoration: none; transition: background 0.2s; }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .nav-cta::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%);
+    transform: skewX(-20deg);
+    animation: navCtaShimmer 3.5s ease-in-out infinite;
+  }
+  @keyframes navCtaShimmer {
+    0%   { left: -75%; }
+    30%  { left: 125%; }
+    100% { left: 125%; }
+  }
   .nav-cta:hover { background: #e0b84e; }
 
   /* ── TICKER ── */
@@ -206,7 +242,7 @@
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
   /* WTO Intelligence Strip */
-  .wto-strip { background: #162d52; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 7px 0; overflow: hidden; display: flex; align-items: center; }
+  .wto-strip { background: #162d52; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 0; overflow: hidden; display: flex; align-items: center; }
   .wto-label { display: flex; align-items: center; gap: 7px; padding: 0 18px; white-space: nowrap; flex-shrink: 0; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 16px; }
   .wto-pulse { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex-shrink: 0; animation: pulse-dot 2s ease-in-out infinite; }
   .wto-label-text { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #4ade80; font-weight: 600; }
@@ -239,6 +275,8 @@
 
   .btn-primary { background: var(--gold); color: var(--navy); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 26px; border: none; cursor: pointer; text-decoration: none; border-radius: 4px; transition: background 0.2s, transform 0.15s; display: inline-block; }
   .btn-primary:hover { background: #e0b84e; transform: translateY(-1px); }
+  .btn-shimmer { position: relative; overflow: hidden; }
+  .btn-shimmer::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%); transform: skewX(-20deg); animation: navCtaShimmer 3.5s ease-in-out infinite; }
   .btn-secondary { background: transparent; color: var(--white); font-family: var(--font-sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 11px 26px; border: 1.5px solid rgba(255,255,255,0.35); cursor: pointer; text-decoration: none; border-radius: 4px; transition: border-color 0.2s; display: inline-block; }
   .btn-secondary:hover { border-color: var(--white); }
 
@@ -518,7 +556,10 @@
   .persona-tab.active { color: var(--navy); border-bottom-color: var(--gold); }
   .persona-tab:hover:not(.active) { color: var(--blue); }
   .persona-panel { display: none; }
-  .persona-panel.active { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: start; }
+  .persona-panel.active { display: block; }
+  .persona-header { margin-bottom: 28px; }
+  .persona-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+  .persona-lower { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
   .persona-role { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
   .persona-headline { font-family: var(--font-serif); font-size: 1.5rem; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
   .persona-body { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
@@ -697,6 +738,20 @@
   /* ── CONTACT ── */
   .contact-section { background: var(--cream); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+  .contact-pilot-pitch { padding-top: 8px; }
+  .pilot-pitch-slots { display: flex; align-items: center; gap: 0; background: var(--navy); border-radius: 8px; padding: 20px 28px; margin-bottom: 28px; }
+  .pilot-slot-item { flex: 1; text-align: center; }
+  .pilot-slot-num { display: block; font-family: var(--font-serif); font-size: 2.4rem; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+  .pilot-slot-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); }
+  .pilot-slot-divider { width: 1px; height: 48px; background: rgba(212,168,71,0.25); flex-shrink: 0; margin: 0 20px; }
+  .pilot-pitch-lead { font-size: 0.92rem; color: var(--ink); line-height: 1.7; margin-bottom: 24px; }
+  .pilot-pitch-points { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .pilot-pitch-point { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--ink); line-height: 1.6; }
+  .pilot-pitch-icon { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 2px; font-weight: 700; }
+  .pilot-pitch-calendar { padding-top: 20px; border-top: 1px solid var(--border); }
+  .pilot-pitch-cal-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 6px; }
+  .pilot-pitch-cal-link { font-size: 0.88rem; color: var(--blue); text-decoration: none; font-weight: 500; }
+  .pilot-pitch-cal-link:hover { text-decoration: underline; }
   .contact-form { display: flex; flex-direction: column; gap: 14px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .form-field { display: flex; flex-direction: column; gap: 5px; }
@@ -777,7 +832,9 @@
     .stage { min-width: 110px; flex-shrink: 0; }
 
     /* Persona */
-    .persona-panel.active { grid-template-columns: 1fr; gap: 28px; }
+    .persona-panel.active { display: block; }
+    .persona-metrics { grid-template-columns: repeat(2, 1fr); }
+    .persona-lower { grid-template-columns: 1fr; gap: 24px; }
     .persona-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; white-space: nowrap; }
     .persona-tab { flex-shrink: 0; }
 
@@ -799,6 +856,7 @@
     /* Contact */
     .contact-grid { grid-template-columns: 1fr; gap: 36px; }
     .form-row { grid-template-columns: 1fr; }
+    .pilot-pitch-slots { padding: 16px 20px; }
 
     /* Dashboard */
     .db-importer-header { flex-direction: column; align-items: flex-start; }
@@ -837,7 +895,7 @@
     .cpi-grid { grid-template-columns: repeat(2, 1fr); }
 
     /* Persona metrics */
-    .persona-metrics { grid-template-columns: 1fr; }
+    .persona-metrics { grid-template-columns: repeat(2, 1fr); }
 
     /* Dashboard importer stats */
     .db-importer-stats { display: grid; grid-template-columns: 1fr 1fr; }
@@ -847,11 +905,17 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="#home">VERI<span>PURA</span></a>
+  <!-- NAV LOGO: icon SVG + styled text. To revert to text only: <a class="nav-logo-text" href="#home">VERI<span>PURA</span></a> -->
+  <a class="nav-logo" href="#home" aria-label="VeriPura" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -5 560 360" style="height:30px;width:auto;flex-shrink:0;" aria-hidden="true">
+      <path fill="#ffffff" d="M525.67,0c-33.17,69.88-142.59,88.12-171.88,97.65-29.29,9.53-103.41,37.41-110.82,100.87-7.42,63.45,27.16,109.45,27.16,109.45,14.91-2.43,28.95-5.53,42.17-9.21l-16.01-40.86s-21.88-47.53,6.18-78.77c0,0,25.23-32.11,66.88-18.88,0,0,11.7,5.19,16.82,8.81,0,0,6.18,4.63.84,8.43-5.34,3.79-10.82-.34-12.85-2.02-2.03-1.68-6.77-6.35-22.93-6.54-16.94-.2-49.19,12.19-50.25,49.01,0,0-1.29,13.3,12.59,41.41,9.37,18.97,13.96,29.38,15.96,34.14,166.17-55.46,191.49-204.43,191.49-204.43,0,0,3.42,55.76-32.82,112.71-36.23,56.94-103.06,112.94-233.41,131.76-130.35,18.82-242.06-10-242.06-10,74.35,33.88,206.12,61.18,326.59,30.12,120.47-31.06,179.76-99.3,201.41-191.06,21.65-91.77-15.06-162.59-15.06-162.59ZM392.83,245.41c-13.68,15.31-27.04,21.59-53.72,26.14-1.52.26-3.02-.53-3.66-1.93l-18.94-41.41s-3-5.29-2.38-9.57c.14-.93.97-1.59,1.91-1.58,2.17.02,5.77.59,10.6,7.95,0,0,3.07,5.33,13.86,29.27.67,1.49,2.17,2.43,3.81,2.4,6.69-.15,24.44-2.21,39.97-18.5,0,0,9.21-8.82,9.17-24.57,0-1.66.76-3.23,2.1-4.21l5.24-3.84c.84-.62,2.02-.09,2.13.94.67,6.6,1.47,25.98-10.09,38.91ZM407.01,186.38c-4.06,4.32-41.47,40.41-41.47,40.41l-6.89,6.53s-4.24,4.61-7.64,1l-5.01-4.64-17.56-17.55s-5.74-5.39-.89-11.47c0,0,3.62-6.08,13.33,4.63l10.19,10.56s2.96,3.53,6.22-.49l41.07-38.87s3.18-3.7,6.8,0c3.62,3.71,3.88,4.24,3.88,4.24,0,0,2.03,1.32-2.03,5.65Z"/>
+    </svg>
+    <span style="font-family:var(--font-serif);font-size:1.25rem;letter-spacing:0.02em;line-height:1;"><span style="color:#ffffff;">Veri</span><span style="color:#D4A847;">Pura</span></span>
+  </a>
   <ul class="nav-links">
-    <li><a href="#problem">The Risks</a></li>
+    <li><a href="#problem">Risks</a></li>
     <li><a href="#workflow">How It Works</a></li>
-    <li><a href="#personas">Who It's For</a></li>
+    <li><a href="#personas">For Whom</a></li>
     <li><a href="#use-cases">Use Cases</a></li>
     <li><a href="#technology">Technology</a></li>
     <li><a href="#applets">Test Drive</a></li>
@@ -865,9 +929,9 @@
   </button>
 </nav>
 <ul class="nav-mobile-menu" id="nav-mobile-menu">
-  <li><a href="#problem" class="nav-mobile-link">The Risks</a></li>
+  <li><a href="#problem" class="nav-mobile-link">Risks</a></li>
   <li><a href="#workflow" class="nav-mobile-link">How It Works</a></li>
-  <li><a href="#personas" class="nav-mobile-link">Who It's For</a></li>
+  <li><a href="#personas" class="nav-mobile-link">For Whom</a></li>
   <li><a href="#use-cases" class="nav-mobile-link">Use Cases</a></li>
   <li><a href="#technology" class="nav-mobile-link">Technology</a></li>
   <li><a href="#applets" class="nav-mobile-link">Test Drive</a></li>
@@ -877,48 +941,12 @@
   <li><a href="#contact" class="nav-cta nav-mobile-link">Apply for a Pilot Slot</a></li>
 </ul>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">14,000+ food shipments refused EU entry in 2024 — TRACES Annual Report</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">39% of import refusals are documentation failures</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">EUDR enforcement now 30 December 2026 for large operators — preparation window is now</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO SPS Committee reviewed a record 71 food trade concerns in November 2025</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">30+ documents required per food import shipment into Europe, the US or UK</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FSMA Rule 204 traceability requirements now in effect — high-risk food importers must comply</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">EU Commission simplification review of EUDR due 30 April 2026 — scope may expand</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO developing new digital import control standards — IT-based facility registration under discussion</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">China notified 11 new food safety standards to WTO, August 2025 — MRL and contaminant limits revised</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO SPS Transparency Working Group launched November 2025 — new notification obligations being shaped</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">Record SPS notifications from developing economies in 2024 — 75% of all WTO SPS filings</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Now selecting founding pilot participants · 5 importer slots · 2 partner slots</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Founding terms locked for life · Benefits not available to later clients</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Apply for a founding pilot slot · Speak directly with Onno &amp; Thomas</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">14,000+ food shipments refused EU entry in 2024 — TRACES Annual Report</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">39% of import refusals are documentation failures</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">EUDR enforcement now 30 December 2026 for large operators — preparation window is now</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FDA detentions avg. $30K–$50K per incident</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO SPS Committee reviewed a record 71 food trade concerns in November 2025</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">30+ documents required per food import shipment into Europe, the US or UK</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FSMA Rule 204 traceability requirements now in effect — high-risk food importers must comply</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">FDA: detained shipments held "from a few hours to several weeks" — every day costs money</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">EU Commission simplification review of EUDR due 30 April 2026 — scope may expand</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO developing new digital import control standards — IT-based facility registration under discussion</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">China notified 11 new food safety standards to WTO, August 2025 — MRL and contaminant limits revised</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">WTO SPS Transparency Working Group launched November 2025 — new notification obligations being shaped</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item">Record SPS notifications from developing economies in 2024 — 75% of all WTO SPS filings</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Now selecting founding pilot participants · 5 importer slots · 2 partner slots</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Founding terms locked for life · Benefits not available to later clients</span><span class="ticker-item ticker-sep">·</span>
-    <span class="ticker-item" style="color: var(--gold)">Apply for a founding pilot slot · Speak directly with Onno &amp; Thomas</span><span class="ticker-item ticker-sep">·</span>
-  </div>
-</div>
 
 <!-- WTO Intelligence Strip -->
 <div class="wto-strip" id="wtoStrip">
   <div class="wto-label">
     <div class="wto-pulse"></div>
-    <span class="wto-label-text">WTO Intelligence</span>
+    <span class="wto-label-text">Latest News</span>
   </div>
   <div class="wto-track-wrap">
     <div class="wto-track" id="wtoTrack">
@@ -1027,7 +1055,7 @@
     <h1>Import compliance<br>shouldn't cost you<br><em>a shipment.</em></h1>
     <p class="hero-sub">VeriPura helps food importers, freight forwarders, and carriers validate compliance documentation before a single container moves — eliminating rejections, detentions, and the manual chaos in between.</p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#contact">Apply for a Pilot Slot</a>
+      <a class="btn-primary btn-shimmer" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See How It Works</a>
     </div>
   </div>
@@ -1248,78 +1276,90 @@
       <button class="persona-tab" onclick="showPersona('carrier',this)">Carriers & Brokers</button>
     </div>
     <div class="persona-panel active" id="persona-importer">
-      <div>
+      <div class="persona-header">
         <div class="persona-role">EU & US Food Importer</div>
         <div class="persona-headline">Stop losing shipments to documentation errors you didn't know you had.</div>
         <p class="persona-body">You're sourcing from high-risk corridors — Thailand, Brazil, Nigeria, China, India, Mexico and beyond — where compliance profiles are complex and documentation is multi-language. One wrong field on a health certificate means your container sits at the border while you watch your margin evaporate.</p>
-        <ul class="pain-list">
-          <li>Validate all import documents before departure, not at the border</li>
-          <li>Automatic checks against European, US and UK import requirements — including EU 2017/625, FDA FSMA, and UK FRCR — with additional frameworks available on request</li>
-          <li>Real-time risk scoring by sourcing corridor and product category</li>
-          <li>Immutable compliance records for audits and buyer due diligence</li>
-        </ul>
-        <div class="pilot-callout">
-          <div class="pilot-callout-slots">5 importer slots remaining</div>
-          <p>We are deliberately selective to start. Founding participants help shape the product, lock founding terms, and receive benefits not available to later clients. What those benefits are is a conversation.</p>
-          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
-        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">14 days</div><div class="label">Avg. to identify food contamination source without traceability</div></div>
         <div class="metric-box"><div class="num">Minutes</div><div class="label">vs. hours for full compliance review</div></div>
         <div class="metric-box"><div class="num">9-stage</div><div class="label">Structured workflow, not a black box</div></div>
         <div class="metric-box"><div class="num">IOTA</div><div class="label">Blockchain-anchored tamperproof audit trail</div></div>
-        <div class="corridor-box"><div class="corridor-label">Regulatory Frameworks Covered</div><div class="corridor-tags"><span class="corridor-tag">EU 2017/625</span><span class="corridor-tag">FDA FSMA</span><span class="corridor-tag">EUDR</span><span class="corridor-tag">TRACES NT</span><span class="corridor-tag">UK FRCR</span><span class="corridor-tag">FSMA 204</span></div></div>
+      </div>
+      <div class="persona-lower">
+        <ul class="pain-list">
+          <li>Validate all import documents before departure, not at the border</li>
+          <li>Automatic checks against European, US and UK import requirements — including EU 2017/625, FDA FSMA, and UK FRCR — with additional frameworks available on request</li>
+          <li>Real-time risk scoring by sourcing corridor and product category</li>
+          <li>Immutable compliance records for audits and buyer due diligence</li>
+        </ul>
+        <div>
+          <div class="corridor-box" style="margin-bottom:16px;"><div class="corridor-label">Regulatory Frameworks Covered</div><div class="corridor-tags"><span class="corridor-tag">EU 2017/625</span><span class="corridor-tag">FDA FSMA</span><span class="corridor-tag">EUDR</span><span class="corridor-tag">TRACES NT</span><span class="corridor-tag">UK FRCR</span><span class="corridor-tag">FSMA 204</span></div></div>
+          <div class="pilot-callout">
+            <div class="pilot-callout-slots">5 importer slots remaining</div>
+            <p>We are deliberately selective to start. Founding participants help shape the product, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later clients. What that looks like is a conversation.</p>
+            <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="persona-panel" id="persona-forwarder">
-      <div>
+      <div class="persona-header">
         <div class="persona-role">Freight Forwarder</div>
         <div class="persona-headline">Your clients hold you accountable for compliance. Now you have a tool that matches that responsibility.</div>
         <p class="persona-body">As a forwarder, you're managing documentation for dozens of shipments simultaneously across multiple origins, product types, and regulatory regimes. A compliance failure isn't just your client's problem — it's your reputation, your renewal, and your next contract.</p>
-        <ul class="pain-list">
-          <li>Batch-process compliance checks across multiple active shipments</li>
-          <li>Instant flag on expiry dates, missing signatures, authority mismatches</li>
-          <li>Client-facing compliance reports generated automatically</li>
-          <li>API integration with your existing TMS or document management system</li>
-        </ul>
-        <div class="pilot-callout">
-          <div class="pilot-callout-slots">2 partner slots remaining</div>
-          <p>Founding partners help shape the channel programme, lock founding terms, and receive benefits not available to later partners. What those benefits are is a conversation.</p>
-          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
-        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">Batch</div><div class="label">Multi-shipment processing in one workflow</div></div>
         <div class="metric-box"><div class="num">API</div><div class="label">Connects to your existing systems</div></div>
         <div class="metric-box"><div class="num">Auto</div><div class="label">Client compliance reports, zero manual prep</div></div>
         <div class="metric-box"><div class="num">24/7</div><div class="label">Always-on verification, no staff bottleneck</div></div>
-        <div class="corridor-box"><div class="corridor-label">Frameworks Supported</div><div class="corridor-tags"><span class="corridor-tag">EU 2017/625</span><span class="corridor-tag">FDA FSMA</span><span class="corridor-tag">EUDR</span><span class="corridor-tag">TRACES NT</span><span class="corridor-tag">UK FRCR</span><span class="corridor-tag">FSMA 204</span><span class="corridor-tag">Additional on request</span></div></div>
+      </div>
+      <div class="persona-lower">
+        <ul class="pain-list">
+          <li>Batch-process compliance checks across multiple active shipments</li>
+          <li>Instant flag on expiry dates, missing signatures, authority mismatches</li>
+          <li>Client-facing compliance reports generated automatically</li>
+          <li>API integration with your existing TMS or document management system</li>
+        </ul>
+        <div>
+          <div class="corridor-box" style="margin-bottom:16px;"><div class="corridor-label">Frameworks Supported</div><div class="corridor-tags"><span class="corridor-tag">EU 2017/625</span><span class="corridor-tag">FDA FSMA</span><span class="corridor-tag">EUDR</span><span class="corridor-tag">TRACES NT</span><span class="corridor-tag">UK FRCR</span><span class="corridor-tag">FSMA 204</span><span class="corridor-tag">Additional on request</span></div></div>
+          <div class="pilot-callout">
+            <div class="pilot-callout-slots">2 partner slots remaining</div>
+            <p>Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later partners. What that looks like is a conversation.</p>
+            <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="persona-panel" id="persona-carrier">
-      <div>
+      <div class="persona-header">
         <div class="persona-role">Carrier & Customs Broker</div>
         <div class="persona-headline">Reduce port delays and protect your throughput with pre-arrival compliance intelligence.</div>
         <p class="persona-body">Port delays and customs holds cost you in ways that compound: demurrage, repositioning costs, schedule disruption, and client attrition. VeriPura flags compliance issues before the vessel departs — giving you time to fix problems before the shipment is ever at sea.</p>
-        <ul class="pain-list">
-          <li>Pre-arrival compliance scoring for all food cargo manifests</li>
-          <li>Instant identification of shipments at risk of customs hold</li>
-          <li>Immutable chain of custody for liability protection</li>
-          <li>Structured remediation guidance — not just flags, but fixes</li>
-        </ul>
-        <div class="pilot-callout">
-          <div class="pilot-callout-slots">2 partner slots remaining</div>
-          <p>Founding partners help shape the channel programme, lock founding terms, and receive benefits not available to later partners. What those benefits are is a conversation.</p>
-          <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
-        </div>
       </div>
       <div class="persona-metrics">
         <div class="metric-box"><div class="num">Pre-</div><div class="label">Arrival compliance review before port</div></div>
         <div class="metric-box"><div class="num">–$50K</div><div class="label">Per-incident detention cost avoided</div></div>
         <div class="metric-box"><div class="num">Chain</div><div class="label">Immutable custody for liability protection</div></div>
         <div class="metric-box"><div class="num">Fix</div><div class="label">Remediation guidance, not just red flags</div></div>
-        <div class="corridor-box"><div class="corridor-label">Entry Points</div><div class="corridor-tags"><span class="corridor-tag">Rotterdam</span><span class="corridor-tag">Hamburg</span><span class="corridor-tag">Antwerp</span><span class="corridor-tag">Los Angeles</span><span class="corridor-tag">New York</span><span class="corridor-tag">Miami</span></div></div>
+      </div>
+      <div class="persona-lower">
+        <ul class="pain-list">
+          <li>Pre-arrival compliance scoring for all food cargo manifests</li>
+          <li>Instant identification of shipments at risk of customs hold</li>
+          <li>Immutable chain of custody for liability protection</li>
+          <li>Structured remediation guidance — not just flags, but fixes</li>
+        </ul>
+        <div>
+          <div class="corridor-box" style="margin-bottom:16px;"><div class="corridor-label">Entry Points</div><div class="corridor-tags"><span class="corridor-tag">Rotterdam</span><span class="corridor-tag">Hamburg</span><span class="corridor-tag">Antwerp</span><span class="corridor-tag">Los Angeles</span><span class="corridor-tag">New York</span><span class="corridor-tag">Miami</span></div></div>
+          <div class="pilot-callout">
+            <div class="pilot-callout-slots">2 partner slots remaining</div>
+            <p>Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later partners. What that looks like is a conversation.</p>
+            <a href="#contact" class="pilot-callout-cta">Find Out If You Qualify →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1582,7 +1622,7 @@
     <h2>The most important thing<br>we import is <em>trust.</em></h2>
     <p>We are deliberately selective to start — five importer slots and two partner slots for our founding pilot programme. If you're moving food from high-risk sourcing corridors into Europe, the US, the UK or beyond, tell us what your current compliance process looks like. We'll show you what VeriPura can change — and whether you qualify.</p>
     <div class="cta-actions">
-      <a class="btn-primary" href="#contact">Apply for a Pilot Slot</a>
+      <a class="btn-primary btn-shimmer" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See the Workflow</a>
     </div>
   </div>
@@ -1590,24 +1630,58 @@
 
 <section id="contact" class="contact-section">
   <div class="section-inner">
-    <div class="section-eyebrow">Contact</div>
-    <h2>Let's talk about<br>your shipments.</h2>
+    <div class="section-eyebrow">Apply for a Pilot Slot</div>
+    <h2>Join the founding<br>pilot programme.</h2>
     <div class="contact-grid">
-      <div>
-        <div class="contact-info-item"><div class="ci-label">Email</div><div class="ci-value"><a href="/cdn-cgi/l/email-protection#d7beb9b1b897a1b2a5bea7a2a5b6f9b4b8ba"><span class="__cf_email__" data-cfemail="c3aaada5ac83b5a6b1aab3b6b1a2eda0acae">[email&#160;protected]</span></a></div></div>
-        <div class="contact-info-item"><div class="ci-label">Book a Demo Directly</div><div class="ci-value"><a href="https://calendar.app.google/aDWSnVgPhiHtsj4L6">Schedule via Calendar →</a></div></div>
-        <div class="contact-info-item"><div class="ci-label">Pilot Program</div><div class="ci-note">We are currently accepting a limited number of pilot partners. If you are a food importer or forwarder active in corridors bound for Europe, the US, the UK or beyond — we'd like to hear from you.</div></div>
-      </div>
-      <div class="contact-form">
-        <div class="form-row">
-          <div class="form-field"><label>First Name</label><input type="text" placeholder="Maria"></div>
-          <div class="form-field"><label>Last Name</label><input type="text" placeholder="Kowalski"></div>
+      <div class="contact-pilot-pitch">
+        <div class="pilot-pitch-slots">
+          <div class="pilot-slot-item"><span class="pilot-slot-num">5</span><span class="pilot-slot-label">Importer slots</span></div>
+          <div class="pilot-slot-divider"></div>
+          <div class="pilot-slot-item"><span class="pilot-slot-num">2</span><span class="pilot-slot-label">Partner slots</span></div>
         </div>
-        <div class="form-field"><label>Company</label><input type="text" placeholder="Your company name"></div>
-        <div class="form-field"><label>Role</label><select><option value="">Select your role</option><option>Food Importer</option><option>Freight Forwarder</option><option>Customs Broker</option><option>Carrier</option><option>Investor</option><option>Other</option></select></div>
-        <div class="form-field"><label>Email</label><input type="email" placeholder="you@company.com"></div>
-        <div class="form-field"><label>Message</label><textarea placeholder="Tell us about your current compliance process and the corridors you work with..."></textarea></div>
-        <button class="btn-primary" style="align-self:flex-start;">Send Message</button>
+        <p class="pilot-pitch-lead">We are deliberately selective. Founding participants work directly with Onno and Thomas — not an onboarding team — to run a live pilot against their real shipments.</p>
+        <div class="pilot-pitch-points">
+          <div class="pilot-pitch-point">
+            <span class="pilot-pitch-icon">✓</span>
+            <span>The pilot is free. No commitment required to participate.</span>
+          </div>
+          <div class="pilot-pitch-point">
+            <span class="pilot-pitch-icon">✓</span>
+            <span>Founding participants receive preferential pricing when they convert — not available to later clients.</span>
+          </div>
+          <div class="pilot-pitch-point">
+            <span class="pilot-pitch-icon">✓</span>
+            <span>You help shape what VeriPura prioritises — the corridors, frameworks, and document types that matter most to your business.</span>
+          </div>
+          <div class="pilot-pitch-point">
+            <span class="pilot-pitch-icon">✓</span>
+            <span>EUDR enforcement is live. FSMA 204 is in effect. The window to get ahead of this is now.</span>
+          </div>
+        </div>
+        <div class="pilot-pitch-calendar">
+          <span class="pilot-pitch-cal-label">Prefer to talk first?</span>
+          <a href="https://calendar.app.google/aDWSnVgPhiHtsj4L6" target="_blank" rel="noopener" class="pilot-pitch-cal-link">Schedule a call with Onno &amp; Thomas →</a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form" id="pilot-form">
+          <div class="form-row">
+            <div class="form-field"><label for="cf-first">First Name</label><input id="cf-first" type="text" placeholder="Maria"></div>
+            <div class="form-field"><label for="cf-last">Last Name</label><input id="cf-last" type="text" placeholder="Kowalski"></div>
+          </div>
+          <div class="form-field"><label for="cf-company">Company</label><input id="cf-company" type="text" placeholder="Your company name"></div>
+          <div class="form-field"><label for="cf-role">Role</label><select id="cf-role"><option value="">Select your role</option><option>Food Importer</option><option>Freight Forwarder</option><option>Customs Broker</option><option>Carrier</option><option>Investor</option><option>Other</option></select></div>
+          <div class="form-field"><label for="cf-email">Email</label><input id="cf-email" type="email" placeholder="you@company.com"></div>
+          <div class="form-field"><label for="cf-whatsapp">WhatsApp <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted);">(optional)</span></label><input id="cf-whatsapp" type="tel" placeholder="+1 555 000 0000"></div>
+          <div class="form-field"><label for="cf-message">Message</label><textarea id="cf-message" placeholder="Tell us about your current compliance process and the corridors you work with..."></textarea></div>
+          <div id="cf-error" style="display:none;font-family:var(--font-mono);font-size:0.7rem;color:var(--red);padding:8px 0;"></div>
+          <button class="btn-primary" id="cf-submit" style="align-self:flex-start;" onclick="submitPilotForm()">Send Message</button>
+        </div>
+        <div id="pilot-form-success" style="display:none;background:rgba(27,122,74,0.08);border:1.5px solid rgba(27,122,74,0.3);border-radius:10px;padding:32px;text-align:center;">
+          <div style="font-size:2rem;margin-bottom:12px;">✓</div>
+          <div style="font-family:var(--font-serif);font-size:1.2rem;color:var(--navy);margin-bottom:10px;">Message received.</div>
+          <div style="font-size:0.88rem;color:var(--muted);line-height:1.65;">Onno or Thomas will be in touch within one business day. In the meantime, you can <a href="https://calendar.app.google/aDWSnVgPhiHtsj4L6" style="color:var(--blue);">book a call directly</a>.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1967,7 +2041,7 @@ INVESTOR TRACK — Thomas leads, light touch only:
 - If asked specific financial questions, answer briefly, qualify as projections, then route
 
 PILOT PROGRAMME — CRITICAL CONTEXT:
-VeriPura is currently selecting founding pilot participants. There are exactly 5 importer slots and 2 partner slots available. This is deliberate — not a marketing construct. Founding participants help shape the product, lock founding terms, and receive benefits not available to later clients. Never specify what those benefits or terms are — that is for the meeting. When a prospect or partner is qualified, reference the pilot naturally: "We're currently selecting our founding pilot participants — five importer slots and two partner slots. If this sounds like the right fit, the next step is a direct conversation with Onno and Thomas to see if you qualify."
+VeriPura is currently selecting founding pilot participants. There are exactly 5 importer slots and 2 partner slots available. This is deliberate — not a marketing construct. Founding participants help shape the product, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later clients. Never specify the exact pricing terms — that is for the meeting. When a prospect or partner is qualified, reference the pilot naturally: "We're currently selecting our founding pilot participants — five importer slots and two partner slots. If this sounds like the right fit, the next step is a direct conversation with Onno and Thomas to see if you qualify."
 
 FREQUENTLY ASKED QUESTIONS — answer these accurately if asked:
 
@@ -2736,5 +2810,48 @@ VERIFIED DATA ONLY — never invent statistics. Permitted references:
 })();
 </script>
 <!-- ── END VERA WIDGET ── -->
+<script>
+function submitPilotForm() {
+  var first    = document.getElementById('cf-first').value.trim();
+  var last     = document.getElementById('cf-last').value.trim();
+  var company  = document.getElementById('cf-company').value.trim();
+  var role     = document.getElementById('cf-role').value;
+  var email    = document.getElementById('cf-email').value.trim();
+  var whatsapp = document.getElementById('cf-whatsapp').value.trim();
+  var message  = document.getElementById('cf-message').value.trim();
+  var errEl    = document.getElementById('cf-error');
+  var btn      = document.getElementById('cf-submit');
+
+  errEl.style.display = 'none';
+
+  if (!first || !last || !company || !role || !email || !message) {
+    errEl.textContent = 'Please fill in all required fields.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  emailjs.send('service_ax4gndi', 'template_b69cqfj', {
+    first_name: first,
+    last_name:  last,
+    company:    company,
+    role:       role,
+    email:      email,
+    whatsapp:   whatsapp || 'Not provided',
+    message:    message
+  }).then(function() {
+    document.getElementById('pilot-form').style.display = 'none';
+    document.getElementById('pilot-form-success').style.display = 'block';
+  }, function(error) {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+    errEl.textContent = 'Something went wrong — please try again or email us directly.';
+    errEl.style.display = 'block';
+    console.error('EmailJS error:', error);
+  });
+}
+</script>
 </body>
 </html>
