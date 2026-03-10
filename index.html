@@ -31,14 +31,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "WebSite",
+  "@id": "https://veripura.com/#website",
   "name": "VeriPura",
   "url": "https://veripura.com/",
-  "description": "VeriPura verifies food import compliance documentation before shipments move — eliminating FDA detentions, border rejections, and documentation failures across Europe, US, UK and beyond.",
+  "description": "Pre-shipment food import compliance verification for food importers, freight forwarders, carriers, and customs brokers.",
+  "publisher": {
+    "@id": "https://veripura.com/#organization"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://veripura.com/#organization",
+  "name": "VeriPura",
+  "url": "https://veripura.com/",
+  "description": "VeriPura verifies food import compliance documentation before shipments move — eliminating FDA detentions, border rejections, and documentation failures across Europe, the US, the UK, and beyond.",
   "foundingDate": "2024",
-  "areaServed": ["Europe", "United States", "United Kingdom", "Global"],
-  "industry": "Food Import Compliance",
-  "knowsAbout": ["Food import compliance", "FDA FSMA", "EUDR", "EU 2017/625", "TRACES NT", "UK FRCR", "Supply chain risk", "Blockchain attestation", "Import documentation verification"],
+  "areaServed": ["Europe", "United States", "United Kingdom"],
   "sameAs": [
     "https://www.linkedin.com/company/veripura/",
     "https://x.com/VeriPura",
@@ -46,23 +59,8 @@
     "https://www.instagram.com/veri.pura/"
   ],
   "founders": [
-    {
-      "@type": "Person",
-      "name": "Onno Stienen",
-      "jobTitle": "CEO & Co-Founder",
-      "sameAs": "https://www.linkedin.com/in/onnostienen/"
-    },
-    {
-      "@type": "Person",
-      "name": "Thomas Oberlin",
-      "jobTitle": "COO & Co-Founder",
-      "sameAs": "https://www.linkedin.com/in/thomassoberlin/",
-      "subjectOf": {
-        "@type": "CreativeWork",
-        "name": "US Patent 8,947,879",
-        "url": "https://patents.google.com/patent/US8947879B2/en"
-      }
-    }
+    { "@id": "https://veripura.com/#onno-stienen" },
+    { "@id": "https://veripura.com/#thomas-oberlin" }
   ]
 }
 </script>
@@ -70,29 +68,81 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://veripura.com/#onno-stienen",
+  "name": "Onno Stienen",
+  "jobTitle": "CEO & Co-Founder",
+  "description": "18+ years operating in food export and import compliance across Southeast Asia and Europe. EU food import compliance expert with experience in the Netherlands, Switzerland, and Germany. The regulatory knowledge encoded in VeriPura's compliance engine is his institutional expertise.",
+  "worksFor": {
+    "@id": "https://veripura.com/#organization"
+  },
+  "knowsAbout": [
+    "EU food import compliance",
+    "EU Regulation 2017/625",
+    "EUDR",
+    "TRACES NT",
+    "Food export operations Southeast Asia",
+    "Phytosanitary certification"
+  ],
+  "sameAs": "https://www.linkedin.com/in/onnostienen/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://veripura.com/#thomas-oberlin",
+  "name": "Thomas Oberlin",
+  "jobTitle": "COO & Co-Founder",
+  "description": "Serial entrepreneur and patent holder with €14M raised across prior ventures. Founder of the first Controlled Environment Agriculture company in South America. Italy-based with extensive go-to-market background in innovative B2B environments.",
+  "worksFor": {
+    "@id": "https://veripura.com/#organization"
+  },
+  "knowsAbout": [
+    "Food supply chain operations",
+    "Controlled environment agriculture",
+    "B2B go-to-market",
+    "Blockchain attestation",
+    "Import compliance technology"
+  ],
+  "sameAs": "https://www.linkedin.com/in/thomassoberlin/",
+  "subjectOf": {
+    "@type": "CreativeWork",
+    "name": "US Patent 8,947,879",
+    "url": "https://patents.google.com/patent/US8947879B2/en"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://veripura.com/#service",
   "name": "VeriPura Food Import Compliance Verification",
   "provider": {
-    "@type": "Organization",
-    "name": "VeriPura",
-    "url": "https://veripura.com/"
+    "@id": "https://veripura.com/#organization"
   },
-  "description": "Pre-shipment food import compliance documentation verification. VeriPura's agentic workflows validate documentation against European, US and UK regulatory requirements before a container moves — eliminating detentions, rejections, and manual compliance failures.",
+  "description": "Pre-shipment food import compliance documentation verification. VeriPura validates documentation against EU Regulation 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT, and UK FRCR requirements before a container moves — eliminating detentions, rejections, and manual compliance failures.",
   "serviceType": "Food Import Compliance Verification",
   "areaServed": ["Europe", "United States", "United Kingdom"],
   "audience": {
     "@type": "Audience",
-    "audienceType": "Food importers, freight forwarders, carriers, customs brokers"
+    "name": "Food importers, freight forwarders, carriers, and customs brokers",
+    "audienceType": "Business"
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "VeriPura Compliance Services",
-    "itemListElement": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-shipment document verification" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corridor risk scoring" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blockchain-anchored compliance attestation" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Regulatory rule engine — EU, US, UK frameworks" } }
-    ]
+  "serviceOutput": [
+    "Pre-shipment compliance verdict",
+    "Blockchain-anchored compliance attestation",
+    "W3C Verifiable Credential",
+    "Corridor risk score",
+    "Remediation guidance"
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://veripura.com/",
+    "availableLanguage": "English"
   }
 }
 </script>
@@ -104,34 +154,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is pre-shipment food import compliance verification?",
+      "name": "What is VeriPura?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pre-shipment compliance verification means checking all import documentation — phytosanitary certificates, health certificates, certificates of origin, and regulatory declarations — against the destination market's requirements before the shipment departs. VeriPura automates this across EU 2017/625, FDA FSMA, EUDR, FSMA 204, and UK FRCR frameworks."
+        "text": "VeriPura is a pre-shipment food import compliance verification service. It validates import documentation — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, and regulatory declarations — against EU, US, and UK border requirements before a container departs, using a 9-stage AI compliance workflow."
       }
     },
     {
       "@type": "Question",
-      "name": "How does VeriPura prevent FDA detentions?",
+      "name": "How does VeriPura prevent FDA automatic detentions?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VeriPura checks every document field against FDA FSMA requirements before the shipment moves. A single documentation error — missing prior notice, incorrect labelling, authority mismatch — can trigger an automatic detention costing $30,000–$50,000. VeriPura flags and resolves these issues before departure."
+        "text": "FDA automatic detentions are typically triggered by documentation errors — an incorrect product code in Prior Notice, a missing field, or an authority mismatch. VeriPura checks every relevant field against FDA FSMA requirements before the shipment departs and flags issues for correction. A detention can cost $30,000–$50,000; the same error fixed before departure costs a corrected document."
       }
     },
     {
       "@type": "Question",
-      "name": "Which regulatory frameworks does VeriPura cover?",
+      "name": "Which import documents does VeriPura check?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VeriPura currently covers EU Regulation 2017/625, FDA FSMA, EUDR (EU Deforestation Regulation), TRACES NT, UK FRCR, and FSMA 204 traceability requirements. Additional frameworks are available on request."
+        "text": "VeriPura verifies phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents (CEDs), FDA prior notice submissions, fumigation certificates, and other documentation required by the destination market's regulatory framework."
       }
     },
     {
       "@type": "Question",
-      "name": "What sourcing corridors does VeriPura support?",
+      "name": "What regulatory frameworks does VeriPura cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VeriPura operates across the high-risk sourcing corridors into Europe, the US and UK — including Thailand, Vietnam, Indonesia, India, Brazil, Mexico, Nigeria, and a growing list of origin markets. New corridors can be onboarded rapidly using VeriPura's AI compliance agents, which identify requirements by HS code, product category, and trade corridor."
+        "text": "VeriPura covers EU Regulation 2017/625, FDA FSMA, EUDR (EU Deforestation Regulation), FSMA 204 traceability requirements, TRACES NT, and UK FRCR. Additional frameworks are available on request."
       }
     },
     {
@@ -139,23 +189,95 @@
       "name": "How does VeriPura help freight forwarders?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Freight forwarders use VeriPura to batch-process compliance checks across multiple active shipments simultaneously. VeriPura flags expiry dates, missing signatures, and authority mismatches, generates client-facing compliance reports automatically, and provides an immutable blockchain-attested record of every check performed — protecting forwarders from client disputes when shipments are rejected."
+        "text": "Freight forwarders use VeriPura to batch-process compliance checks across multiple active shipments simultaneously. VeriPura flags expiry dates, missing signatures, and authority mismatches, and generates client-facing compliance reports automatically. Every check produces a blockchain-attested record — protecting forwarders from client disputes when shipments are rejected."
       }
     },
     {
       "@type": "Question",
-      "name": "Does VeriPura integrate with existing TMS or freight platforms?",
+      "name": "How do freight forwarders offer VeriPura compliance verification to their clients?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. VeriPura connects via REST API and webhook, layering onto existing TMS or freight platforms without requiring a rip-and-replace. Document intake can be triggered directly from existing workflows."
+        "text": "Freight forwarders join the VeriPura channel partner programme and offer pre-shipment document validation as a value-added service alongside their freight offering. When a client's shipment is ready to move, the forwarder submits the document bundle through VeriPura. VeriPura checks every document against the destination market's requirements — FDA FSMA, EUDR, TRACES NT, EU 2017/625, FSMA 204 — and returns a compliance verdict with any flagged issues before departure. The forwarder receives a blockchain-attested compliance record for every check performed, which can be provided to the importer client as part of the shipment dossier."
       }
     },
     {
       "@type": "Question",
-      "name": "What documents does VeriPura verify for food imports?",
+      "name": "How does VeriPura help carriers and customs brokers reduce customs holds on food shipments?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "VeriPura verifies phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents (CEDs), prior notice submissions, fumigation certificates, and other import documentation required by the destination market's regulatory framework."
+        "text": "Customs holds and port delays on food shipments are most commonly triggered by documentation errors that could have been caught before departure. VeriPura gives carriers and customs brokers a pre-arrival compliance check: document bundles are validated against the requirements of the destination port and regulatory regime before the vessel sails. Errors that would trigger an FDA detention, a TRACES NT rejection, or an EU border hold are identified and flagged while they are still fixable. VeriPura also produces a blockchain-attested audit trail for every check — giving customs brokers a documented record of compliance diligence if a shipment is later disputed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the VeriPura channel partner programme offer freight forwarders and carriers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The VeriPura channel partner programme gives freight forwarders and carriers three things: a pre-shipment compliance verification service they can offer food importer clients as a value-added product; a revenue share on every shipment verified through their channel; and a blockchain-attested compliance record for every check that materially reduces their liability exposure when clients face border disputes. Partner slots in the founding pilot are limited. Founding partners set the terms of the programme they want built — the corridors, document types, and integration with their existing systems that matter most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does VeriPura help with EUDR compliance for food imports?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The EU Deforestation Regulation (EUDR) requires importers to demonstrate that specific commodities — including beef, soy, cocoa, coffee, and palm oil — have not contributed to deforestation. VeriPura checks EUDR due diligence documentation as part of its pre-shipment workflow, flagging gaps before departure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the VeriPura workflow produce a compliance verdict?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VeriPura processes every shipment through 9 stages: Intake (document upload), Mapping (HS code and corridor identification), Parse (AI field extraction), Trace (supply chain linkage), Comply (EU and FDA rule check), Shield (risk scoring), Auditor (audit trail generation), Verdict (pass, fail, or fix with remediation guidance), and Ledger (IOTA blockchain anchor)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VeriPura a replacement for a customs broker or compliance consultant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. VeriPura automates document validation and compliance checking against known regulatory requirements. It is used by importers, forwarders, carriers, and brokers — not as a replacement for professional customs or legal advice. It handles the systematic, repeatable part of compliance: checking that the right documents are present, correctly completed, and consistent with each other and with regulatory requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is TRACES NT and why do food importers use it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TRACES NT (Trade Control and Expert System) is the European Commission's online platform for managing health and phytosanitary certificates for food imports entering the EU. Importers must submit Common Entry Documents (CEDs) via TRACES NT before shipments arrive at EU border inspection posts. Errors in document format, missing fields, or mismatches between the CED and the physical consignment are among the most common causes of EU food import refusals. VeriPura validates documentation against TRACES NT requirements before departure — so that CEDs are accepted on arrival rather than flagged for enhanced border checks. More information: https://food.ec.europa.eu/animals/traces_nt_en"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does FSMA 204 require from food importers, and how does VeriPura help?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FDA Food Safety Modernization Act Section 204 requires importers of designated high-risk foods to maintain and provide traceability records covering key data elements at each critical tracking event in the supply chain — from farm or processor through to the point of import. These records must be available to the FDA within 24 hours of a request. VeriPura validates that the required traceability documentation is present, correctly formatted, and consistent with the shipment before it departs — and anchors the records to the IOTA blockchain so they are immediately retrievable if FDA requests them. More information: https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-requirements-additional-traceability-records-certain-foods"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can VeriPura check the documents my supplier sends before I submit them to customs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Supplier document validation is one of the primary use cases for VeriPura. Importers upload the document bundle received from their supplier — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis — and VeriPura checks every field against the destination market's requirements before the importer submits to customs or the shipment departs. Errors that would trigger a border rejection or FDA detention are caught at the point when they are still fixable: before the container moves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common food import documentation errors that cause border rejections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common documentation errors in food import compliance include: authority signature mismatches on phytosanitary or health certificates; incorrect or missing product description codes in FDA Prior Notice submissions; Common Entry Document format errors that TRACES NT rejects; cold chain log formats not accepted by destination market authorities; establishment numbers that do not match approved lists; certificates that were valid at issue but expired by the time the shipment arrives; and missing EUDR due diligence records for affected commodities. VeriPura checks for all of these against the specific requirements of the destination market and trade corridor before the shipment departs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which food commodities are affected by the EU Deforestation Regulation and what documentation does it require?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The EUDR applies to cattle, cocoa, coffee, palm oil, soy, wood, and derived products — including beef, chocolate products, coffee blends, palm oil derivatives, and soy-based ingredients commonly traded in food import shipments. Importers must provide due diligence statements demonstrating that the commodities were produced on land not subject to deforestation after December 2020, with supporting geolocation data and supply chain documentation. VeriPura checks that the required EUDR due diligence documentation is present and complete before departure, flagging gaps that would cause rejection at EU borders."
       }
     }
   ]
@@ -165,38 +287,27 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How VeriPura Verifies Food Import Compliance Documentation",
-  "description": "VeriPura processes every import file through a structured 9-stage agentic workflow — from document intake to blockchain-anchored compliance verdict.",
-  "step": [
-    { "@type": "HowToStep", "position": 1, "name": "Intake", "text": "Upload import documentation via the VeriPura portal or API." },
-    { "@type": "HowToStep", "position": 2, "name": "Mapping", "text": "HS code and corridor identification — documents are mapped to the correct regulatory regime." },
-    { "@type": "HowToStep", "position": 3, "name": "Parse", "text": "AI field extraction — all document fields are extracted and normalised." },
-    { "@type": "HowToStep", "position": 4, "name": "Trace", "text": "Supply chain linkage — provenance and chain of custody are established." },
-    { "@type": "HowToStep", "position": 5, "name": "Comply", "text": "EU and FDA rule check — documents are validated against applicable regulatory requirements." },
-    { "@type": "HowToStep", "position": 6, "name": "Shield", "text": "Risk scoring and alerts — shipment risk is scored and flagged issues are surfaced." },
-    { "@type": "HowToStep", "position": 7, "name": "Auditor", "text": "Full audit trail generation — a structured, immutable record of all checks is created." },
-    { "@type": "HowToStep", "position": 8, "name": "Verdict", "text": "Pass, fail, or fix — a clear compliance verdict is issued with remediation guidance." },
-    { "@type": "HowToStep", "position": 9, "name": "Ledger", "text": "IOTA blockchain anchor — the compliance verdict is anchored to the IOTA Rebased blockchain via an immutable, verifiable record." }
-  ]
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "VeriPura — Food Import Compliance Verification",
+  "@id": "https://veripura.com/#webpage",
+  "name": "VeriPura — Pre-Shipment Food Import Compliance Verification",
   "url": "https://veripura.com/",
+  "isPartOf": {
+    "@id": "https://veripura.com/#website"
+  },
+  "about": {
+    "@id": "https://veripura.com/#service"
+  },
   "description": "Pre-shipment food import compliance verification for food importers, freight forwarders, carriers, and customs brokers. Covers EU 2017/625, FDA FSMA, EUDR, FSMA 204, TRACES NT, and UK FRCR.",
   "dateModified": "2026-03-10",
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://veripura.com/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": [".hero-sub", ".section-lead", ".persona-body"]
-  },
-  "about": {
-    "@type": "Thing",
-    "name": "Food Import Compliance"
   },
   "mentions": [
     {"@type": "Thing", "name": "EU Regulation 2017/625"},
@@ -375,6 +486,7 @@
   .stat-num { font-family: var(--font-serif); font-size: 2.2rem; color: var(--navy); line-height: 1; margin-bottom: 8px; }
   .stat-num.red { color: var(--red); }
   .stat-label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+  .stat-source { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.04em; opacity: 0.55; font-style: normal; display: block; margin-top: 2px; text-transform: none; }
 
   /* ── SECTION COMMONS ── */
   section { position: relative; }
@@ -780,6 +892,17 @@
   .team-title { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
   .team-bio { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
 
+  /* ── FAQ ── */
+  .faq-section { background: var(--cream); }
+  .faq-list { margin-top: 40px; display: flex; flex-direction: column; gap: 6px; }
+  .faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 18px 24px; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--navy); cursor: pointer; list-style: none; gap: 16px; }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question::after { content: '+'; font-size: 1.2rem; font-weight: 400; color: var(--gold); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item[open] .faq-question::after { content: '−'; }
+  .faq-answer { padding: 0 24px 18px; }
+  .faq-answer p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin: 0; }
+
   /* ── CTA ── */
   .cta-section { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-top: 2px solid var(--gold); }
   .cta-inner { max-width: 680px; margin: 0 auto; padding: 80px 3rem; text-align: center; }
@@ -953,6 +1076,10 @@
 
     /* Dashboard importer stats */
     .db-importer-stats { display: grid; grid-template-columns: 1fr 1fr; }
+
+    /* FAQ */
+    .faq-question { font-size: 0.88rem; padding: 14px 16px; }
+    .faq-answer { padding: 0 16px 14px; }
   }
 </style>
 </head>
@@ -961,9 +1088,7 @@
 <nav aria-label="Main navigation">
   <!-- NAV LOGO: icon SVG + styled text. To revert to text only: <a class="nav-logo-text" href="#home">VERI<span>PURA</span></a> -->
   <a class="nav-logo" href="#home" aria-label="VeriPura" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -5 560 360" style="height:30px;width:auto;flex-shrink:0;" aria-hidden="true">
-      <path fill="#ffffff" d="M525.67,0c-33.17,69.88-142.59,88.12-171.88,97.65-29.29,9.53-103.41,37.41-110.82,100.87-7.42,63.45,27.16,109.45,27.16,109.45,14.91-2.43,28.95-5.53,42.17-9.21l-16.01-40.86s-21.88-47.53,6.18-78.77c0,0,25.23-32.11,66.88-18.88,0,0,11.7,5.19,16.82,8.81,0,0,6.18,4.63.84,8.43-5.34,3.79-10.82-.34-12.85-2.02-2.03-1.68-6.77-6.35-22.93-6.54-16.94-.2-49.19,12.19-50.25,49.01,0,0-1.29,13.3,12.59,41.41,9.37,18.97,13.96,29.38,15.96,34.14,166.17-55.46,191.49-204.43,191.49-204.43,0,0,3.42,55.76-32.82,112.71-36.23,56.94-103.06,112.94-233.41,131.76-130.35,18.82-242.06-10-242.06-10,74.35,33.88,206.12,61.18,326.59,30.12,120.47-31.06,179.76-99.3,201.41-191.06,21.65-91.77-15.06-162.59-15.06-162.59ZM392.83,245.41c-13.68,15.31-27.04,21.59-53.72,26.14-1.52.26-3.02-.53-3.66-1.93l-18.94-41.41s-3-5.29-2.38-9.57c.14-.93.97-1.59,1.91-1.58,2.17.02,5.77.59,10.6,7.95,0,0,3.07,5.33,13.86,29.27.67,1.49,2.17,2.43,3.81,2.4,6.69-.15,24.44-2.21,39.97-18.5,0,0,9.21-8.82,9.17-24.57,0-1.66.76-3.23,2.1-4.21l5.24-3.84c.84-.62,2.02-.09,2.13.94.67,6.6,1.47,25.98-10.09,38.91ZM407.01,186.38c-4.06,4.32-41.47,40.41-41.47,40.41l-6.89,6.53s-4.24,4.61-7.64,1l-5.01-4.64-17.56-17.55s-5.74-5.39-.89-11.47c0,0,3.62-6.08,13.33,4.63l10.19,10.56s2.96,3.53,6.22-.49l41.07-38.87s3.18-3.7,6.8,0c3.62,3.71,3.88,4.24,3.88,4.24,0,0,2.03,1.32-2.03,5.65Z"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200" style="height:30px;width:auto;flex-shrink:0;" aria-hidden="true"><image href="data:image/png;base64,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" width="200" height="200"/></svg>
     <span style="font-family:var(--font-serif);font-size:1.25rem;letter-spacing:0.02em;line-height:1;"><span style="color:#ffffff;">Veri</span><span style="color:#D4A847;">Pura</span></span>
   </a>
   <ul class="nav-links">
@@ -1114,8 +1239,8 @@
   <div class="hero-content">
     <div class="hero-eyebrow">Now Selecting Founding Pilot Participants — 5 Importer Slots · 2 Partner Slots</div>
     <h1>Import compliance<br>shouldn't cost you<br><em>a shipment.</em></h1>
-    <p class="hero-kicker">Pre-shipment compliance verification for food importers, freight forwarders, and carriers — covering FDA FSMA, EUDR, FSMA 204, and EU 2017/625.</p>
-    <p class="hero-sub" itemprop="description">VeriPura helps food importers, freight forwarders, and carriers validate compliance documentation before a single container moves — eliminating rejections, detentions, and the manual chaos in between.</p>
+    <p class="hero-kicker">Pre-shipment food import compliance verification for importers, freight forwarders, and carriers — validating documentation against FDA FSMA, EUDR, FSMA 204, and EU 2017/625 before a container moves.</p>
+    <p class="hero-sub" itemprop="description">VeriPura helps food importers, freight forwarders, and carriers validate compliance documentation before a single container moves — preventing documentation-driven rejections, detentions, and the manual chaos in between.</p>
     <div class="hero-actions">
       <a class="btn-primary btn-shimmer" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See How It Works</a>
@@ -1200,7 +1325,7 @@
 
       <div>
         <dt style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(212,168,71,0.65);margin-bottom:5px;">Why before departure</dt>
-        <dd style="color:var(--sky);margin:0;">Documentation failures cause 39% of EU food import refusals. An FDA detention costs $30,000–$50,000. The same error fixed before departure costs nothing but a corrected document.</dd>
+        <dd style="color:var(--sky);margin:0;">Documentation failures cause 39% of EU food import refusals <cite style="font-size:0.6rem;opacity:0.6;font-style:normal;">(European Commission TRACES)</cite>. An FDA detention costs up to $50,000 <cite style="font-size:0.6rem;opacity:0.6;font-style:normal;">(FDA Import Program)</cite>. The same error fixed before departure costs nothing but a corrected document.</dd>
       </div>
 
     </dl>
@@ -1210,21 +1335,21 @@
 
 <aside class="stats-band" aria-label="Food import compliance statistics">
   <div class="stat-item"><div class="stat-num red">39%</div><div class="stat-label">of import refusals are<br>documentation failures <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(TRACES)</cite></div></div>
-  <div class="stat-item"><div class="stat-num red">$50K</div><div class="stat-label">avg. cost of a single<br>FDA detention event <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA)</cite></div></div>
-  <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">documents per EU<br>food import shipment</div></div>
-  <div class="stat-item"><div class="stat-num">14 days</div><div class="stat-label">avg. to identify source of<br>food contamination (industry data)</div></div>
+  <div class="stat-item"><div class="stat-num red">$50K</div><div class="stat-label">up to, per single<br>FDA detention event <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(FDA Import Program)</cite></div></div>
+  <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">documents or more required for a<br>complex EU food import shipment</div></div>
+  <div class="stat-item"><div class="stat-num">14 days</div><div class="stat-label">avg. to identify source of<br>food contamination <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;">(industry traceability studies)</cite></div></div>
 </aside>
 
 <section id="problem" class="problem-section" aria-label="Food import compliance risks">
   <div class="section-inner">
     <p class="section-eyebrow">The Risks</p>
     <h2>One wrong field.<br>One rejected food import shipment.</h2>
-    <p class="section-lead">The cost of compliance failure is measured in detained shipments, regulatory fines, and lost business — before a single container reaches its buyer.</p>
+    <p class="section-lead">Border rejections and FDA detentions are preventable — when you catch documentation errors before the shipment moves, not at the border. The cost of catching them too late is measured in detained containers, regulatory fines, and lost buyer relationships.</p>
 
     <div class="risk-stat-strip">
       <div class="risk-stat">
         <div class="risk-stat-num">14,000+</div>
-        <div class="risk-stat-label">European food import refusals in 2024</div>
+        <div class="risk-stat-label">European food import refusals in 2024 <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(European Commission TRACES)</cite></div>
       </div>
       <div class="risk-stat-divider"></div>
       <div class="risk-stat">
@@ -1239,14 +1364,14 @@
       <div class="risk-stat-divider"></div>
       <div class="risk-stat">
         <div class="risk-stat-num">14 Days</div>
-        <div class="risk-stat-label">avg. to trace contamination source</div>
+        <div class="risk-stat-label">avg. to trace contamination source <cite style="font-size:0.6rem;opacity:0.6;display:block;font-style:normal;">(industry traceability studies)</cite></div>
       </div>
     </div>
 
     <!-- CPI Corridor Heatmap -->
     <div class="cpi-block">
       <div class="cpi-block-title">Know Your Corridor Risk</div>
-      <p class="cpi-block-desc">Every sourcing corridor carries a different compliance risk profile. The wider the gap between your origin market's CPI score and your destination market's expectations, the greater your documentation exposure. These 18 corridors represent the highest concentration of European and US refusals — but VeriPura operates wherever the risk exists.</p>
+      <p class="cpi-block-desc">Every sourcing corridor carries a different compliance risk profile. The wider the gap between your origin market's CPI score and your destination market's expectations, the greater your documentation exposure. These 18 corridors represent the highest concentration of European and US refusals — with additional corridors onboarded on request.</p>
       <div class="cpi-gap-row">
         <div class="cpi-gap-side">
           <div class="cpi-gap-label">Receiving Markets</div>
@@ -1287,20 +1412,31 @@
     </div>
 
     <div class="problem-grid">
-      <div class="problem-card" data-num="01"><div class="problem-cost">$30K–$50K</div><div class="problem-title">Per FDA Detention Incident</div><div class="problem-desc">An FDA automatic detention triggered by a documentation error can cost tens of thousands in warehouse fees, re-inspection costs, and lost product — before the goods ever reach a buyer.</div></div>
+      <div class="problem-card" data-num="01"><div class="problem-cost">$30K–$50K</div><div class="problem-title">Per FDA Detention Incident</div><div class="problem-desc">An FDA automatic detention triggered by a documentation error can cost tens of thousands in warehouse fees, re-inspection costs, and lost product — before the goods ever reach a buyer. <cite style="font-size:0.72rem;opacity:0.65;font-style:normal;">(FDA Import Program)</cite></div></div>
       <div class="problem-card" data-num="02"><div class="problem-cost">14,000+</div><div class="problem-title">EU Food Import Refusals in 2024</div><div class="problem-desc">EU border control refusals reached over 14,000 for animal-origin food products in 2024 alone, per the TRACES Annual Report. New regulations including EU 2017/625 and EUDR continue to raise the documentation bar that importers must clear.</div></div>
       <div class="problem-card" data-num="03"><div class="problem-cost">"Hours to weeks"</div><div class="problem-title">FDA Examination Time Per Shipment</div><div class="problem-desc">The FDA states that shipment examination can take "from a few hours to several weeks" if laboratory analysis is required. Every day a container sits at port compounds storage fees, spoilage risk, and buyer penalties.</div></div>
-      <div class="problem-card" data-num="04"><div class="problem-cost">14 Days</div><div class="problem-title">Average Contamination Identification Time</div><div class="problem-desc">When contamination occurs, identifying the source through fragmented paper records takes an average of 14 days — by which point the product has long since reached consumers. VeriPura's immutable chain of custody compresses this dramatically.</div></div>
+      <div class="problem-card" data-num="04"><div class="problem-cost">14 Days</div><div class="problem-title">Average Contamination Identification Time</div><div class="problem-desc">When contamination occurs, identifying the source through fragmented paper records takes an average of 14 days — by which point the product has long since reached consumers. VeriPura's immutable chain of custody compresses this significantly. <cite style="font-size:0.72rem;opacity:0.65;font-style:normal;">(industry traceability studies)</cite></div></div>
+    </div>
+
+    <!-- Common documentation errors block — importer SEO intent -->
+    <div class="vp-errors-block" style="margin-top:40px;background:var(--pale);border:1.5px solid var(--border);border-radius:10px;padding:32px 36px;">
+      <p style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:16px;">Most common documentation errors caught by VeriPura</p>
+      <dl style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px 40px;font-family:var(--font-sans);font-size:0.84rem;line-height:1.65;">
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">Authority signature mismatch</dt><dd style="color:var(--muted);margin:0;">Phytosanitary or health certificate signed by an authority not recognised by the destination market.</dd></div>
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">FDA Prior Notice code error</dt><dd style="color:var(--muted);margin:0;">Incorrect or missing product description code causes automatic detention by FDA PREDICT.</dd></div>
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">TRACES NT format rejection</dt><dd style="color:var(--muted);margin:0;">Common Entry Document format or missing field prevents TRACES NT acceptance before arrival.</dd></div>
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">Expired certificate at arrival</dt><dd style="color:var(--muted);margin:0;">Certificate valid at issue date but expired by the time the shipment reaches the border inspection post.</dd></div>
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">Establishment number mismatch</dt><dd style="color:var(--muted);margin:0;">Slaughter or processing establishment number does not match the destination market's approved list.</dd></div>
+        <div><dt style="font-weight:600;color:var(--navy);margin-bottom:3px;">Missing EUDR due diligence records</dt><dd style="color:var(--muted);margin:0;">No geolocation data or deforestation statement for EUDR-affected commodities — rejection at EU border.</dd></div>
+      </dl>
     </div>
 
   </div>
-</section>
-
 <section id="workflow" class="workflow-section" aria-label="How VeriPura verifies food import compliance">
   <div class="section-inner">
     <p class="section-eyebrow">How It Works</p>
     <h2>Nine stages.<br>One verified food import compliance check.</h2>
-    <p class="section-lead">VeriPura's AI compliance engine processes every import file through a structured 9-stage workflow — from document intake to blockchain-anchored compliance verdict.</p>
+    <p class="section-lead">VeriPura validates the documents your suppliers send you against the requirements of your destination market — before a single container moves. Every import file passes through a structured 9-stage workflow, from document intake to blockchain-anchored compliance verdict.</p>
     <div class="workflow-stages" id="workflow-stages">
       <div class="stage active" id="ws-0"><div class="stage-num">01</div><div class="stage-icon">📥</div><div class="stage-name">Intake</div><div class="stage-sub">Upload via portal or API</div></div>
       <div class="stage" id="ws-1"><div class="stage-num">02</div><div class="stage-icon">🗺️</div><div class="stage-name">Mapping</div><div class="stage-sub">HS code & corridor ID</div></div>
@@ -1316,7 +1452,7 @@
     <div style="margin-top: 28px; background: var(--navy); border-radius: 8px; padding: 20px 32px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
       <div style="font-family: var(--font-serif); font-size: 2rem; color: var(--gold); flex-shrink: 0; line-height: 1;">50+</div>
       <div style="width: 1px; height: 36px; background: rgba(212,168,71,0.3); flex-shrink: 0;"></div>
-      <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--sky); line-height: 1.6; max-width: 680px;">Specialised agents working in combination — each trained to the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.</div>
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--sky); line-height: 1.6; max-width: 680px;">Specialised agents working in combination — each trained on the specific regulatory requirements of different food types, certification regimes, and sourcing corridors.</div>
     </div>
 
 
@@ -1401,7 +1537,7 @@
     <div class="persona-panel" id="persona-forwarder">
       <div class="persona-header">
         <p class="persona-role">Freight Forwarder</p>
-        <h3 class="persona-headline">Your clients hold you accountable for compliance. Now you have a tool that matches that responsibility.</h3>
+        <h3 class="persona-headline">Compliance document validation for freight forwarders — across every active shipment, before any container moves.</h3>
         <p class="persona-body">As a forwarder, you're managing documentation for dozens of shipments simultaneously across multiple origins, product types, and regulatory regimes. A compliance failure isn't just your client's problem — it's your reputation, your renewal, and your next contract.</p>
       </div>
       <div class="persona-metrics">
@@ -1447,7 +1583,7 @@
           <li>Structured remediation guidance — not just flags, but fixes</li>
         </ul>
         <div>
-          <div class="corridor-box" style="margin-bottom:16px;"><div class="corridor-label">Entry Points</div><div class="corridor-tags"><span class="corridor-tag">Rotterdam</span><span class="corridor-tag">Hamburg</span><span class="corridor-tag">Antwerp</span><span class="corridor-tag">Los Angeles</span><span class="corridor-tag">New York</span><span class="corridor-tag">Miami</span></div></div>
+          <div class="corridor-box" style="margin-bottom:16px;"><div class="corridor-label">Common ports of entry for the shipments VeriPura verifies</div><div class="corridor-tags"><span class="corridor-tag">Rotterdam</span><span class="corridor-tag">Hamburg</span><span class="corridor-tag">Antwerp</span><span class="corridor-tag">Los Angeles</span><span class="corridor-tag">New York</span><span class="corridor-tag">Miami</span></div></div>
           <div class="pilot-callout">
             <div class="pilot-callout-slots">2 partner slots remaining</div>
             <p>Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later partners. What that looks like is a conversation.</p>
@@ -1463,7 +1599,7 @@
 <section id="use-cases" class="usecases-section">
   <div class="section-inner">
     <p class="section-eyebrow">Use Cases</p>
-    <h2>Real shipments.<br>Real compliance problems solved.</h2>
+    <h2>Illustrative scenarios.<br>Real compliance problems, solved before departure.</h2>
     <p class="section-lead">See how VeriPura works across the food categories most exposed to documentation failure at European, US and UK borders.</p>
     <p style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); margin-top: 10px; letter-spacing: 0.04em;">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
     <div class="usecase-grid">
@@ -1477,7 +1613,7 @@
           <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
           <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
           <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
-          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for. <a href="#contact">Apply for a pilot slot</a></div>
+          <div class="usecase-pilot-hook">→ This is the kind of shipment VeriPura was built for — whether you're the importer or the forwarder managing the document bundle. <a href="#contact">Apply for a pilot slot</a></div>
         </div>
       </article>
       <article class="usecase-card">
@@ -1527,12 +1663,12 @@
   <div class="section-inner">
     <p class="section-eyebrow">Technology</p>
     <h2>Food import compliance intelligence<br>anchored to blockchain.</h2>
-    <p class="section-lead">VeriPura combines document AI, regulatory rule engines, and IOTA blockchain to create a compliance record that is fast, accurate, and impossible to falsify.</p>
+    <p class="section-lead">VeriPura combines document AI, regulatory rule engines, and IOTA blockchain to create a compliance record that is fast, consistent, and tamperproof and independently verifiable.</p>
     <div class="tech-grid">
-      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div><h3 class="tech-title">Document AI Engine</h3><div class="tech-desc">Powered by Google Cloud Document AI, VeriPura extracts and validates data from any format — PDFs, scanned certificates, multi-language documents — in seconds, not hours.</div><span class="tech-tag">Google Cloud Doc AI</span></div>
-      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="tech-title">Regulatory Rule Engine</h3><div class="tech-desc">A continuously updated library of food import requirements across Europe, US, UK and beyond — TRACES NT, FDA FSMA, EUDR, EU 2017/625, UK FRCR, FSMA 204 — checked against every document field in real time.</div><span class="tech-tag">Europe · FDA · UK · EUDR</span></div>
+      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div><h3 class="tech-title">Document AI Engine</h3><div class="tech-desc">VeriPura's document intelligence layer extracts and validates data from any format — PDFs, scanned certificates, multi-language documents — in seconds, not hours.</div><span class="tech-tag">Multi-format · Multi-language</span></div>
+      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 class="tech-title">Regulatory Rule Engine</h3><div class="tech-desc">A regularly maintained library of food import requirements across Europe, US, UK and beyond — TRACES NT, FDA FSMA, EUDR, EU 2017/625, UK FRCR, FSMA 204 — checked against every document field in real time.</div><span class="tech-tag">Europe · FDA · UK · EUDR</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><h3 class="tech-title">IOTA Blockchain Ledger</h3><div class="tech-desc">Every compliance verdict is anchored to the IOTA Rebased blockchain via IOTA TWIN — an immutable, tamperproof record any authorised party can verify instantly.</div><span class="tech-tag">IOTA Rebased · TWIN</span></div>
-      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h3 class="tech-title">Risk Corridor Intelligence</h3><div class="tech-desc">Built on FDA refusal data, European TRACES rejection statistics, and UK border intelligence, VeriPura scores every sourcing corridor by risk profile — so importers know their exposure before signing a PO.</div><span class="tech-tag">65,000+ FDA Refusal Records</span></div>
+      <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h3 class="tech-title">Risk Corridor Intelligence</h3><div class="tech-desc">Built on FDA refusal data, European TRACES rejection statistics, and UK border intelligence, VeriPura scores every sourcing corridor by risk profile — so importers know their exposure before signing a PO.</div><span class="tech-tag">Based on 65,000+ FDA Refusal Database records</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3 class="tech-title">Verifiable Credentials</h3><div class="tech-desc">Using IOTA Identity 1.7 and W3C Verifiable Credentials, VeriPura issues machine-readable compliance attestations shareable instantly with buyers, auditors, and border authorities.</div><span class="tech-tag">W3C VCs · IOTA Identity</span></div>
       <div class="tech-card"><div class="tech-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3 class="tech-title">API & System Integration</h3><div class="tech-desc">VeriPura connects via REST API to your existing TMS, ERP, or document management system. Compliance intelligence layered on top of your current workflow — no rip-and-replace.</div><span class="tech-tag">REST API · Webhook</span></div>
     </div>
@@ -1559,18 +1695,18 @@
 <section id="channel-partners" class="channel-section">
   <div class="section-inner">
     <p class="section-eyebrow">Become a Partner</p>
-    <h2>Freight forwarders and carriers:<br>VeriPura works <em>for</em> you.</h2>
-    <p class="section-lead">You already touch every food shipment. Every compliance failure your clients suffer is a cost you absorb — in delays, in relationship damage, in liability exposure. VeriPura turns that burden into a competitive advantage and a new revenue stream.</p>
+    <h2>The food import compliance partner programme<br>built for freight forwarders and carriers.</h2>
+    <p class="section-lead">Freight forwarders and carriers that add VeriPura compliance verification to their service offering give food importer clients a pre-shipment document validation check against FDA FSMA, EUDR, TRACES NT, and EU 2017/625 requirements — reducing customs holds and border rejections before the container moves. Every compliance failure your clients suffer is a cost you absorb. VeriPura turns that into a competitive advantage and a new revenue stream.</p>
     <div class="channel-grid">
       <div class="channel-card">
         <div class="channel-card-icon">💶</div>
         <h3 class="channel-card-title">Revenue Share on Every Shipment</h3>
-        <div class="channel-card-desc">Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce. Each new importer client you onboard generates recurring income — with no cap on volume.</div>
+        <div class="channel-card-desc">Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce. Each new importer client you onboard generates recurring income.</div>
       </div>
       <div class="channel-card">
         <div class="channel-card-icon">🛡️</div>
         <h3 class="channel-card-title">Protect Yourself from Client Liability</h3>
-        <div class="channel-card-desc">When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you an immutable, blockchain-attested record of every compliance check performed — demonstrating due diligence and protecting you from disputes. You're no longer carrying your clients' documentation risk.</div>
+        <div class="channel-card-desc">When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you a documented, blockchain-attested record of every compliance check performed — materially reducing your exposure when clients face border disputes.</div>
       </div>
       <div class="channel-card">
         <div class="channel-card-icon">📦</div>
@@ -1579,13 +1715,13 @@
       </div>
     </div>
     <div class="channel-proof">
-      <div class="channel-proof-stat"><div class="num">14,000+</div><div class="lbl">Food shipments refused<br>EU entry in 2024</div></div>
+      <div class="channel-proof-stat"><div class="num">14,000+</div><div class="lbl">Food shipments refused<br>EU entry in 2024 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;">(European Commission TRACES)</cite></div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat"><div class="num">39%</div><div class="lbl">Of refusals caused by<br>documentation failures</div></div>
+      <div class="channel-proof-stat"><div class="num">39%</div><div class="lbl">Of refusals caused by<br>documentation failures <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;">(European Commission TRACES)</cite></div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat"><div class="num">$30–50K</div><div class="lbl">Avg. cost of a single<br>FDA detention incident</div></div>
+      <div class="channel-proof-stat"><div class="num">$30–50K</div><div class="lbl">Up to, per single<br>FDA detention incident <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;">(FDA Import Program)</cite></div></div>
       <div class="channel-proof-divider"></div>
-      <div class="channel-proof-stat"><div class="num">14 days</div><div class="lbl">Avg. to identify a food<br>contamination source</div></div>
+      <div class="channel-proof-stat"><div class="num">14 days</div><div class="lbl">Avg. to identify a food<br>contamination source <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;">(industry traceability studies)</cite></div></div>
     </div>
     <div class="channel-cta">
       <a class="btn-primary" href="partners.html">See the Full Partner Programme →</a>
@@ -1656,7 +1792,130 @@
   </div>
 </section>
 
-<!-- APPLETS / TEST DRIVE -->
+<!-- FAQ -->
+<section id="faq" class="faq-section" aria-label="Frequently asked questions about VeriPura food import compliance verification">
+  <div class="section-inner">
+    <p class="section-eyebrow">FAQ</p>
+    <h2>Common questions about food import compliance verification.</h2>
+    <p class="section-lead">Questions from food importers, freight forwarders, carriers, and customs brokers about how VeriPura works and where it fits.</p>
+
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-question">What is VeriPura?</summary>
+        <div class="faq-answer">
+          <p>VeriPura is a pre-shipment food import compliance verification service. It validates import documentation — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, and regulatory declarations — against EU, US, and UK border requirements before a container departs, using a 9-stage AI compliance workflow.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does VeriPura prevent FDA automatic detentions?</summary>
+        <div class="faq-answer">
+          <p>FDA automatic detentions are typically triggered by documentation errors — an incorrect product code in Prior Notice, a missing field, or an authority mismatch. VeriPura checks every relevant field against FDA FSMA requirements before the shipment departs and flags issues for correction. A detention can cost $30,000–$50,000; the same error fixed before departure costs a corrected document.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Which import documents does VeriPura check?</summary>
+        <div class="faq-answer">
+          <p>VeriPura verifies phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents (CEDs), FDA prior notice submissions, fumigation certificates, and other documentation required by the destination market's regulatory framework.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What regulatory frameworks does VeriPura cover?</summary>
+        <div class="faq-answer">
+          <p>VeriPura covers EU Regulation 2017/625, FDA FSMA, EUDR (EU Deforestation Regulation), FSMA 204 traceability requirements, TRACES NT, and UK FRCR. Additional frameworks are available on request.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does VeriPura help freight forwarders?</summary>
+        <div class="faq-answer">
+          <p>Freight forwarders use VeriPura to batch-process compliance checks across multiple active shipments simultaneously. VeriPura flags expiry dates, missing signatures, and authority mismatches, and generates client-facing compliance reports automatically. Every check produces a blockchain-attested record — protecting forwarders from client disputes when shipments are rejected.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How do freight forwarders offer VeriPura compliance verification to their clients?</summary>
+        <div class="faq-answer">
+          <p>Freight forwarders join the VeriPura channel partner programme and offer pre-shipment document validation as a value-added service alongside their freight offering. When a client's shipment is ready to move, the forwarder submits the document bundle through VeriPura. VeriPura checks every document against the destination market's requirements — FDA FSMA, EUDR, TRACES NT, EU 2017/625, FSMA 204 — and returns a compliance verdict with any flagged issues before departure. The forwarder receives a blockchain-attested compliance record for every check performed, which can be provided to the importer client as part of the shipment dossier.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does VeriPura help carriers and customs brokers reduce customs holds on food shipments?</summary>
+        <div class="faq-answer">
+          <p>Customs holds and port delays on food shipments are most commonly triggered by documentation errors that could have been caught before departure. VeriPura gives carriers and customs brokers a pre-arrival compliance check: document bundles are validated against the requirements of the destination port and regulatory regime before the vessel sails. Errors that would trigger an FDA detention, a TRACES NT rejection, or an EU border hold are identified and flagged while they are still fixable. VeriPura also produces a blockchain-attested audit trail for every check — giving customs brokers a documented record of compliance diligence if a shipment is later disputed.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What does the VeriPura channel partner programme offer freight forwarders and carriers?</summary>
+        <div class="faq-answer">
+          <p>The VeriPura channel partner programme gives freight forwarders and carriers three things: a pre-shipment compliance verification service they can offer food importer clients as a value-added product; a revenue share on every shipment verified through their channel; and a blockchain-attested compliance record for every check that materially reduces their liability exposure when clients face border disputes. Partner slots in the founding pilot are limited. Founding partners set the terms of the programme they want built — the corridors, document types, and integration with their existing systems that matter most.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does VeriPura help with EUDR compliance for food imports?</summary>
+        <div class="faq-answer">
+          <p>The EU Deforestation Regulation (EUDR) requires importers to demonstrate that specific commodities — including beef, soy, cocoa, coffee, and palm oil — have not contributed to deforestation. VeriPura checks EUDR due diligence documentation as part of its pre-shipment workflow, flagging gaps before departure.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">How does the VeriPura workflow produce a compliance verdict?</summary>
+        <div class="faq-answer">
+          <p>VeriPura processes every shipment through 9 stages: Intake (document upload), Mapping (HS code and corridor identification), Parse (AI field extraction), Trace (supply chain linkage), Comply (EU and FDA rule check), Shield (risk scoring), Auditor (audit trail generation), Verdict (pass, fail, or fix with remediation guidance), and Ledger (IOTA blockchain anchor).</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Is VeriPura a replacement for a customs broker or compliance consultant?</summary>
+        <div class="faq-answer">
+          <p>No. VeriPura automates document validation and compliance checking against known regulatory requirements. It is used by importers, forwarders, carriers, and brokers — not as a replacement for professional customs or legal advice. It handles the systematic, repeatable part of compliance: checking that the right documents are present, correctly completed, and consistent with each other and with regulatory requirements.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What is TRACES NT and why do food importers use it?</summary>
+        <div class="faq-answer">
+          <p><a href="https://food.ec.europa.eu/animals/traces_nt_en" target="_blank" rel="noopener">TRACES NT</a> (Trade Control and Expert System) is the European Commission's online platform for managing health and phytosanitary certificates for food imports entering the EU. Importers must submit Common Entry Documents (CEDs) via TRACES NT before shipments arrive at EU border inspection posts. Errors in document format, missing fields, or mismatches between the CED and the physical consignment are among the most common causes of EU food import refusals. VeriPura validates documentation against TRACES NT requirements before departure — so that CEDs are accepted on arrival rather than flagged for enhanced border checks.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What does FSMA 204 require from food importers, and how does VeriPura help?</summary>
+        <div class="faq-answer">
+          <p><a href="https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-requirements-additional-traceability-records-certain-foods" target="_blank" rel="noopener">FDA Food Safety Modernization Act Section 204</a> requires importers of designated high-risk foods to maintain and provide traceability records covering key data elements at each critical tracking event in the supply chain — from farm or processor through to the point of import. These records must be available to the FDA within 24 hours of a request. VeriPura validates that the required traceability documentation is present, correctly formatted, and consistent with the shipment before it departs — and anchors the records to the IOTA blockchain so they are immediately retrievable if FDA requests them.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Can VeriPura check the documents my supplier sends before I submit them to customs?</summary>
+        <div class="faq-answer">
+          <p>Yes. Supplier document validation is one of the primary use cases for VeriPura. Importers upload the document bundle received from their supplier — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis — and VeriPura checks every field against the destination market's requirements before the importer submits to customs or the shipment departs. Errors that would trigger a border rejection or FDA detention are caught at the point when they are still fixable: before the container moves.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">What are the most common food import documentation errors that cause border rejections?</summary>
+        <div class="faq-answer">
+          <p>The most common documentation errors in food import compliance include: authority signature mismatches on phytosanitary or health certificates; incorrect or missing product description codes in FDA Prior Notice submissions; Common Entry Document format errors that TRACES NT rejects; cold chain log formats not accepted by destination market authorities; establishment numbers that do not match approved lists; certificates that were valid at issue but expired by the time the shipment arrives; and missing EUDR due diligence records for affected commodities. VeriPura checks for all of these against the specific requirements of the destination market and trade corridor before the shipment departs.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">Which food commodities are affected by the EU Deforestation Regulation and what documentation does it require?</summary>
+        <div class="faq-answer">
+          <p>The EUDR applies to cattle, cocoa, coffee, palm oil, soy, wood, and derived products — including beef, chocolate products, coffee blends, palm oil derivatives, and soy-based ingredients commonly traded in food import shipments. Importers must provide due diligence statements demonstrating that the commodities were produced on land not subject to deforestation after December 2020, with supporting geolocation data and supply chain documentation. VeriPura checks that the required EUDR due diligence documentation is present and complete before departure, flagging gaps that would cause rejection at EU borders.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
 <section id="applets" class="applets-section">
   <div class="section-inner">
     <p class="section-eyebrow">Live Intelligence Tools</p>
@@ -1714,7 +1973,7 @@
   <div class="cta-inner">
     <p class="section-eyebrow">Get Started</p>
     <h2>The most important thing<br>we import is <em>trust.</em></h2>
-    <p>We are deliberately selective to start — five importer slots and two partner slots for our founding pilot programme. If you're moving food from high-risk sourcing corridors into Europe, the US, the UK or beyond, tell us what your current compliance process looks like. We'll show you what VeriPura can change — and whether you qualify.</p>
+    <p>If you're moving food from high-risk sourcing corridors and managing TRACES NT notifications, FDA Prior Notice submissions, EUDR due diligence documentation, or FSMA 204 traceability records — this pilot is for you. We are deliberately selective: five importer slots and two partner slots. Tell us what your current compliance process looks like. We'll show you exactly what VeriPura catches — and whether you qualify.</p>
     <div class="cta-actions">
       <a class="btn-primary btn-shimmer" href="#contact">Apply for a Pilot Slot</a>
       <a class="btn-secondary" href="#workflow">See the Workflow</a>
@@ -1788,7 +2047,7 @@
   <div class="footer-links">
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
-    <a href="https://medium.com/@info_73854/veripura-whitepaper-8f08c1bb7e2c">Whitepaper</a>
+
   </div>
   <div class="footer-social">
     <!-- X / Twitter -->
