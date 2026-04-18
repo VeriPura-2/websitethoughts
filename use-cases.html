@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN3S73P3LF"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CN3S73P3LF');</script>
+<title>Use Cases — VeriPura Food Import Compliance</title>
+<meta name="description" content="Real food import compliance problems, solved before departure. Four illustrative shipment scenarios across fresh produce, seafood, processed food, and beef.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://veripura.com/use-cases.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Use Cases — VeriPura Food Import Compliance">
+<meta property="og:description" content="Real compliance problems, solved before departure. Thai Mango to Rotterdam. Vietnamese Shrimp to Hamburg. Indian Spices to US FDA. Brazilian Beef to Great Britain.">
+<meta property="og:url" content="https://veripura.com/use-cases.html">
+<meta property="og:image" content="https://veripura.com/og-image.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+<link rel="icon" type="image/png" href="checkmark_gold.png?v=2">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0F2444; --navy-mid: #1F3864; --blue: #2E5FA3; --blue-lt: #4A80C4;
+  --sky: #D6E4F0; --pale: #EBF3FA; --cream: #F8F9FB; --red: #C8504A;
+  --gold: #D4A847; --white: #FFFFFF; --ink: #1A2332; --muted: #5A6878; --border: #CBD8E8;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-wordmark: 'Playfair Display', Georgia, serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-sans); background: var(--cream); color: var(--ink); line-height: 1.55; overflow-x: hidden; }
+
+/* NAV */
+#main-nav { background: var(--navy); padding: 0 2rem 0 1.25rem; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; border-bottom: 2px solid var(--blue); box-shadow: 0 2px 12px rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.nav-wordmark { font-family: var(--font-wordmark); font-size: 1.25rem; letter-spacing: 0.02em; line-height: 1; }
+.nav-wordmark .w1 { color: #ffffff; } .nav-wordmark .w2 { color: var(--gold); }
+.nav-links { display: flex; gap: 1.1rem; align-items: center; list-style: none; }
+.nav-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--sky); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-investor { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(212,168,71,0.75); text-decoration: none; border: 1px solid rgba(212,168,71,0.3); border-radius: 3px; padding: 5px 12px; transition: color 0.2s, border-color 0.2s; white-space: nowrap; }
+.nav-investor:hover { color: var(--gold); border-color: rgba(212,168,71,0.7); }
+.nav-cta { background: var(--gold); color: var(--navy); border: none; border-radius: 4px; font-family: var(--font-sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; cursor: pointer; text-decoration: none; transition: background 0.2s; position: relative; overflow: hidden; white-space: nowrap; }
+.nav-cta::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.45) 50%, transparent 100%); transform: skewX(-20deg); animation: shimmer 3.5s ease-in-out infinite; }
+@keyframes shimmer { 0% { left: -75%; } 30% { left: 125%; } 100% { left: 125%; } }
+.nav-cta:hover { background: #e0b84e; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--sky); border-radius: 2px; transition: all 0.25s; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile-menu { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--navy); border-bottom: 1.5px solid rgba(255,255,255,0.1); padding: 20px 24px; z-index: 999; flex-direction: column; gap: 0; }
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu li { list-style: none; }
+.nav-mobile-menu a { display: block; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); transition: color 0.2s; }
+.nav-mobile-menu a:hover { color: var(--gold); }
+.nav-mobile-menu .nav-cta { margin-top: 16px; display: inline-block; text-align: center; border-bottom: none; }
+
+/* WTO STRIP */
+.wto-strip { background: #162d52; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 10px 0; overflow: hidden; display: flex; align-items: center; margin-top: 64px; }
+.wto-label { display: flex; align-items: center; gap: 7px; padding: 0 18px; white-space: nowrap; flex-shrink: 0; border-right: 1px solid rgba(255,255,255,0.12); margin-right: 16px; }
+.wto-pulse { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; flex-shrink: 0; animation: pulse-dot 2s ease-in-out infinite; }
+.wto-label-text { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: #4ade80; font-weight: 600; }
+.wto-track-wrap { overflow: hidden; flex: 1; }
+.wto-track { display: flex; white-space: nowrap; animation: ticker-scroll 55s linear infinite; }
+.wto-item { font-family: var(--font-mono); font-size: 0.67rem; letter-spacing: 0.06em; color: rgba(255,255,255,0.82); padding: 0 32px; }
+.wto-item a { color: inherit; text-decoration: none; }
+.wto-item a:hover { color: #fff; text-decoration: underline; }
+.wto-sep { color: rgba(255,255,255,0.25); padding: 0 4px; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* PAGE HEADER */
+.page-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #1a3a6e 100%); padding: 72px 3rem 64px; position: relative; overflow: hidden; }
+.page-header::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(214,228,240,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(214,228,240,0.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.page-header-inner { max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
+.page-eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.page-header h1 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3rem); color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+.page-header-sub { font-size: 1rem; color: var(--sky); max-width: 600px; line-height: 1.7; }
+.page-header-note { font-family: var(--font-mono); font-size: 0.65rem; color: rgba(214,228,240,0.45); margin-top: 12px; letter-spacing: 0.04em; }
+
+/* REJECTED DOC */
+.rejected-doc-section { background: var(--white); border-bottom: 1.5px solid var(--border); }
+.rejected-doc-inner { max-width: 1080px; margin: 0 auto; padding: 60px 3rem; display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
+.rejected-doc-text h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 2.8vw, 2.2rem); color: var(--navy); margin-bottom: 16px; line-height: 1.15; }
+.rejected-doc-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.rejected-doc-wrap { position: relative; }
+.rejected-doc { background: #F9F6F0; border: 1px solid #D4C9B8; border-radius: 4px; padding: 24px 24px 20px; box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 4px 16px rgba(0,0,0,0.15); transform: rotate(-2deg); position: relative; }
+.rejected-doc::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #8B7355, #C4A882, #8B7355); border-radius: 4px 4px 0 0; }
+.doc-header-line { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #D4C9B8; }
+.doc-issuer { font-family: var(--font-mono); font-size: 0.54rem; color: #6B5B45; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.6; }
+.doc-seal { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #8B7355; display: flex; align-items: center; justify-content: center; font-size: 0.46rem; color: #8B7355; font-family: var(--font-mono); text-align: center; line-height: 1.2; letter-spacing: 0.04em; opacity: 0.7; }
+.doc-title { font-family: Georgia, serif; font-size: 0.92rem; font-weight: 700; color: #2C1F0E; margin-bottom: 3px; letter-spacing: 0.02em; }
+.doc-subtitle { font-family: var(--font-mono); font-size: 0.55rem; color: #6B5B45; letter-spacing: 0.06em; margin-bottom: 14px; }
+.doc-fields-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; margin-bottom: 10px; }
+.doc-field { margin-bottom: 7px; }
+.doc-field-label { font-family: var(--font-mono); font-size: 0.48rem; color: #9B8B75; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+.doc-field-value { font-size: 0.68rem; color: #2C1F0E; border-bottom: 1px solid #D4C9B8; padding-bottom: 2px; font-family: var(--font-mono); }
+.doc-barcode { display: flex; gap: 1.5px; margin-top: 12px; padding-top: 10px; border-top: 1px solid #D4C9B8; align-items: flex-end; height: 26px; }
+.doc-barcode span { background: #2C1F0E; opacity: 0.6; }
+.rejected-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-18deg) scale(1); opacity: 0; z-index: 10; pointer-events: none; }
+.rejected-stamp.stamped { animation: stampDown 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) forwards; }
+@keyframes stampDown { 0% { transform: translate(-50%,-50%) rotate(-18deg) scale(3); opacity: 0; } 60% { transform: translate(-50%,-50%) rotate(-18deg) scale(0.92); opacity: 1; } 75% { transform: translate(-50%,-50%) rotate(-18deg) scale(1.06); opacity: 1; } 100% { transform: translate(-50%,-50%) rotate(-18deg) scale(1); opacity: 1; } }
+.rejected-stamp-inner { font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; font-weight: 900; color: transparent; -webkit-text-stroke: 3px #C0392B; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border: 4px solid #C0392B; border-radius: 4px; white-space: nowrap; opacity: 0.88; background: rgba(192,57,43,0.06); }
+.rejected-callout { margin-top: 14px; background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.3); border-radius: 6px; padding: 9px 14px; display: flex; gap: 10px; align-items: center; transform: rotate(-2deg); }
+.callout-icon { font-size: 0.95rem; flex-shrink: 0; }
+.callout-text { font-family: var(--font-mono); font-size: 0.6rem; color: #E07070; line-height: 1.6; }
+.callout-text strong { color: #F09090; display: block; margin-bottom: 1px; }
+
+/* SECTION */
+.section-inner { max-width: 1080px; margin: 0 auto; padding: 80px 3rem; }
+.section-eyebrow { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+.section-eyebrow::before { content: ''; display: inline-block; width: 22px; height: 2px; background: var(--blue); }
+h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); line-height: 1.15; margin-bottom: 14px; }
+
+/* USE CASE CARDS */
+.usecases-section { background: var(--pale); }
+.usecase-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+.usecase-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; transition: border-color 0.25s, box-shadow 0.25s; }
+.usecase-card:hover { border-color: var(--blue-lt); box-shadow: 0 4px 20px rgba(46,95,163,0.1); }
+.usecase-card-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 24px 24px 20px; }
+.usecase-category { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.usecase-title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--white); line-height: 1.2; }
+.usecase-corridor { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.corridor-tag { font-family: var(--font-mono); font-size: 0.6rem; padding: 3px 10px; border-radius: 3px; background: rgba(212,168,71,0.12); border: 1px solid rgba(212,168,71,0.3); color: var(--sky); }
+.usecase-card-body { padding: 22px 24px; }
+.usecase-scenario { font-size: 0.86rem; color: var(--ink); line-height: 1.65; margin-bottom: 16px; }
+.usecase-pain { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: #7a4f00; background: rgba(220,150,0,0.09); border: 1.5px solid rgba(220,150,0,0.35); border-left: 4px solid #D4A847; border-radius: 4px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.6; }
+.usecase-pain::before { content: '\26A0  '; font-size: 0.8rem; }
+.usecase-outcome { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; color: #0a3d6b; background: rgba(46,95,163,0.08); border: 1.5px solid rgba(46,95,163,0.3); border-left: 4px solid #2E5FA3; border-radius: 4px; padding: 10px 14px; line-height: 1.6; }
+.usecase-outcome::before { content: '\2714  '; font-size: 0.8rem; }
+.usecase-pilot-hook { font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; color: var(--gold); margin-top: 14px; }
+.usecase-pilot-hook a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+
+/* BOTTOM CTA */
+.page-cta-section { background: var(--navy); border-top: 2px solid var(--gold); }
+.page-cta-inner { max-width: 680px; margin: 0 auto; padding: 72px 3rem; text-align: center; }
+.page-cta-inner h2 { color: var(--white); margin-bottom: 20px; }
+.page-cta-inner p { font-size: 0.95rem; color: var(--sky); margin-bottom: 36px; line-height: 1.7; }
+.btn-primary { background: var(--gold); color: var(--navy); font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 28px; border: none; cursor: pointer; text-decoration: none; border-radius: 4px; transition: background 0.2s, transform 0.15s; display: inline-block; }
+.btn-primary:hover { background: #e0b84e; transform: translateY(-1px); }
+
+/* FOOTER */
+footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); padding: 28px 3rem; }
+.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.footer-copy { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--muted); }
+.footer-url a { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; color: var(--sky); text-decoration: none; transition: color 0.2s; }
+.footer-url a:hover { color: var(--gold); }
+.footer-sep { color: var(--muted); font-size: 0.6rem; }
+.footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.footer-links a { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(214,228,240,0.6); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links, .nav-right { display: none; }
+  .nav-hamburger { display: flex; }
+  .page-header { padding: 56px 1.25rem 48px; }
+  .rejected-doc-inner { grid-template-columns: 1fr; gap: 40px; }
+  .rejected-doc-wrap { display: flex; justify-content: center; }
+  .rejected-doc-wrap > .rejected-doc { max-width: 300px; }
+  .section-inner { padding: 56px 1.25rem; }
+  .usecase-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav id="main-nav" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html" aria-label="VeriPura home">
+    <img src="checkmark_gold.png" alt="" aria-hidden="true" height="34" width="34">
+    <span class="nav-wordmark"><span class="w1">Veri</span><span class="w2">Pura</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#tools">Tools</a></li>
+    <li><a href="use-cases.html" class="active">Use Cases</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="partners.html">Partners</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor">Investor Relations</a>
+    <a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a>
+  </div>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-mobile-menu" id="nav-mobile-menu">
+    <li><a href="index.html#tools" class="nav-mobile-link">Tools</a></li>
+    <li><a href="use-cases.html" class="nav-mobile-link">Use Cases</a></li>
+    <li><a href="faq.html" class="nav-mobile-link">FAQ</a></li>
+    <li><a href="partners.html" class="nav-mobile-link">Partners</a></li>
+    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link">Investor Relations</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a></li>
+  </ul>
+</nav>
+
+<!-- WTO Intelligence Strip -->
+<div class="wto-strip" id="wtoStrip">
+  <div class="wto-label">
+    <div class="wto-pulse"></div>
+    <span class="wto-label-text">Food Trade Intelligence</span>
+  </div>
+  <div class="wto-track-wrap">
+    <div class="wto-track" id="wtoTrack">
+      <span class="wto-item">FOOD TRADE INTELLIGENCE &middot; Fetching latest notices&hellip;</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Use Cases</p>
+    <h1>Real compliance problems,<br>solved before departure.</h1>
+    <p class="page-header-sub">Illustrative scenarios across the food categories most exposed to documentation failure at European, US, and UK borders.</p>
+    <p class="page-header-note">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
+  </div>
+</div>
+
+<!-- REJECTED DOC VISUAL -->
+<div class="rejected-doc-section">
+  <div class="rejected-doc-inner">
+    <div class="rejected-doc-text">
+      <h2>This is what a border rejection looks like.</h2>
+      <p>A single signature mismatch on a phytosanitary certificate. An incorrect product code in FDA Prior Notice. A cold chain log format TRACES NT won't accept. Each one costs tens of thousands of dollars and days at port.<br><br>Every scenario below was preventable. The error existed in the documents before the container moved. VeriPura finds it at Intake — not at Rotterdam, Hamburg, or Tilbury.</p>
+    </div>
+    <div class="rejected-doc-wrap">
+      <div class="rejected-doc">
+        <div class="doc-header-line">
+          <div class="doc-issuer">Department of Agriculture<br>Republic of Thailand<br>Plant Protection Division</div>
+          <div class="doc-seal">OFFICIAL<br>SEAL</div>
+        </div>
+        <div class="doc-title">Phytosanitary Certificate</div>
+        <div class="doc-subtitle">INTERNATIONAL PLANT PROTECTION CONVENTION &middot; NO. TH-2024-09-78231</div>
+        <div class="doc-fields-grid">
+          <div class="doc-field"><div class="doc-field-label">Exporter</div><div class="doc-field-value">Thai Harvest Co., Ltd.</div></div>
+          <div class="doc-field"><div class="doc-field-label">Consignee</div><div class="doc-field-value">Euro Fresh Imports B.V.</div></div>
+          <div class="doc-field"><div class="doc-field-label">Country of Origin</div><div class="doc-field-value">Thailand</div></div>
+          <div class="doc-field"><div class="doc-field-label">Destination</div><div class="doc-field-value">Netherlands</div></div>
+          <div class="doc-field"><div class="doc-field-label">Commodity</div><div class="doc-field-value">Mangifera indica L.</div></div>
+          <div class="doc-field"><div class="doc-field-label">Quantity</div><div class="doc-field-value">12,400 kg &middot; 620 cartons</div></div>
+        </div>
+        <div class="doc-barcode">
+          <span style="width:2px;height:22px"></span><span style="width:1px;height:18px"></span><span style="width:3px;height:22px"></span><span style="width:1px;height:14px"></span><span style="width:2px;height:20px"></span><span style="width:1px;height:22px"></span><span style="width:3px;height:16px"></span><span style="width:1px;height:22px"></span><span style="width:2px;height:18px"></span><span style="width:1px;height:22px"></span><span style="width:2px;height:14px"></span><span style="width:3px;height:22px"></span><span style="width:1px;height:20px"></span><span style="width:2px;height:22px"></span>
+        </div>
+      </div>
+      <div class="rejected-stamp" id="rejected-stamp">
+        <div class="rejected-stamp-inner">REJECTED</div>
+      </div>
+      <div class="rejected-callout">
+        <div class="callout-icon">&#9888;&#65039;</div>
+        <div class="callout-text"><strong>Authority Signature Mismatch</strong>Certificate signatory not on Rotterdam accepted authority list.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- USE CASES -->
+<section class="usecases-section" aria-label="Food import compliance use cases">
+  <div class="section-inner">
+    <p class="section-eyebrow">Illustrative Scenarios</p>
+    <h2>Four corridors. Four failures that didn't have to happen.</h2>
+    <div class="usecase-grid">
+
+      <article class="usecase-card">
+        <div class="usecase-card-header">
+          <p class="usecase-category">Fresh Produce</p>
+          <h3 class="usecase-title">Thai Mango to Rotterdam</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Thailand &rarr; NL</span><span class="corridor-tag">CPI Gap: 44pts</span></div>
+        </div>
+        <div class="usecase-card-body">
+          <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
+          <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
+          <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
+          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify EU phytosanitary documentation</a></p>
+        </div>
+      </article>
+
+      <article class="usecase-card">
+        <div class="usecase-card-header">
+          <p class="usecase-category">Seafood</p>
+          <h3 class="usecase-title">Vietnamese Shrimp to Hamburg</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Vietnam &rarr; DE</span><span class="corridor-tag">EUDR Affected</span></div>
+        </div>
+        <div class="usecase-card-body">
+          <p class="usecase-scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
+          <div class="usecase-pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay, substantial costs incurred. Buyer relationship damaged.</div>
+          <div class="usecase-outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
+          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify TRACES NT compliance before departure</a></p>
+        </div>
+      </article>
+
+      <article class="usecase-card">
+        <div class="usecase-card-header">
+          <p class="usecase-category">Processed Food</p>
+          <h3 class="usecase-title">Indian Spices to US FDA</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">India &rarr; US</span><span class="corridor-tag">FSMA 204</span></div>
+        </div>
+        <div class="usecase-card-body">
+          <p class="usecase-scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
+          <div class="usecase-pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. Storage, re-examination, and bond costs in the range of $30K&ndash;$50K.</div>
+          <div class="usecase-outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
+          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify FDA Prior Notice and FSMA 204 records</a></p>
+        </div>
+      </article>
+
+      <article class="usecase-card">
+        <div class="usecase-card-header">
+          <p class="usecase-category">Beef &amp; Red Meat</p>
+          <h3 class="usecase-title">Brazilian Beef to Great Britain</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Brazil &rarr; GB</span><span class="corridor-tag">EUDR Adjacent</span><span class="corridor-tag">CPI Gap: 42pts</span></div>
+        </div>
+        <div class="usecase-card-body">
+          <p class="usecase-scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU&ndash;Mercosur-aligned certificate of origin.</p>
+          <div class="usecase-pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days. Significant costs in cold storage, re-inspection, and partial product loss.</div>
+          <div class="usecase-outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
+          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify UK import health certificates and EUDR records</a></p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="page-cta-section" aria-label="Apply for a pilot slot">
+  <div class="page-cta-inner">
+    <h2>Ready to stop this happening to your shipments?</h2>
+    <p>Five importer slots. Two partner slots. We run a live pilot against your real shipments — at no cost to you.</p>
+    <a href="index.html#contact" class="btn-primary">Apply for a Pilot Slot &rarr;</a>
+  </div>
+</section>
+
+</main>
+
+<footer aria-label="Site footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="footer-copy">VeriPura &copy; 2026</span>
+      <span class="footer-sep">&middot;</span>
+      <span class="footer-url"><a href="https://www.veripura.com" target="_blank" rel="noopener">www.veripura.com</a></span>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="use-cases.html">Use Cases</a>
+      <a href="faq.html">FAQ</a>
+      <a href="partners.html">Partners</a>
+      <a href="https://investors.veripura.com/" target="_blank" rel="noopener">Investor Relations</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- WTO Feed -->
+<script>
+(function() {
+  var KEYWORDS = ['food','sps','sanitary','phytosanitary','import','eudr','fsma','contaminant','mycotoxin','pesticide','residue','traceability','detention','refusal','codex','recall','deforestation','agricultural','tariff','trade','certification','organic','halal','fraud','adulteration','border','inspection','rasff','traces','fda','customs','shipment','compliance','regulation','safety'];
+  var FEEDS = ['https://veripura-feed-proxy.thomas-f58.workers.dev/?url=' + encodeURIComponent('https://www.foodsafetynews.com/feed/')];
+  function matchesKeyword(text) { var lower = text.toLowerCase(); return KEYWORDS.some(function(k) { return lower.indexOf(k) !== -1; }); }
+  function fetchFeed(url, callback) {
+    fetch(url).then(function(res) { return res.text(); }).then(function(text) {
+      var parser = new DOMParser(); var xml = parser.parseFromString(text, 'text/xml');
+      var items = Array.from(xml.querySelectorAll('item')).slice(0, 30);
+      var results = items.map(function(item) { return { title: (item.querySelector('title')||{}).textContent||'', link: (item.querySelector('link')||{}).textContent||'' }; }).filter(function(item) { return item.title && matchesKeyword(item.title); });
+      callback(results);
+    }).catch(function() { callback([]); });
+  }
+  function loadFeed() {
+    fetchFeed(FEEDS[0], function(items) {
+      var track = document.getElementById('wtoTrack'); if (!track) return;
+      if (!items.length) return;
+      var doubled = items.concat(items);
+      track.innerHTML = doubled.map(function(item) { return '<span class="wto-item"><a href="' + item.link + '" target="_blank" rel="noopener">' + item.title + '</a></span><span class="wto-sep">&middot;</span>'; }).join('');
+      var duration = Math.max(60, Math.min(200, items.reduce(function(s,i){return s+i.title.length;},0) * 0.35));
+      track.style.animationDuration = duration + 's';
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadFeed); } else { loadFeed(); }
+})();
+</script>
+
+<!-- Mobile nav + stamp -->
+<script>
+(function() {
+  var btn = document.getElementById('nav-hamburger'), menu = document.getElementById('nav-mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+    document.querySelectorAll('.nav-mobile-link').forEach(function(l) { l.addEventListener('click', function() { btn.classList.remove('open'); menu.classList.remove('open'); }); });
+  }
+  // Stamp animation
+  var stampFired = false;
+  function playStamp() {
+    if (stampFired) return; stampFired = true;
+    ['click','scroll','keydown','touchstart'].forEach(function(ev) { document.removeEventListener(ev, playStamp); });
+    var stamp = document.getElementById('rejected-stamp');
+    if (!stamp) return;
+    setTimeout(function() { stamp.classList.add('stamped'); }, 800);
+  }
+  ['click','scroll','keydown','touchstart'].forEach(function(ev) { document.addEventListener(ev, playStamp, { once: false, passive: true }); });
+  // Auto-trigger after 2s
+  setTimeout(playStamp, 2000);
+})();
+</script>
+
+</body>
+</html>
