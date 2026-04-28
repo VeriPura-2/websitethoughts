@@ -177,6 +177,15 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 .footer-links a { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(214,228,240,0.6); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
+/* LANG SWITCHER */
+.lang-switcher { display: flex; align-items: center; gap: 3px; margin-right: 4px; }
+.lang-flag { background: none; border: 1.5px solid transparent; font-size: 1.05rem; cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: border-color 0.2s, opacity 0.2s; opacity: 0.5; line-height: 1; }
+.lang-flag:hover { opacity: 0.85; }
+.lang-flag.active { opacity: 1; border-color: rgba(212,168,71,0.5); }
+.nav-mobile-menu .lang-switcher { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-mobile-menu .lang-flag { opacity: 0.6; font-size: 1.2rem; }
+.nav-mobile-menu .lang-flag.active { opacity: 1; }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links, .nav-right { display: none; }
@@ -200,25 +209,35 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
     <span class="nav-wordmark"><span class="w1">Veri</span><span class="w2">Pura</span></span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#tools">Tools</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
-    <li><a href="faq.html" class="active">FAQ</a></li>
-    <li><a href="partners.html">Partners</a></li>
+    <li><a href="index.html#tools" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" data-i18n="nav.useCases">Use Cases</a></li>
+    <li><a href="faq.html" class="active" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" data-i18n="nav.partners">Partners</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor">Investor Relations</a>
-    <a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a>
+    <div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div>
+    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor" data-i18n="nav.investor">Investor Relations</a>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-mobile-menu" id="nav-mobile-menu">
-    <li><a href="index.html#tools" class="nav-mobile-link">Tools</a></li>
-    <li><a href="use-cases.html" class="nav-mobile-link">Use Cases</a></li>
-    <li><a href="faq.html" class="nav-mobile-link">FAQ</a></li>
-    <li><a href="partners.html" class="nav-mobile-link">Partners</a></li>
-    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link">Investor Relations</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a></li>
+    <li><a href="index.html#tools" class="nav-mobile-link" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" class="nav-mobile-link" data-i18n="nav.useCases">Use Cases</a></li>
+    <li><a href="faq.html" class="nav-mobile-link" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" class="nav-mobile-link" data-i18n="nav.partners">Partners</a></li>
+    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link" data-i18n="nav.investor">Investor Relations</a></li>
+    <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a></li>
+    <li><div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div></li>
   </ul>
 </nav>
 
@@ -226,7 +245,7 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <div class="wto-strip" id="wtoStrip">
   <div class="wto-label">
     <div class="wto-pulse"></div>
-    <span class="wto-label-text">Food Trade Intelligence</span>
+    <span class="wto-label-text" data-i18n="wto.label">Food Trade Intelligence</span>
   </div>
   <div class="wto-track-wrap">
     <div class="wto-track" id="wtoTrack">
@@ -240,40 +259,40 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-header-eyebrow">FAQ</p>
-    <h1>Common questions about food import compliance verification.</h1>
-    <p class="page-header-sub">Questions from food importers, freight forwarders, carriers, and customs brokers about how VeriPura works and where it fits.</p>
+    <p class="page-header-eyebrow" data-i18n="faq.pageTitle">FAQ</p>
+    <h1 data-i18n="faq.h1">Common questions about food import compliance verification.</h1>
+    <p class="page-header-sub" data-i18n="faq.headerSub">Questions from food importers, freight forwarders, carriers, and customs brokers about how VeriPura works and where it fits.</p>
   </div>
 </div>
 
 <!-- DOCUMENTATION ERRORS BLOCK -->
 <div class="errors-section" aria-label="Most common documentation errors caught by VeriPura">
   <div class="errors-inner">
-    <p class="errors-eyebrow">Most common documentation errors caught by VeriPura</p>
+    <p class="errors-eyebrow" data-i18n="faq.errors.eyebrow">Most common documentation errors caught by VeriPura</p>
     <dl class="errors-grid">
       <div class="error-item">
-        <dt>Authority signature mismatch</dt>
-        <dd>Phytosanitary or health certificate signed by an authority not recognised by the destination market.</dd>
+        <dt data-i18n="faq.errors.e1.title">Authority signature mismatch</dt>
+        <dd data-i18n="faq.errors.e1.desc">Phytosanitary or health certificate signed by an authority not recognised by the destination market.</dd>
       </div>
       <div class="error-item">
-        <dt>FDA Prior Notice code error</dt>
-        <dd>Incorrect or missing product description code causes automatic detention by FDA PREDICT.</dd>
+        <dt data-i18n="faq.errors.e2.title">FDA Prior Notice code error</dt>
+        <dd data-i18n="faq.errors.e2.desc">Incorrect or missing product description code causes automatic detention by FDA PREDICT.</dd>
       </div>
       <div class="error-item">
-        <dt>TRACES NT format rejection</dt>
-        <dd>Common Entry Document format or missing field prevents TRACES NT acceptance before arrival.</dd>
+        <dt data-i18n="faq.errors.e3.title">TRACES NT format rejection</dt>
+        <dd data-i18n="faq.errors.e3.desc">Common Entry Document format or missing field prevents TRACES NT acceptance before arrival.</dd>
       </div>
       <div class="error-item">
-        <dt>Expired certificate at arrival</dt>
-        <dd>Certificate valid at issue date but expired by the time the shipment reaches the border inspection post.</dd>
+        <dt data-i18n="faq.errors.e4.title">Expired certificate at arrival</dt>
+        <dd data-i18n="faq.errors.e4.desc">Certificate valid at issue date but expired by the time the shipment reaches the border inspection post.</dd>
       </div>
       <div class="error-item">
-        <dt>Establishment number mismatch</dt>
-        <dd>Slaughter or processing establishment number does not match the destination market's approved list.</dd>
+        <dt data-i18n="faq.errors.e5.title">Establishment number mismatch</dt>
+        <dd data-i18n="faq.errors.e5.desc">Slaughter or processing establishment number does not match the destination market's approved list.</dd>
       </div>
       <div class="error-item">
-        <dt>Missing EUDR due diligence records</dt>
-        <dd>No geolocation data or deforestation statement for EUDR-affected commodities — rejection at EU border.</dd>
+        <dt data-i18n="faq.errors.e6.title">Missing EUDR due diligence records</dt>
+        <dd data-i18n="faq.errors.e6.desc">No geolocation data or deforestation statement for EUDR-affected commodities — rejection at EU border.</dd>
       </div>
     </dl>
   </div>
@@ -286,115 +305,83 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
     <div class="faq-list">
 
       <details class="faq-item">
-        <summary class="faq-question">What is VeriPura?</summary>
-        <div class="faq-answer">
-          <p>VeriPura is a pre-shipment food import compliance verification service. It validates import documentation — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, and regulatory declarations — against EU, US, and UK border requirements before a container departs, using a 9-stage AI compliance workflow.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q1.q">What is VeriPura?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q1.a">VeriPura is a pre-shipment food import compliance verification service. It validates import documentation — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, and regulatory declarations — against EU, US, and UK border requirements before a container departs, using a 9-stage AI compliance workflow.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How does VeriPura prevent FDA automatic detentions?</summary>
-        <div class="faq-answer">
-          <p>FDA automatic detentions are typically triggered by documentation errors — an incorrect product code in Prior Notice, a missing field, or an authority mismatch. VeriPura checks every relevant field against FDA FSMA requirements before the shipment departs and flags issues for correction. A detention can cost $30,000–$50,000; the same error fixed before departure costs a corrected document.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q2.q">How does VeriPura prevent FDA automatic detentions?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q2.a">FDA automatic detentions are typically triggered by documentation errors — an incorrect product code in Prior Notice, a missing field, or an authority mismatch. VeriPura checks every relevant field against FDA FSMA requirements before the shipment departs and flags issues for correction. A detention can cost $30,000–$50,000; the same error fixed before departure costs a corrected document.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">Which import documents does VeriPura check?</summary>
-        <div class="faq-answer">
-          <p>VeriPura verifies phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents (CEDs), FDA prior notice submissions, fumigation certificates, and other documentation required by the destination market's regulatory framework.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q3.q">Which import documents does VeriPura check?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q3.a">VeriPura verifies phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, common entry documents (CEDs), FDA prior notice submissions, fumigation certificates, and other documentation required by the destination market's regulatory framework.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">What regulatory frameworks does VeriPura cover?</summary>
-        <div class="faq-answer">
-          <p>VeriPura covers EU Regulation 2017/625, FDA FSMA, EUDR (EU Deforestation Regulation), FSMA 204 traceability requirements, TRACES NT, and UK FRCR. Additional frameworks are available on request.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q4.q">What regulatory frameworks does VeriPura cover?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q4.a">VeriPura covers EU Regulation 2017/625, FDA FSMA, EUDR (EU Deforestation Regulation), FSMA 204 traceability requirements, TRACES NT, and UK FRCR. Additional frameworks are available on request.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How does VeriPura help freight forwarders?</summary>
-        <div class="faq-answer">
-          <p>Freight forwarders use VeriPura to batch-process compliance checks across multiple active shipments simultaneously. VeriPura flags expiry dates, missing signatures, and authority mismatches, and generates client-facing compliance reports automatically. Every check produces a blockchain-attested record — protecting forwarders from client disputes when shipments are rejected.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q5.q">How does VeriPura help freight forwarders?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q5.a">Freight forwarders use VeriPura to batch-process compliance checks across multiple active shipments simultaneously. VeriPura flags expiry dates, missing signatures, and authority mismatches, and generates client-facing compliance reports automatically. Every check produces a blockchain-attested record — protecting forwarders from client disputes when shipments are rejected.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How do freight forwarders offer VeriPura compliance verification to their clients?</summary>
-        <div class="faq-answer">
-          <p>Freight forwarders join the VeriPura channel partner programme and offer pre-shipment document validation as a value-added service alongside their freight offering. When a client's shipment is ready to move, the forwarder submits the document bundle through VeriPura. VeriPura checks every document against the destination market's requirements — FDA FSMA, EUDR, TRACES NT, EU 2017/625, FSMA 204 — and returns a compliance verdict with any flagged issues before departure. The forwarder receives a blockchain-attested compliance record for every check performed, which can be provided to the importer client as part of the shipment dossier.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q6.q">How do freight forwarders offer VeriPura compliance verification to their clients?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q6.a">Freight forwarders join the VeriPura channel partner programme and offer pre-shipment document validation as a value-added service alongside their freight offering. When a client's shipment is ready to move, the forwarder submits the document bundle through VeriPura. VeriPura checks every document against the destination market's requirements — FDA FSMA, EUDR, TRACES NT, EU 2017/625, FSMA 204 — and returns a compliance verdict with any flagged issues before departure. The forwarder receives a blockchain-attested compliance record for every check performed, which can be provided to the importer client as part of the shipment dossier.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How does VeriPura help carriers and customs brokers reduce customs holds on food shipments?</summary>
-        <div class="faq-answer">
-          <p>Customs holds and port delays on food shipments are most commonly triggered by documentation errors that could have been caught before departure. VeriPura gives carriers and customs brokers a pre-arrival compliance check: document bundles are validated against the requirements of the destination port and regulatory regime before the vessel sails. Errors that would trigger an FDA detention, a TRACES NT rejection, or an EU border hold are identified and flagged while they are still fixable. VeriPura also produces a blockchain-attested audit trail for every check — giving customs brokers a documented record of compliance diligence if a shipment is later disputed.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q7.q">How does VeriPura help carriers and customs brokers reduce customs holds on food shipments?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q7.a">Customs holds and port delays on food shipments are most commonly triggered by documentation errors that could have been caught before departure. VeriPura gives carriers and customs brokers a pre-arrival compliance check: document bundles are validated against the requirements of the destination port and regulatory regime before the vessel sails. Errors that would trigger an FDA detention, a TRACES NT rejection, or an EU border hold are identified and flagged while they are still fixable. VeriPura also produces a blockchain-attested audit trail for every check — giving customs brokers a documented record of compliance diligence if a shipment is later disputed.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">What does the VeriPura channel partner programme offer freight forwarders and carriers?</summary>
-        <div class="faq-answer">
-          <p>The VeriPura channel partner programme gives freight forwarders and carriers three things: a pre-shipment compliance verification service they can offer food importer clients as a value-added product; a revenue share on every shipment verified through their channel; and a blockchain-attested compliance record for every check that materially reduces their liability exposure when clients face border disputes. Partner slots in the founding pilot are limited. Founding partners set the terms of the programme they want built — the corridors, document types, and integration with their existing systems that matter most.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q8.q">What does the VeriPura channel partner programme offer freight forwarders and carriers?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q8.a">The VeriPura channel partner programme gives freight forwarders and carriers three things: a pre-shipment compliance verification service they can offer food importer clients as a value-added product; a revenue share on every shipment verified through their channel; and a blockchain-attested compliance record for every check that materially reduces their liability exposure when clients face border disputes. Partner slots in the founding pilot are limited. Founding partners set the terms of the programme they want built — the corridors, document types, and integration with their existing systems that matter most.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How does VeriPura help with EUDR compliance for food imports?</summary>
-        <div class="faq-answer">
-          <p>The EU Deforestation Regulation (EUDR) requires importers to demonstrate that specific commodities — including beef, soy, cocoa, coffee, and palm oil — have not contributed to deforestation. VeriPura checks EUDR due diligence documentation as part of its pre-shipment workflow, flagging gaps before departure.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q9.q">How does VeriPura help with EUDR compliance for food imports?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q9.a">The EU Deforestation Regulation (EUDR) requires importers to demonstrate that specific commodities — including beef, soy, cocoa, coffee, and palm oil — have not contributed to deforestation. VeriPura checks EUDR due diligence documentation as part of its pre-shipment workflow, flagging gaps before departure.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">How does the VeriPura workflow produce a compliance verdict?</summary>
-        <div class="faq-answer">
-          <p>VeriPura processes every shipment through 9 stages: Intake (document upload), Mapping (HS code and corridor identification), Parse (AI field extraction), Trace (supply chain linkage), Comply (EU and FDA rule check), Shield (risk scoring), Auditor (audit trail generation), Verdict (pass, fail, or fix with remediation guidance), and Ledger (IOTA blockchain anchor).</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q10.q">How does the VeriPura workflow produce a compliance verdict?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q10.a">VeriPura processes every shipment through 9 stages: Intake (document upload), Mapping (HS code and corridor identification), Parse (AI field extraction), Trace (supply chain linkage), Comply (EU and FDA rule check), Shield (risk scoring), Auditor (audit trail generation), Verdict (pass, fail, or fix with remediation guidance), and Ledger (IOTA blockchain anchor).</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">Is VeriPura a replacement for a customs broker or compliance consultant?</summary>
-        <div class="faq-answer">
-          <p>No. VeriPura automates document validation and compliance checking against known regulatory requirements. It is used by importers, forwarders, carriers, and brokers — not as a replacement for professional customs or legal advice. It handles the systematic, repeatable part of compliance: checking that the right documents are present, correctly completed, and consistent with each other and with regulatory requirements.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q11.q">Is VeriPura a replacement for a customs broker or compliance consultant?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q11.a">No. VeriPura automates document validation and compliance checking against known regulatory requirements. It is used by importers, forwarders, carriers, and brokers — not as a replacement for professional customs or legal advice. It handles the systematic, repeatable part of compliance: checking that the right documents are present, correctly completed, and consistent with each other and with regulatory requirements.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">What is TRACES NT and why do food importers use it?</summary>
-        <div class="faq-answer">
-          <p><a href="https://food.ec.europa.eu/animals/traces_nt_en" target="_blank" rel="noopener">TRACES NT</a> (Trade Control and Expert System) is the European Commission's online platform for managing health and phytosanitary certificates for food imports entering the EU. Importers must submit Common Entry Documents (CEDs) via TRACES NT before shipments arrive at EU border inspection posts. Errors in document format, missing fields, or mismatches between the CED and the physical consignment are among the most common causes of EU food import refusals. VeriPura validates documentation against TRACES NT requirements before departure — so that CEDs are accepted on arrival rather than flagged for enhanced border checks.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q12.q">What is TRACES NT and why do food importers use it?</summary>
+        <div class="faq-answer"><p data-i18n-html="faq.q12.a"><a href="https://food.ec.europa.eu/animals/traces_nt_en" target="_blank" rel="noopener">TRACES NT</a> (Trade Control and Expert System) is the European Commission's online platform for managing health and phytosanitary certificates for food imports entering the EU. Importers must submit Common Entry Documents (CEDs) via TRACES NT before shipments arrive at EU border inspection posts. Errors in document format, missing fields, or mismatches between the CED and the physical consignment are among the most common causes of EU food import refusals. VeriPura validates documentation against TRACES NT requirements before departure — so that CEDs are accepted on arrival rather than flagged for enhanced border checks.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">What does FSMA 204 require from food importers, and how does VeriPura help?</summary>
-        <div class="faq-answer">
-          <p><a href="https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-requirements-additional-traceability-records-certain-foods" target="_blank" rel="noopener">FDA Food Safety Modernization Act Section 204</a> requires importers of designated high-risk foods to maintain and provide traceability records covering key data elements at each critical tracking event in the supply chain — from farm or processor through to the point of import. These records must be available to the FDA within 24 hours of a request. VeriPura validates that the required traceability documentation is present, correctly formatted, and consistent with the shipment before it departs — and anchors the records to the IOTA blockchain so they are immediately retrievable if FDA requests them.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q13.q">What does FSMA 204 require from food importers, and how does VeriPura help?</summary>
+        <div class="faq-answer"><p data-i18n-html="faq.q13.a"><a href="https://www.fda.gov/food/food-safety-modernization-act-fsma/fsma-final-rule-requirements-additional-traceability-records-certain-foods" target="_blank" rel="noopener">FDA Food Safety Modernization Act Section 204</a> requires importers of designated high-risk foods to maintain and provide traceability records covering key data elements at each critical tracking event in the supply chain — from farm or processor through to the point of import. These records must be available to the FDA within 24 hours of a request. VeriPura validates that the required traceability documentation is present, correctly formatted, and consistent with the shipment before it departs — and anchors the records to the IOTA blockchain so they are immediately retrievable if FDA requests them.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">Can VeriPura check the documents my supplier sends before I submit them to customs?</summary>
-        <div class="faq-answer">
-          <p>Yes. Supplier document validation is one of the primary use cases for VeriPura. Importers upload the document bundle received from their supplier — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis — and VeriPura checks every field against the destination market's requirements before the importer submits to customs or the shipment departs. Errors that would trigger a border rejection or FDA detention are caught at the point when they are still fixable: before the container moves.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q14.q">Can VeriPura check the documents my supplier sends before I submit them to customs?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q14.a">Yes. Supplier document validation is one of the primary use cases for VeriPura. Importers upload the document bundle received from their supplier — phytosanitary certificates, health certificates, certificates of origin, certificates of analysis — and VeriPura checks every field against the destination market's requirements before the importer submits to customs or the shipment departs. Errors that would trigger a border rejection or FDA detention are caught at the point when they are still fixable: before the container moves.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">What are the most common food import documentation errors that cause border rejections?</summary>
-        <div class="faq-answer">
-          <p>The most common documentation errors in food import compliance include: authority signature mismatches on phytosanitary or health certificates; incorrect or missing product description codes in FDA Prior Notice submissions; Common Entry Document format errors that TRACES NT rejects; cold chain log formats not accepted by destination market authorities; establishment numbers that do not match approved lists; certificates that were valid at issue but expired by the time the shipment arrives; and missing EUDR due diligence records for affected commodities. VeriPura checks for all of these against the specific requirements of the destination market and trade corridor before the shipment departs.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q15.q">What are the most common food import documentation errors that cause border rejections?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q15.a">The most common documentation errors in food import compliance include: authority signature mismatches on phytosanitary or health certificates; incorrect or missing product description codes in FDA Prior Notice submissions; Common Entry Document format errors that TRACES NT rejects; cold chain log formats not accepted by destination market authorities; establishment numbers that do not match approved lists; certificates that were valid at issue but expired by the time the shipment arrives; and missing EUDR due diligence records for affected commodities. VeriPura checks for all of these against the specific requirements of the destination market and trade corridor before the shipment departs.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary class="faq-question">Which food commodities are affected by the EU Deforestation Regulation and what documentation does it require?</summary>
-        <div class="faq-answer">
-          <p>The EUDR applies to cattle, cocoa, coffee, palm oil, soy, wood, and derived products — including beef, chocolate products, coffee blends, palm oil derivatives, and soy-based ingredients commonly traded in food import shipments. Importers must provide due diligence statements demonstrating that the commodities were produced on land not subject to deforestation after December 2020, with supporting geolocation data and supply chain documentation. VeriPura checks that the required EUDR due diligence documentation is present and complete before departure, flagging gaps that would cause rejection at EU borders.</p>
-        </div>
+        <summary class="faq-question" data-i18n="faq.q16.q">Which food commodities are affected by the EU Deforestation Regulation and what documentation does it require?</summary>
+        <div class="faq-answer"><p data-i18n="faq.q16.a">The EUDR applies to cattle, cocoa, coffee, palm oil, soy, wood, and derived products — including beef, chocolate products, coffee blends, palm oil derivatives, and soy-based ingredients commonly traded in food import shipments. Importers must provide due diligence statements demonstrating that the commodities were produced on land not subject to deforestation after December 2020, with supporting geolocation data and supply chain documentation. VeriPura checks that the required EUDR due diligence documentation is present and complete before departure, flagging gaps that would cause rejection at EU borders.</p></div>
       </details>
 
     </div>
@@ -404,8 +391,8 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- FAQ CTA -->
 <div class="faq-cta-section" aria-label="Contact VeriPura">
   <div class="faq-cta-inner">
-    <p class="faq-cta-text">Still have questions? Talk to Onno and Thomas directly.</p>
-    <a href="index.html#contact" class="faq-cta-link">Get in Touch &rarr;</a>
+    <p class="faq-cta-text" data-i18n="faq.cta.text">Still have questions? Talk to Onno and Thomas directly.</p>
+    <a href="index.html#contact" class="faq-cta-link" data-i18n="faq.cta.link">Get in Touch →</a>
   </div>
 </div>
 
@@ -414,15 +401,15 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <footer aria-label="Site footer">
   <div class="footer-inner">
     <div class="footer-left">
-      <span class="footer-copy">VeriPura &copy; 2026</span>
+      <span class="footer-copy" data-i18n="footer.copyright">VeriPura © 2026</span>
       <span class="footer-sep">&middot;</span>
       <span class="footer-url"><a href="https://www.veripura.com" target="_blank" rel="noopener">www.veripura.com</a></span>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="use-cases.html">Use Cases</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners.html">Partners</a>
-      <a href="https://investors.veripura.com/" target="_blank" rel="noopener">Investor Relations</a>
+      <a href="use-cases.html" data-i18n="footer.useCases">Use Cases</a>
+      <a href="faq.html" data-i18n="footer.faq">FAQ</a>
+      <a href="partners.html" data-i18n="footer.partners">Partners</a>
+      <a href="https://investors.veripura.com/" target="_blank" rel="noopener" data-i18n="footer.investor">Investor Relations</a>
     </nav>
   </div>
 </footer>
@@ -483,5 +470,6 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 })();
 </script>
 
+<script src="i18n.js"></script>
 </body>
 </html>

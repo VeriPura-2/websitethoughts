@@ -213,6 +213,14 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 .footer-links a { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(214,228,240,0.6); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
+.lang-switcher { display: flex; align-items: center; gap: 3px; margin-right: 4px; }
+.lang-flag { background: none; border: 1.5px solid transparent; font-size: 1.05rem; cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: border-color 0.2s, opacity 0.2s; opacity: 0.5; line-height: 1; }
+.lang-flag:hover { opacity: 0.85; }
+.lang-flag.active { opacity: 1; border-color: rgba(212,168,71,0.5); }
+.nav-mobile-menu .lang-switcher { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-mobile-menu .lang-flag { opacity: 0.6; font-size: 1.2rem; }
+.nav-mobile-menu .lang-flag.active { opacity: 1; }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links, .nav-right { display: none; }
@@ -240,25 +248,35 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
     <span class="nav-wordmark"><span class="w1">Veri</span><span class="w2">Pura</span></span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#tools">Tools</a></li>
-    <li><a href="use-cases.html">Use Cases</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="partners.html" class="active">Partners</a></li>
+    <li><a href="index.html#tools" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" data-i18n="nav.usecases">Use Cases</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" class="active" data-i18n="nav.partners">Partners</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor">Investor Relations</a>
-    <a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a>
+    <div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div>
+    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor" data-i18n="nav.investors">Investor Relations</a>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-mobile-menu" id="nav-mobile-menu">
-    <li><a href="index.html#tools" class="nav-mobile-link">Tools</a></li>
-    <li><a href="use-cases.html" class="nav-mobile-link">Use Cases</a></li>
-    <li><a href="faq.html" class="nav-mobile-link">FAQ</a></li>
-    <li><a href="partners.html" class="nav-mobile-link">Partners</a></li>
-    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link">Investor Relations</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a></li>
+    <li><a href="index.html#tools" class="nav-mobile-link" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" class="nav-mobile-link" data-i18n="nav.usecases">Use Cases</a></li>
+    <li><a href="faq.html" class="nav-mobile-link" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" class="nav-mobile-link" data-i18n="nav.partners">Partners</a></li>
+    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link" data-i18n="nav.investors">Investor Relations</a></li>
+    <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a></li>
+    <li><div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div></li>
   </ul>
 </nav>
 
@@ -266,7 +284,7 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <div class="wto-strip" id="wtoStrip">
   <div class="wto-label">
     <div class="wto-pulse"></div>
-    <span class="wto-label-text">Food Trade Intelligence</span>
+    <span class="wto-label-text" data-i18n="wto.label">Food Trade Intelligence</span>
   </div>
   <div class="wto-track-wrap">
     <div class="wto-track" id="wtoTrack">
@@ -280,18 +298,18 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-header-eyebrow">Become a Partner</p>
-    <h1>The food import compliance partner programme built for freight forwarders and carriers.</h1>
-    <p class="page-header-sub">Every compliance failure your importer clients suffer is a cost you absorb — in delays, disputes, and damaged relationships. VeriPura turns that liability into a competitive advantage and a new revenue stream.</p>
+    <p class="page-header-eyebrow" data-i18n="partners.header.eyebrow">Become a Partner</p>
+    <h1 data-i18n="partners.header.h1">The food import compliance partner programme built for freight forwarders and carriers.</h1>
+    <p class="page-header-sub" data-i18n="partners.header.sub">Every compliance failure your importer clients suffer is a cost you absorb — in delays, disputes, and damaged relationships. VeriPura turns that liability into a competitive advantage and a new revenue stream.</p>
     <div class="page-header-slots">
       <div class="page-header-slot">
         <span class="page-header-slot-num">2</span>
-        <span class="page-header-slot-label">Partner slots<br>remaining</span>
+        <span class="page-header-slot-label" data-i18n-html="partners.header.slot1label">Partner slots<br>remaining</span>
       </div>
       <div class="page-header-slot-div"></div>
       <div class="page-header-slot">
         <span class="page-header-slot-num">0</span>
-        <span class="page-header-slot-label">Cost to<br>founding partners</span>
+        <span class="page-header-slot-label" data-i18n-html="partners.header.slot2label">Cost to<br>founding partners</span>
       </div>
     </div>
   </div>
@@ -300,24 +318,24 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- CHANNEL CARDS -->
 <section id="programme" class="channel-section" aria-label="VeriPura channel partner programme benefits">
   <div class="section-inner">
-    <p class="section-eyebrow">The Programme</p>
-    <h2>Three things the programme gives you.</h2>
-    <p class="section-lead">Freight forwarders and carriers that add VeriPura compliance verification to their service offering give food importer clients a pre-shipment document validation check against FDA FSMA, EUDR, TRACES NT, and EU 2017/625 requirements — reducing customs holds and border rejections before the container moves.</p>
+    <p class="section-eyebrow" data-i18n="partners.prog.eyebrow">The Programme</p>
+    <h2 data-i18n="partners.prog.h2">Three things the programme gives you.</h2>
+    <p class="section-lead" data-i18n="partners.prog.lead">Freight forwarders and carriers that add VeriPura compliance verification to their service offering give food importer clients a pre-shipment document validation check against FDA FSMA, EUDR, TRACES NT, and EU 2017/625 requirements — reducing customs holds and border rejections before the container moves.</p>
     <div class="channel-grid">
       <div class="channel-card">
         <div class="channel-card-icon">💶</div>
-        <h3 class="channel-card-title">Revenue Share on Every Shipment</h3>
-        <div class="channel-card-desc">Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce. Each new importer client you onboard generates recurring income — not a one-time referral fee.</div>
+        <h3 class="channel-card-title" data-i18n="partners.prog.c1.title">Revenue Share on Every Shipment</h3>
+        <div class="channel-card-desc" data-i18n="partners.prog.c1.desc">Channel partners earn a share of VeriPura subscription and per-shipment attestation revenue for every client they introduce. Each new importer client you onboard generates recurring income — not a one-time referral fee.</div>
       </div>
       <div class="channel-card">
         <div class="channel-card-icon">🛡️</div>
-        <h3 class="channel-card-title">Protect Yourself from Client Liability</h3>
-        <div class="channel-card-desc">When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you a documented, blockchain-attested record of every compliance check performed — materially reducing your exposure when clients face border disputes.</div>
+        <h3 class="channel-card-title" data-i18n="partners.prog.c2.title">Protect Yourself from Client Liability</h3>
+        <div class="channel-card-desc" data-i18n="partners.prog.c2.desc">When a shipment is rejected at the border, the importer looks to their forwarder first. VeriPura gives you a documented, blockchain-attested record of every compliance check performed — materially reducing your exposure when clients face border disputes.</div>
       </div>
       <div class="channel-card">
         <div class="channel-card-icon">📦</div>
-        <h3 class="channel-card-title">Extend Your Service Offering</h3>
-        <div class="channel-card-desc">VeriPura compliance validation becomes a value-added service you offer alongside freight. Clients sourcing from high-risk corridors — Thailand, Vietnam, Brazil, India — need this capability now, with EUDR and FSMA 204 enforcement live. You become their single point of contact for compliant cross-border food trade.</div>
+        <h3 class="channel-card-title" data-i18n="partners.prog.c3.title">Extend Your Service Offering</h3>
+        <div class="channel-card-desc" data-i18n="partners.prog.c3.desc">VeriPura compliance validation becomes a value-added service you offer alongside freight. Clients sourcing from high-risk corridors — Thailand, Vietnam, Brazil, India — need this capability now, with EUDR and FSMA 204 enforcement live. You become their single point of contact for compliant cross-border food trade.</div>
       </div>
     </div>
 
@@ -325,27 +343,27 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
     <div class="channel-proof" aria-label="Food import compliance market statistics">
       <div class="channel-proof-stat">
         <div class="num">14,000+</div>
-        <div class="lbl">Food shipments refused EU entry in 2024 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(European Commission TRACES)</cite></div>
+        <div class="lbl" data-i18n-html="partners.proof.s1">Food shipments refused EU entry in 2024 <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(European Commission TRACES)</cite></div>
       </div>
       <div class="channel-proof-stat">
         <div class="num">39%</div>
-        <div class="lbl">Of refusals caused by documentation failures <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(European Commission TRACES)</cite></div>
+        <div class="lbl" data-i18n-html="partners.proof.s2">Of refusals caused by documentation failures <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(European Commission TRACES)</cite></div>
       </div>
       <div class="channel-proof-stat">
         <div class="num">$30–50K</div>
-        <div class="lbl">Up to, per single FDA detention incident <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(FDA Import Program)</cite></div>
+        <div class="lbl" data-i18n-html="partners.proof.s3">Up to, per single FDA detention incident <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(FDA Import Program)</cite></div>
       </div>
       <div class="channel-proof-stat">
         <div class="num">14 days</div>
-        <div class="lbl">Avg. to identify a food contamination source <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(industry traceability studies)</cite></div>
+        <div class="lbl" data-i18n-html="partners.proof.s4">Avg. to identify a food contamination source <cite style="font-size:0.6rem;opacity:0.55;font-style:normal;display:block;margin-top:3px;">(industry traceability studies)</cite></div>
       </div>
     </div>
 
     <!-- PILOT CALLOUT -->
     <div class="pilot-callout">
-      <div class="pilot-callout-slots">2 partner slots remaining in the founding pilot</div>
-      <p>Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later partners. What that looks like is a conversation.</p>
-      <a href="index.html#contact" class="pilot-callout-cta">Apply for a Partner Slot &rarr;</a>
+      <div class="pilot-callout-slots" data-i18n="partners.pilot.slots">2 partner slots remaining in the founding pilot</div>
+      <p data-i18n="partners.pilot.p">Founding partners help shape the channel programme, complete the pilot at no cost, and receive preferential pricing when they convert — terms not available to later partners. What that looks like is a conversation.</p>
+      <a href="index.html#contact" class="pilot-callout-cta" data-i18n="partners.pilot.cta">Apply for a Partner Slot →</a>
     </div>
   </div>
 </section>
@@ -353,43 +371,43 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- HOW IT WORKS FOR PARTNERS -->
 <section id="how-it-works" class="howit-section" aria-label="How VeriPura works for channel partners">
   <div class="section-inner">
-    <p class="section-eyebrow">How It Works</p>
-    <h2>From client shipment to compliance record<br>in five steps.</h2>
-    <p class="section-lead">When your importer client has a shipment ready to move, you submit their document bundle through VeriPura. The check runs against the destination market's specific requirements. You receive a verdict — and a blockchain-attested record — before the container departs.</p>
+    <p class="section-eyebrow" data-i18n="partners.howit.eyebrow">How It Works</p>
+    <h2 data-i18n-html="partners.howit.h2">From client shipment to compliance record<br>in five steps.</h2>
+    <p class="section-lead" data-i18n="partners.howit.lead">When your importer client has a shipment ready to move, you submit their document bundle through VeriPura. The check runs against the destination market's specific requirements. You receive a verdict — and a blockchain-attested record — before the container departs.</p>
     <dl class="howit-steps">
       <div class="howit-step">
         <dt class="howit-step-num">01</dt>
         <div class="howit-step-body">
-          <dt>Client submits document bundle</dt>
-          <dd>Phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, FDA Prior Notice, and any other documents required for the destination market.</dd>
+          <dt data-i18n="partners.howit.s1.title">Client submits document bundle</dt>
+          <dd data-i18n="partners.howit.s1.desc">Phytosanitary certificates, health certificates, certificates of origin, certificates of analysis, FDA Prior Notice, and any other documents required for the destination market.</dd>
         </div>
       </div>
       <div class="howit-step">
         <dt class="howit-step-num">02</dt>
         <div class="howit-step-body">
-          <dt>VeriPura maps corridor and frameworks</dt>
-          <dd>HS code identification, origin/destination corridor, and applicable regulatory regimes — EU 2017/625, FDA FSMA, EUDR, TRACES NT, FSMA 204, UK FRCR — are identified automatically.</dd>
+          <dt data-i18n="partners.howit.s2.title">VeriPura maps corridor and frameworks</dt>
+          <dd data-i18n="partners.howit.s2.desc">HS code identification, origin/destination corridor, and applicable regulatory regimes — EU 2017/625, FDA FSMA, EUDR, TRACES NT, FSMA 204, UK FRCR — are identified automatically.</dd>
         </div>
       </div>
       <div class="howit-step">
         <dt class="howit-step-num">03</dt>
         <div class="howit-step-body">
-          <dt>AI compliance check runs across all documents</dt>
-          <dd>50+ specialised agents check every field — authority signatures, product codes, establishment numbers, certificate validity dates, EUDR due diligence records — against the requirements of the destination market.</dd>
+          <dt data-i18n="partners.howit.s3.title">AI compliance check runs across all documents</dt>
+          <dd data-i18n="partners.howit.s3.desc">50+ specialised agents check every field — authority signatures, product codes, establishment numbers, certificate validity dates, EUDR due diligence records — against the requirements of the destination market.</dd>
         </div>
       </div>
       <div class="howit-step">
         <dt class="howit-step-num">04</dt>
         <div class="howit-step-body">
-          <dt>Verdict delivered with remediation guidance</dt>
-          <dd>Pass, fail, or fix. Any flagged issues include specific remediation instructions — so errors are corrected at the point when they are still fixable: before the container moves.</dd>
+          <dt data-i18n="partners.howit.s4.title">Verdict delivered with remediation guidance</dt>
+          <dd data-i18n="partners.howit.s4.desc">Pass, fail, or fix. Any flagged issues include specific remediation instructions — so errors are corrected at the point when they are still fixable: before the container moves.</dd>
         </div>
       </div>
       <div class="howit-step">
         <dt class="howit-step-num">05</dt>
         <div class="howit-step-body">
-          <dt>Blockchain-attested compliance record issued</dt>
-          <dd>Every check is anchored to the IOTA blockchain, producing an immutable, timestamped audit trail. You provide this to your importer client as part of the shipment dossier — and retain it as documented evidence of compliance diligence.</dd>
+          <dt data-i18n="partners.howit.s5.title">Blockchain-attested compliance record issued</dt>
+          <dd data-i18n="partners.howit.s5.desc">Every check is anchored to the IOTA blockchain, producing an immutable, timestamped audit trail. You provide this to your importer client as part of the shipment dossier — and retain it as documented evidence of compliance diligence.</dd>
         </div>
       </div>
     </dl>
@@ -399,16 +417,16 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- CORRIDORS TABLE -->
 <section id="corridors" class="corridors-section" aria-label="Supported food import trade corridors">
   <div class="section-inner">
-    <p class="section-eyebrow">Covered Corridors</p>
-    <h2>High-risk corridors where documentation failures concentrate.</h2>
-    <p class="section-lead">VeriPura is built for the origin–destination pairs where documentation errors cause the most border rejections and FDA detentions.</p>
+    <p class="section-eyebrow" data-i18n="partners.corridors.eyebrow">Covered Corridors</p>
+    <h2 data-i18n="partners.corridors.h2">High-risk corridors where documentation failures concentrate.</h2>
+    <p class="section-lead" data-i18n="partners.corridors.lead">VeriPura is built for the origin–destination pairs where documentation errors cause the most border rejections and FDA detentions.</p>
     <table class="corridor-table" aria-label="Food import trade corridors covered by VeriPura">
       <thead>
         <tr>
-          <th>Origin</th>
-          <th>Destination</th>
-          <th>Commodity focus</th>
-          <th>Frameworks</th>
+          <th data-i18n="partners.corridors.col.origin">Origin</th>
+          <th data-i18n="partners.corridors.col.destination">Destination</th>
+          <th data-i18n="partners.corridors.col.commodity">Commodity focus</th>
+          <th data-i18n="partners.corridors.col.frameworks">Frameworks</th>
         </tr>
       </thead>
       <tbody>
@@ -456,12 +474,12 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- BOTTOM CTA -->
 <div class="partners-cta-section" aria-label="Apply for a partner slot">
   <div class="partners-cta-inner">
-    <p class="section-eyebrow">Apply Now</p>
-    <h2>Two founding partner slots.<br>Terms set by those who fill them.</h2>
-    <p>Founding partners complete the pilot at no cost and receive preferential pricing that is not available to later joiners. They also shape the corridors, document types, and integrations that get built first. What that looks like in practice is a 30-minute conversation.</p>
+    <p class="section-eyebrow" data-i18n="partners.cta.eyebrow">Apply Now</p>
+    <h2 data-i18n-html="partners.cta.h2">Two founding partner slots.<br>Terms set by those who fill them.</h2>
+    <p data-i18n="partners.cta.p">Founding partners complete the pilot at no cost and receive preferential pricing that is not available to later joiners. They also shape the corridors, document types, and integrations that get built first. What that looks like in practice is a 30-minute conversation.</p>
     <div class="cta-actions">
-      <a href="index.html#contact" class="btn-primary">Apply for a Partner Slot</a>
-      <a href="https://calendar.app.google/Xe4rLSCFsGeATWD49" target="_blank" rel="noopener" class="btn-secondary">Book a Call with Onno or Thomas</a>
+      <a href="index.html#contact" class="btn-primary" data-i18n="partners.cta.btn1">Apply for a Partner Slot</a>
+      <a href="https://calendar.app.google/Xe4rLSCFsGeATWD49" target="_blank" rel="noopener" class="btn-secondary" data-i18n="partners.cta.btn2">Book a Call with Onno or Thomas</a>
     </div>
   </div>
 </div>
@@ -476,13 +494,15 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
       <span class="footer-url"><a href="https://www.veripura.com" target="_blank" rel="noopener">www.veripura.com</a></span>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="use-cases.html">Use Cases</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners.html">Partners</a>
-      <a href="https://investors.veripura.com/" target="_blank" rel="noopener">Investor Relations</a>
+      <a href="use-cases.html" data-i18n="nav.usecases">Use Cases</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="https://investors.veripura.com/" target="_blank" rel="noopener" data-i18n="nav.investors">Investor Relations</a>
     </nav>
   </div>
 </footer>
+
+<script src="i18n.js"></script>
 
 <!-- WTO Feed Script -->
 <script>

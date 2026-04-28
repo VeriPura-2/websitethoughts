@@ -154,6 +154,15 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 .footer-links a { font-family: var(--font-sans); font-size: 0.75rem; color: rgba(214,228,240,0.6); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--gold); }
 
+/* LANG SWITCHER */
+.lang-switcher { display: flex; align-items: center; gap: 3px; margin-right: 4px; }
+.lang-flag { background: none; border: 1.5px solid transparent; font-size: 1.05rem; cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: border-color 0.2s, opacity 0.2s; opacity: 0.5; line-height: 1; }
+.lang-flag:hover { opacity: 0.85; }
+.lang-flag.active { opacity: 1; border-color: rgba(212,168,71,0.5); }
+.nav-mobile-menu .lang-switcher { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-mobile-menu .lang-flag { opacity: 0.6; font-size: 1.2rem; }
+.nav-mobile-menu .lang-flag.active { opacity: 1; }
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links, .nav-right { display: none; }
@@ -176,25 +185,35 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
     <span class="nav-wordmark"><span class="w1">Veri</span><span class="w2">Pura</span></span>
   </a>
   <ul class="nav-links">
-    <li><a href="index.html#tools">Tools</a></li>
-    <li><a href="use-cases.html" class="active">Use Cases</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-    <li><a href="partners.html">Partners</a></li>
+    <li><a href="index.html#tools" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" class="active" data-i18n="nav.useCases">Use Cases</a></li>
+    <li><a href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" data-i18n="nav.partners">Partners</a></li>
   </ul>
   <div class="nav-right">
-    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor">Investor Relations</a>
-    <a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a>
+    <div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div>
+    <a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-investor" data-i18n="nav.investor">Investor Relations</a>
+    <a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-mobile-menu" id="nav-mobile-menu">
-    <li><a href="index.html#tools" class="nav-mobile-link">Tools</a></li>
-    <li><a href="use-cases.html" class="nav-mobile-link">Use Cases</a></li>
-    <li><a href="faq.html" class="nav-mobile-link">FAQ</a></li>
-    <li><a href="partners.html" class="nav-mobile-link">Partners</a></li>
-    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link">Investor Relations</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Apply for a Pilot Slot</a></li>
+    <li><a href="index.html#tools" class="nav-mobile-link" data-i18n="nav.tools">Tools</a></li>
+    <li><a href="use-cases.html" class="nav-mobile-link" data-i18n="nav.useCases">Use Cases</a></li>
+    <li><a href="faq.html" class="nav-mobile-link" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="partners.html" class="nav-mobile-link" data-i18n="nav.partners">Partners</a></li>
+    <li><a href="https://investors.veripura.com/" target="_blank" rel="noopener" class="nav-mobile-link" data-i18n="nav.investor">Investor Relations</a></li>
+    <li><a href="index.html#contact" class="nav-cta" data-i18n="nav.cta">Apply for a Pilot Slot</a></li>
+    <li><div class="lang-switcher">
+      <button class="lang-flag" data-lang="en" onclick="setLanguage('en')" title="English">🇬🇧</button>
+      <button class="lang-flag" data-lang="th" onclick="setLanguage('th')" title="ภาษาไทย">🇹🇭</button>
+      <button class="lang-flag" data-lang="pt" onclick="setLanguage('pt')" title="Português">🇧🇷</button>
+    </div></li>
   </ul>
 </nav>
 
@@ -202,7 +221,7 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <div class="wto-strip" id="wtoStrip">
   <div class="wto-label">
     <div class="wto-pulse"></div>
-    <span class="wto-label-text">Food Trade Intelligence</span>
+    <span class="wto-label-text" data-i18n="wto.label">Food Trade Intelligence</span>
   </div>
   <div class="wto-track-wrap">
     <div class="wto-track" id="wtoTrack">
@@ -216,10 +235,10 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- PAGE HEADER -->
 <div class="page-header">
   <div class="page-header-inner">
-    <p class="page-eyebrow">Use Cases</p>
-    <h1>Real compliance problems,<br>solved before departure.</h1>
-    <p class="page-header-sub">Illustrative scenarios across the food categories most exposed to documentation failure at European, US, and UK borders.</p>
-    <p class="page-header-note">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
+    <p class="page-eyebrow" data-i18n="usecases.pageEyebrow">Use Cases</p>
+    <h1 data-i18n-html="usecases.h1">Real compliance problems,<br>solved before departure.</h1>
+    <p class="page-header-sub" data-i18n="usecases.headerSub">Illustrative scenarios across the food categories most exposed to documentation failure at European, US, and UK borders.</p>
+    <p class="page-header-note" data-i18n="usecases.headerNote">All shipment scenarios are illustrative examples, not real shipments or clients.</p>
   </div>
 </div>
 
@@ -227,8 +246,8 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <div class="rejected-doc-section">
   <div class="rejected-doc-inner">
     <div class="rejected-doc-text">
-      <h2>This is what a border rejection looks like.</h2>
-      <p>A single signature mismatch on a phytosanitary certificate. An incorrect product code in FDA Prior Notice. A cold chain log format TRACES NT won't accept. Each one costs tens of thousands of dollars and days at port.<br><br>Every scenario below was preventable. The error existed in the documents before the container moved. VeriPura finds it at Intake — not at Rotterdam, Hamburg, or Tilbury.</p>
+      <h2 data-i18n="usecases.rejectedDoc.h2">This is what a border rejection looks like.</h2>
+      <p data-i18n-html="usecases.rejectedDoc.p">A single signature mismatch on a phytosanitary certificate. An incorrect product code in FDA Prior Notice. A cold chain log format TRACES NT won't accept. Each one costs tens of thousands of dollars and days at port.<br><br>Every scenario below was preventable. The error existed in the documents before the container moved. VeriPura finds it at Intake — not at Rotterdam, Hamburg, or Tilbury.</p>
     </div>
     <div class="rejected-doc-wrap">
       <div class="rejected-doc">
@@ -251,11 +270,11 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
         </div>
       </div>
       <div class="rejected-stamp" id="rejected-stamp">
-        <div class="rejected-stamp-inner">REJECTED</div>
+        <div class="rejected-stamp-inner" data-i18n="usecases.stamp">REJECTED</div>
       </div>
       <div class="rejected-callout">
         <div class="callout-icon">&#9888;&#65039;</div>
-        <div class="callout-text"><strong>Authority Signature Mismatch</strong>Certificate signatory not on Rotterdam accepted authority list.</div>
+        <div class="callout-text"><strong data-i18n="usecases.callout.title">Authority Signature Mismatch</strong><span data-i18n="usecases.callout.body">Certificate signatory not on Rotterdam accepted authority list.</span></div>
       </div>
     </div>
   </div>
@@ -264,63 +283,63 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- USE CASES -->
 <section class="usecases-section" aria-label="Food import compliance use cases">
   <div class="section-inner">
-    <p class="section-eyebrow">Illustrative Scenarios</p>
-    <h2>Four corridors. Four failures that didn't have to happen.</h2>
+    <p class="section-eyebrow" data-i18n="usecases.eyebrow">Illustrative Scenarios</p>
+    <h2 data-i18n="usecases.h2">Four corridors. Four failures that didn't have to happen.</h2>
     <div class="usecase-grid">
 
       <article class="usecase-card">
         <div class="usecase-card-header">
-          <p class="usecase-category">Fresh Produce</p>
-          <h3 class="usecase-title">Thai Mango to Rotterdam</h3>
-          <div class="usecase-corridor"><span class="corridor-tag">Thailand &rarr; NL</span><span class="corridor-tag">CPI Gap: 44pts</span></div>
+          <p class="usecase-category" data-i18n="usecases.uc1.category">Fresh Produce</p>
+          <h3 class="usecase-title" data-i18n="usecases.uc1.title">Thai Mango to Rotterdam</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Thailand → NL</span><span class="corridor-tag">CPI Gap: 44pts</span></div>
         </div>
         <div class="usecase-card-body">
-          <p class="usecase-scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
-          <div class="usecase-pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
-          <div class="usecase-outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
-          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify EU phytosanitary documentation</a></p>
+          <p class="usecase-scenario" data-i18n="usecases.uc1.scenario">A Dutch importer sources 12 containers of fresh mango from a Thai cooperative. The shipment requires a phytosanitary certificate, pesticide residue analysis, a certificate of origin, and pre-export TRACES notification — all issued by different Thai authorities, in Thai and English.</p>
+          <div class="usecase-pain" data-i18n="usecases.uc1.pain">Without VeriPura: Authority signature mismatch on phytosanitary cert caught at Rotterdam border control. 6-day hold. Substantial demurrage, re-inspection fees, and product loss — mango downgraded and partially destroyed.</div>
+          <div class="usecase-outcome" data-i18n="usecases.uc1.outcome">With VeriPura: Signature mismatch flagged at Intake stage. Corrected cert obtained before departure. Container clears Rotterdam on arrival. Zero demurrage.</div>
+          <p class="usecase-pilot-hook"><span data-i18n="usecases.uc1.hook">→ This is the kind of shipment VeriPura was built for.</span> <a href="index.html#contact" data-i18n="usecases.uc1.hookLink">Apply for a pilot slot — we verify EU phytosanitary documentation</a></p>
         </div>
       </article>
 
       <article class="usecase-card">
         <div class="usecase-card-header">
-          <p class="usecase-category">Seafood</p>
-          <h3 class="usecase-title">Vietnamese Shrimp to Hamburg</h3>
-          <div class="usecase-corridor"><span class="corridor-tag">Vietnam &rarr; DE</span><span class="corridor-tag">EUDR Affected</span></div>
+          <p class="usecase-category" data-i18n="usecases.uc2.category">Seafood</p>
+          <h3 class="usecase-title" data-i18n="usecases.uc2.title">Vietnamese Shrimp to Hamburg</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Vietnam → DE</span><span class="corridor-tag">EUDR Affected</span></div>
         </div>
         <div class="usecase-card-body">
-          <p class="usecase-scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
-          <div class="usecase-pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay, substantial costs incurred. Buyer relationship damaged.</div>
-          <div class="usecase-outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
-          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify TRACES NT compliance before departure</a></p>
+          <p class="usecase-scenario" data-i18n="usecases.uc2.scenario">A German seafood distributor imports 8 tonnes of frozen shrimp from a Vietnamese processor. Documentation required includes health certificates, catch certificates, cold chain logs, HACCP compliance records, and EU import notification via TRACES NT — across 5 issuing authorities.</p>
+          <div class="usecase-pain" data-i18n="usecases.uc2.pain">Without VeriPura: Cold chain log format not accepted by TRACES NT system. Shipment flagged for enhanced border checks. 4-day delay, substantial costs incurred. Buyer relationship damaged.</div>
+          <div class="usecase-outcome" data-i18n="usecases.uc2.outcome">With VeriPura: Cold chain log format issue identified at Parse stage. Supplier provided corrected format within 24 hours. Shipment pre-cleared via TRACES before vessel arrival.</div>
+          <p class="usecase-pilot-hook"><span data-i18n="usecases.uc2.hook">→ This is the kind of shipment VeriPura was built for.</span> <a href="index.html#contact" data-i18n="usecases.uc2.hookLink">Apply for a pilot slot — we verify TRACES NT compliance before departure</a></p>
         </div>
       </article>
 
       <article class="usecase-card">
         <div class="usecase-card-header">
-          <p class="usecase-category">Processed Food</p>
-          <h3 class="usecase-title">Indian Spices to US FDA</h3>
-          <div class="usecase-corridor"><span class="corridor-tag">India &rarr; US</span><span class="corridor-tag">FSMA 204</span></div>
+          <p class="usecase-category" data-i18n="usecases.uc3.category">Processed Food</p>
+          <h3 class="usecase-title" data-i18n="usecases.uc3.title">Indian Spices to US FDA</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">India → US</span><span class="corridor-tag">FSMA 204</span></div>
         </div>
         <div class="usecase-card-body">
-          <p class="usecase-scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
-          <div class="usecase-pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. Storage, re-examination, and bond costs in the range of $30K&ndash;$50K.</div>
-          <div class="usecase-outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
-          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify FDA Prior Notice and FSMA 204 records</a></p>
+          <p class="usecase-scenario" data-i18n="usecases.uc3.scenario">A US specialty food importer sources cumin, turmeric, and chilli powder from three Indian suppliers. Each shipment requires FDA Prior Notice, FSMA traceability records, a Certificate of Analysis, and fumigation certificates — with strict field formatting required for FDA PREDICT system acceptance.</p>
+          <div class="usecase-pain" data-i18n="usecases.uc3.pain">Without VeriPura: Prior Notice entry rejected by FDA PREDICT due to incorrect product description code. Shipment placed on automatic detention. Storage, re-examination, and bond costs in the range of $30K–$50K.</div>
+          <div class="usecase-outcome" data-i18n="usecases.uc3.outcome">With VeriPura: Product code mismatch identified at Comply stage before submission. Corrected Prior Notice accepted first time. No detention. FSMA traceability records blockchain-attested for audit.</div>
+          <p class="usecase-pilot-hook"><span data-i18n="usecases.uc3.hook">→ This is the kind of shipment VeriPura was built for.</span> <a href="index.html#contact" data-i18n="usecases.uc3.hookLink">Apply for a pilot slot — we verify FDA Prior Notice and FSMA 204 records</a></p>
         </div>
       </article>
 
       <article class="usecase-card">
         <div class="usecase-card-header">
-          <p class="usecase-category">Beef &amp; Red Meat</p>
-          <h3 class="usecase-title">Brazilian Beef to Great Britain</h3>
-          <div class="usecase-corridor"><span class="corridor-tag">Brazil &rarr; GB</span><span class="corridor-tag">EUDR Adjacent</span><span class="corridor-tag">CPI Gap: 42pts</span></div>
+          <p class="usecase-category" data-i18n="usecases.uc4.category">Beef &amp; Red Meat</p>
+          <h3 class="usecase-title" data-i18n="usecases.uc4.title">Brazilian Beef to Great Britain</h3>
+          <div class="usecase-corridor"><span class="corridor-tag">Brazil → GB</span><span class="corridor-tag">EUDR Adjacent</span><span class="corridor-tag">CPI Gap: 42pts</span></div>
         </div>
         <div class="usecase-card-body">
-          <p class="usecase-scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU&ndash;Mercosur-aligned certificate of origin.</p>
-          <div class="usecase-pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days. Significant costs in cold storage, re-inspection, and partial product loss.</div>
-          <div class="usecase-outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
-          <p class="usecase-pilot-hook">&rarr; This is the kind of shipment VeriPura was built for. <a href="index.html#contact">Apply for a pilot slot &mdash; we verify UK import health certificates and EUDR records</a></p>
+          <p class="usecase-scenario" data-i18n="usecases.uc4.scenario">A British meat importer sources chilled and frozen beef cuts from a Brazilian processor in Mato Grosso do Sul. The shipment requires a UK health certificate issued by MAPA, an Export Health Certificate validated by APHA, deforestation due diligence records under the UK Forest Risk Commodities framework, cold chain documentation, and an EU–Mercosur-aligned certificate of origin.</p>
+          <div class="usecase-pain" data-i18n="usecases.uc4.pain">Without VeriPura: APHA rejects the Export Health Certificate at Tilbury — slaughter establishment number on the health cert does not match the approved UK establishment list. Shipment held for 9 days. Significant costs in cold storage, re-inspection, and partial product loss.</div>
+          <div class="usecase-outcome" data-i18n="usecases.uc4.outcome">With VeriPura: Establishment number mismatch and deforestation documentation gap both flagged at Comply stage before departure from Santos. Corrected certificates obtained within 48 hours. Shipment arrives Tilbury pre-cleared. IOTA-attested deforestation records available to UK Border Force on request — zero manual chase.</div>
+          <p class="usecase-pilot-hook"><span data-i18n="usecases.uc4.hook">→ This is the kind of shipment VeriPura was built for.</span> <a href="index.html#contact" data-i18n="usecases.uc4.hookLink">Apply for a pilot slot — we verify UK import health certificates and EUDR records</a></p>
         </div>
       </article>
 
@@ -331,9 +350,9 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
 <!-- BOTTOM CTA -->
 <section class="page-cta-section" aria-label="Apply for a pilot slot">
   <div class="page-cta-inner">
-    <h2>Ready to stop this happening to your shipments?</h2>
-    <p>Five importer slots. Two partner slots. We run a live pilot against your real shipments — at no cost to you.</p>
-    <a href="index.html#contact" class="btn-primary">Apply for a Pilot Slot &rarr;</a>
+    <h2 data-i18n="usecases.cta.h2">Ready to stop this happening to your shipments?</h2>
+    <p data-i18n="usecases.cta.p">Five importer slots. Two partner slots. We run a live pilot against your real shipments — at no cost to you.</p>
+    <a href="index.html#contact" class="btn-primary" data-i18n="usecases.cta.btn">Apply for a Pilot Slot &rarr;</a>
   </div>
 </section>
 
@@ -347,10 +366,10 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
       <span class="footer-url"><a href="https://www.veripura.com" target="_blank" rel="noopener">www.veripura.com</a></span>
     </div>
     <nav class="footer-links" aria-label="Footer navigation">
-      <a href="use-cases.html">Use Cases</a>
-      <a href="faq.html">FAQ</a>
-      <a href="partners.html">Partners</a>
-      <a href="https://investors.veripura.com/" target="_blank" rel="noopener">Investor Relations</a>
+      <a href="use-cases.html" data-i18n="nav.usecases">Use Cases</a>
+      <a href="faq.html" data-i18n="nav.faq">FAQ</a>
+      <a href="partners.html" data-i18n="nav.partners">Partners</a>
+      <a href="https://investors.veripura.com/" target="_blank" rel="noopener" data-i18n="nav.investors">Investor Relations</a>
     </nav>
   </div>
 </footer>
@@ -382,6 +401,8 @@ footer { background: var(--navy); border-top: 1.5px solid var(--navy-mid); paddi
   if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', loadFeed); } else { loadFeed(); }
 })();
 </script>
+
+<script src="i18n.js"></script>
 
 <!-- Mobile nav + stamp -->
 <script>
